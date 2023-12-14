@@ -30,9 +30,9 @@ async function scrapePFN(team: string) {
   await page.waitForSelector(".draft-sim-results-body.selected");
 
   html = load(await page.content());
-  const length = html(".draft-sim-results-body.selected > .draft-card").toArray().length;
+  const numberOfPicks = html(".draft-sim-results-body.selected > .draft-card").toArray().length;
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < numberOfPicks; i++) {
     await page.waitForSelector(".draft-button-div");
     await page.waitForSelector("#draft-button-icon");
 
