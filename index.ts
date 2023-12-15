@@ -25,13 +25,12 @@ async function scrapePFN(team: string) {
   await page.click(`[src='${img}']`);
   await page.click("[id='7']");
   await page.click("#fast");
-
   await page.click("#lets-draft-button-desktop");
 
   await page.waitForSelector(".my-picks");
   await page.click(".my-picks");
 
-  await page.waitForSelector(".draft-sim-results-body.selected");
+  await page.waitForSelector(".user-teams-container");
 
   html = load(await page.content());
 
@@ -60,18 +59,20 @@ async function scrapePFN(team: string) {
       //@ts-ignore
       .map((element) => element.children[0].data);
 
-    const positions = draftCards
+    const positionSchools = draftCards
       .find(".player-position-school")
       .toArray()
       .map((element) => {
         //@ts-ignore
         const positionSchool = element.children[0].data;
-        return positionSchool.substring(0, positionSchool.indexOf(" "));
+        const splitIndex = positionSchool.indexOf(" ");
+
+        return [positionSchool.substring(0, splitIndex), positionSchool.substring(splitIndex + 1)];
       });
 
     playerNames.forEach((player, index) => {
       if (!players[player]) {
-        players[player] = { picks: [], position: positions[index] };
+        players[player] = { picks: [], position: positionSchools[index][0], school: positionSchools[index][1] };
       }
 
       players[player].picks.push(picks[i]);
@@ -89,12 +90,7 @@ async function main() {
   const data = readFileSync("./utils/teams.json", { encoding: "utf8", flag: "r" });
   const teamsList: { [key: string]: string } = JSON.parse(data);
 
-  events.EventEmitter.setMaxListeners(100);
-
-  await scrapePFN(teamsList["NYG"]);
-  await scrapePFN(teamsList["WAS"]);
-  await scrapePFN(teamsList["DAL"]);
-  await scrapePFN(teamsList["PHI"]);
+  await scrapePFN(teamsList["NYJ"]);
 }
 
 main();

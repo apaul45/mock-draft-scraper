@@ -17,6 +17,7 @@ enum Positions {
 interface Player {
   picks: number[];
   position: Positions;
+  school: string;
 }
 
 export { Positions, Player };
