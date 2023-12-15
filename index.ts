@@ -1,9 +1,13 @@
 import puppeteer from "puppeteer";
 import { load } from "cheerio";
-import { readFileSync } from "fs";
+import { readFileSync, writeFileSync } from "fs";
+import { Player, Positions } from "./utils";
+import events from "events";
 
 async function scrapePFN(team: string) {
-  const browser = await puppeteer.launch({ headless: false, defaultViewport: null });
+  const players: { [player: string]: Player } = {};
+
+  const browser = await puppeteer.launch({ headless: "new", defaultViewport: null });
   const page = await browser.newPage();
 
   await page.goto("https://www.profootballnetwork.com/mockdraft");
@@ -30,18 +34,54 @@ async function scrapePFN(team: string) {
   await page.waitForSelector(".draft-sim-results-body.selected");
 
   html = load(await page.content());
-  const numberOfPicks = html(".draft-sim-results-body.selected > .draft-card").toArray().length;
 
-  for (let i = 0; i < numberOfPicks; i++) {
+  const picks = html(".draft-sim-results-body.selected > .draft-card")
+    .find(".number")
+    .toArray()
+    .map((div) => {
+      //@ts-ignore
+      const text = div.children[0].data;
+      return text.substring(0, text.indexOf("."));
+    });
+
+  for (let i = 0; i < picks.length; i++) {
     await page.waitForSelector(".draft-button-div");
     await page.waitForSelector("#draft-button-icon");
 
     await page.click("#player-pool-container");
 
+    html = load(await page.content());
+
+    const draftCards = html("#player-pool-body > .draft-card");
+
+    const playerNames = draftCards
+      .find(".player-name")
+      .toArray()
+      //@ts-ignore
+      .map((element) => element.children[0].data);
+
+    const positions = draftCards
+      .find(".player-position-school")
+      .toArray()
+      .map((element) => {
+        //@ts-ignore
+        const positionSchool = element.children[0].data;
+        return positionSchool.substring(0, positionSchool.indexOf(" "));
+      });
+
+    playerNames.forEach((player, index) => {
+      if (!players[player]) {
+        players[player] = { picks: [], position: positions[index] };
+      }
+
+      players[player].picks.push(picks[i]);
+    });
+
     await page.waitForSelector(".player-draft-button");
     await page.click(".player-draft-button");
   }
 
+  writeFileSync(`./teams/${team}.json`, JSON.stringify(players));
   await browser.close();
 }
 
@@ -49,7 +89,12 @@ async function main() {
   const data = readFileSync("./utils/teams.json", { encoding: "utf8", flag: "r" });
   const teamsList: { [key: string]: string } = JSON.parse(data);
 
-  scrapePFN(teamsList["NYG"]);
+  events.EventEmitter.setMaxListeners(100);
+
+  await scrapePFN(teamsList["NYG"]);
+  await scrapePFN(teamsList["WAS"]);
+  await scrapePFN(teamsList["DAL"]);
+  await scrapePFN(teamsList["PHI"]);
 }
 
 main();
