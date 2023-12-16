@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 import { load } from "cheerio";
-import { readFileSync, writeFileSync } from "fs";
+import { readFileSync, writeFileSync, writeFile } from "fs";
 import { Player } from "./utils";
 
 async function scrapePFN() {
@@ -79,11 +79,11 @@ function formatAndWriteData() {
     };
   });
 
-  writeFileSync(`./result.json`, JSON.stringify(teamsList));
+  writeFile(`./result.json`, JSON.stringify(teamsList), (err: any) => {});
 }
 
 async function main() {
-  await scrapePFN();
+  // await scrapePFN();
   formatAndWriteData();
 }
 
