@@ -4,56 +4,34 @@ import { readFileSync, writeFileSync } from "fs";
 import { Player, Positions } from "./utils";
 import events from "events";
 
-async function scrapePFN(team: string) {
-  const players: { [player: string]: Player } = {};
+async function scrapePFN() {
+  const draft: Player[] = [];
 
   const browser = await puppeteer.launch({ headless: "new", defaultViewport: null });
   const page = await browser.newPage();
 
   await page.goto("https://www.profootballnetwork.com/mockdraft");
 
-  let html = load(await page.content());
-
-  const img = html("[alt=NFL-team-logo]")
-    .toArray()
-    .map((img) => img.attribs["src"])
-    .find((teamUrl) => {
-      const teamName = teamUrl.substring(26, teamUrl.indexOf("."));
-      return team.includes(teamName);
-    });
-
-  await page.click(`[src='${img}']`);
+  await page.waitForSelector("#lets-draft-button-desktop");
   await page.click("[id='7']");
   await page.click("#fast");
   await page.click("#lets-draft-button-desktop");
 
-  await page.waitForSelector(".my-picks");
-  await page.click(".my-picks");
+  await page.waitForSelector("#full-sim-results-div", { timeout: 70000 });
 
-  await page.waitForSelector(".user-teams-container");
+  for (let i = 1; i <= 7; i++) {
+    await page.click(`[data-round='${i}']`);
 
-  html = load(await page.content());
+    const html = load(await page.content());
 
-  const picks = html(".draft-sim-results-body.selected > .draft-card")
-    .find(".number")
-    .toArray()
-    .map((div) => {
-      //@ts-ignore
-      const text = div.children[0].data;
-      return text.substring(0, text.indexOf("."));
-    });
+    const draftCards = html(".round-picks-holder > .draft-card");
 
-  for (let i = 0; i < picks.length; i++) {
-    await page.waitForSelector(".draft-button-div");
-    await page.waitForSelector("#draft-button-icon");
+    const teams = draftCards
+      .find(".team-logo-sm")
+      .toArray()
+      .map((element) => element.attribs["alt"]);
 
-    await page.click("#player-pool-container");
-
-    html = load(await page.content());
-
-    const draftCards = html("#player-pool-body > .draft-card");
-
-    const playerNames = draftCards
+    const players = draftCards
       .find(".player-name")
       .toArray()
       //@ts-ignore
@@ -70,27 +48,44 @@ async function scrapePFN(team: string) {
         return [positionSchool.substring(0, splitIndex), positionSchool.substring(splitIndex + 1)];
       });
 
-    playerNames.forEach((player, index) => {
-      if (!players[player]) {
-        players[player] = { picks: [], position: positionSchools[index][0], school: positionSchools[index][1] };
-      }
+    teams.forEach((team, index) => {
+      const player: Player = {
+        name: players[index],
+        team: team,
+        position: positionSchools[index][0],
+        school: positionSchools[index][1],
+      };
 
-      players[player].picks.push(picks[i]);
+      draft.push(player);
     });
-
-    await page.waitForSelector(".player-draft-button");
-    await page.click(".player-draft-button");
   }
 
-  writeFileSync(`./teams/${team}.json`, JSON.stringify(players));
+  writeFileSync(`./teams/players.json`, JSON.stringify(draft));
   await browser.close();
 }
 
-async function main() {
-  const data = readFileSync("./utils/teams.json", { encoding: "utf8", flag: "r" });
-  const teamsList: { [key: string]: string } = JSON.parse(data);
+function formatAndWriteData() {
+  let data = readFileSync("./utils/teams.json", { encoding: "utf8", flag: "r" });
+  const teamsList: { [key: string]: any } = JSON.parse(data);
 
-  await scrapePFN(teamsList["NYJ"]);
+  data = readFileSync("./teams/players.json", { encoding: "utf8", flag: "r" });
+  const players: Player[] = JSON.parse(data);
+
+  players.forEach((player, index) => {
+    const team = player.team;
+
+    teamsList[team] = {
+      ...teamsList[team],
+      [index + 1]: { ...player, availablePlayers: players.slice(index + 1) },
+    };
+  });
+
+  writeFileSync(`./teams/result.json`, JSON.stringify(teamsList));
+}
+
+async function main() {
+  //await scrapePFN();
+  formatAndWriteData();
 }
 
 main();
