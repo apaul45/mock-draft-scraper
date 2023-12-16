@@ -1,8 +1,7 @@
 import puppeteer from "puppeteer";
 import { load } from "cheerio";
 import { readFileSync, writeFileSync } from "fs";
-import { Player, Positions } from "./utils";
-import events from "events";
+import { Player } from "./utils";
 
 async function scrapePFN() {
   const draft: Player[] = [];
