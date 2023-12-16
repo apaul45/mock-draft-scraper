@@ -60,7 +60,7 @@ async function scrapePFN() {
     });
   }
 
-  writeFileSync(`./teams/players.json`, JSON.stringify(draft));
+  writeFileSync(`./sites/PFN.json`, JSON.stringify(draft));
   await browser.close();
 }
 
@@ -68,7 +68,7 @@ function formatAndWriteData() {
   let data = readFileSync("./utils/teams.json", { encoding: "utf8", flag: "r" });
   const teamsList: { [key: string]: any } = JSON.parse(data);
 
-  data = readFileSync("./teams/players.json", { encoding: "utf8", flag: "r" });
+  data = readFileSync("./sites/PFN.json", { encoding: "utf8", flag: "r" });
   const players: Player[] = JSON.parse(data);
 
   players.forEach((player, index) => {
@@ -80,11 +80,11 @@ function formatAndWriteData() {
     };
   });
 
-  writeFileSync(`./teams/result.json`, JSON.stringify(teamsList));
+  writeFileSync(`./result.json`, JSON.stringify(teamsList));
 }
 
 async function main() {
-  //await scrapePFN();
+  await scrapePFN();
   formatAndWriteData();
 }
 
