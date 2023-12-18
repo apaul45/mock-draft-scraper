@@ -100,3 +100,67 @@ export { Positions, Player };
 //     console.log("Successfully drafted a player for giants!! AGREEGE");
 //   }
 // }
+
+// async function readData() {
+//   const res = await axios.get("https://www.nflmockdraftdatabase.com/user-mock-drafts/2024/user-mock-1885940", {
+//     responseType: "document",
+//   });
+
+//   let data = readFileSync("./utils/teams.json", { encoding: "utf8", flag: "r" });
+//   const teamsList: { [key: string]: any } = JSON.parse(data);
+//   const reverseTeams = Object.fromEntries(
+//     Object.entries(teamsList).map(([key, value]) => {
+//       const fullName = value["fullName"];
+
+//       return [fullName.substring(fullName.lastIndexOf(" ") + 1), key];
+//     })
+//   );
+
+//   const draft: Player[] = [];
+
+//   const html = load(res.data as any);
+
+//   html(".mock-list:first").remove();
+
+//   const playerNames = html(".mock-list-item")
+//     .find(".player-name.player-name-bold > a")
+//     .toArray()
+//     // @ts-ignore
+//     .map((element) => element.children[0].data);
+
+//   const positions = html(".mock-list-item")
+//     .find(".player-details")
+//     .toArray()
+//     .map((element) => {
+//       // @ts-ignore
+//       const text: string = element.children[0].data;
+//       return text.substring(0, text.indexOf(" "));
+//     });
+
+//   const schools = html(".mock-list-item")
+//     .find(".player-details > a")
+//     .toArray()
+//     //@ts-ignore
+//     .map((element) => element.children[1].data);
+
+//   const teams = html(".mock-list-item")
+//     .find(".team-link > img")
+//     .toArray()
+//     .map((element) => {
+//       const alt = element.attribs["alt"];
+//       return reverseTeams[alt.substring(0, alt.indexOf(" "))];
+//     });
+
+//   teams.forEach((team, index) => {
+//     const player: Player = {
+//       name: playerNames[index],
+//       team: team,
+//       position: positions[index] as unknown as Positions,
+//       school: schools[index],
+//     };
+
+//     draft.push(player);
+//   });
+
+//   writeFileSync("./sites/MFD.json", JSON.stringify(draft));
+// }
