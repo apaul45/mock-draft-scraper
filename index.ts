@@ -1,7 +1,8 @@
 import puppeteer from "puppeteer";
 import { load } from "cheerio";
-import { readFileSync, writeFileSync, writeFile } from "fs";
+import { readFileSync, writeFileSync, writeFile, readdirSync } from "fs";
 import { Player, Positions } from "./utils";
+import _ from "lodash";
 
 async function scrapeMFD(teamsList: { [key: string]: string }) {
   const draft: Player[] = [];
@@ -31,8 +32,8 @@ async function scrapeMFD(teamsList: { [key: string]: string }) {
   await page.$eval(".pdtb10-lr2.brd-none.w100p.bold.fs-14px.bg-none.color-orange", (el) => el.click());
 
   await page.waitForSelector(".modal-content", { timeout: 90000 });
-  await page.click(".hoverable.pdtb10-lr2.w100p.bold.fs-14px.bg-white.color-sec.brd-1px-sec.btn.btn-primary");
-  await page.click(".hoverable.pdtb10-lr2.w100p.bold.fs-14px.bg-white.color-sec.brd-1px-sec.btn.btn-primary");
+  //@ts-ignore
+  await page.$eval(".hoverable.pdtb10-lr2.w100p.bold.fs-14px.bg-white.color-sec.brd-1px-sec.btn.btn-primary", (el) => el.click());
 
   await page.waitForSelector(".mock-list");
 
@@ -81,7 +82,9 @@ async function scrapeMFD(teamsList: { [key: string]: string }) {
     draft.push(player);
   });
 
-  writeFileSync("./sites/MFD.json", JSON.stringify(draft));
+  const currentDate = new Date();
+  writeFileSync(`./sites/MFD_${currentDate.toISOString()}.json`, JSON.stringify(draft));
+
   await browser.close();
 }
 
@@ -141,26 +144,33 @@ async function scrapePFN() {
     });
   }
 
-  writeFileSync(`./sites/PFN.json`, JSON.stringify(draft));
+  const currentDate = new Date();
+  writeFileSync(`./sites/PFN_${currentDate.toISOString()}.json`, JSON.stringify(draft));
+
   await browser.close();
 }
 
-function formatAndWriteData() {
-  let data = readFileSync("./utils/teams.json", { encoding: "utf8", flag: "r" });
-  const teamsList: { [key: string]: any } = JSON.parse(data);
+function formatAndWriteData(teamsList: { [key: string]: any }) {
+  const fileNames = readdirSync("./sites", { withFileTypes: true });
 
-  data = readFileSync("./sites/PFN.json", { encoding: "utf8", flag: "r" });
-  const players: Player[] = JSON.parse(data);
+  fileNames.forEach(({ name }) => {
+    let data = readFileSync(`./sites/${name}`, { encoding: "utf8", flag: "r" });
+    const players: Player[] = JSON.parse(data);
 
-  players.forEach((player, index) => {
-    const team = player.team;
+    players.forEach((player, index) => {
+      const team = player.team;
 
-    teamsList[team] = {
-      ...teamsList[team],
-      [index + 1]: { ...player, availablePlayers: players.slice(index + 1) },
-    };
+      const availablePlayers = players.slice(index + 1).map((el) => el.name);
+      const previousAvailablePlayers = teamsList[team][index + 1] ? teamsList[team][index + 1]["availablePlayers"] : availablePlayers;
+
+      teamsList[team] = {
+        ...teamsList[team],
+        [index + 1]: { ...player, availablePlayers: _.intersection(availablePlayers, previousAvailablePlayers) },
+      };
+    });
   });
 
+  console.log(`Processed ${fileNames.length} files`);
   writeFile(`./result.json`, JSON.stringify(teamsList), (err: any) => {});
 }
 
@@ -177,10 +187,9 @@ async function main() {
     })
   );
 
-  await scrapeMFD(reverseTeamsList);
-
-  // await scrapePFN();
-  //formatAndWriteData();
+  //await scrapeMFD(reverseTeamsList);
+  //await scrapePFN();
+  formatAndWriteData(teamsList);
 }
 
 main();
