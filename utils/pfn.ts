@@ -2,12 +2,18 @@ import { load } from "cheerio";
 import puppeteer from "puppeteer";
 import { Player } from ".";
 import { writeFileSync } from "fs";
+import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
+import { fetch } from "cross-fetch";
 
 async function scrapePFN() {
   const draft: Player[] = [];
 
   const browser = await puppeteer.launch({ headless: "new", defaultViewport: null });
   const page = await browser.newPage();
+
+  // Ads on this site cause a insanely long timeout, so block
+  const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
+  await blocker.enableBlockingInPage(page);
 
   await page.goto("https://www.profootballnetwork.com/mockdraft");
 
@@ -59,8 +65,8 @@ async function scrapePFN() {
     });
   }
 
-  const currentDate = new Date();
-  writeFileSync(`./sites/PFN_${currentDate.toISOString()}.json`, JSON.stringify(draft));
+  const currentDate = new Date().toISOString();
+  writeFileSync(`./sites/PFN_${currentDate}.json`, JSON.stringify(draft));
 
   await browser.close();
 }

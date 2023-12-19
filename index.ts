@@ -1,6 +1,6 @@
 import { readFileSync, writeFile, readdirSync } from "fs";
 import { load } from "cheerio";
-import { Player, Teams, scrapeMFD, scrapeNDB, scrapePFN, toTitleCase } from "./utils";
+import { Player, Teams, scrapeMDD, scrapeNDB, scrapePFN, toTitleCase } from "./utils";
 import _ from "lodash";
 import axios from "axios";
 
@@ -28,17 +28,20 @@ function gatherResults(teamsList: Teams, draftOrder: string[]) {
     let data = readFileSync(`./sites/${name}`, { encoding: "utf8", flag: "r" });
     const players: Player[] = JSON.parse(data);
 
-    players.forEach((player, index) => {
-      const team = player.team;
-
+    players.forEach(({ name, team, position, school }, index) => {
       if (draftOrder[index] != team) return;
 
+      const pickedPlayers = teamsList[team][index + 1]?.["picked"] || {};
+
       const availablePlayers = players.slice(index + 1).map((el) => el.name);
-      const previousAvailablePlayers = teamsList[team][index + 1] ? teamsList[team][index + 1]["availablePlayers"] : availablePlayers;
+      const previousAvailablePlayers = teamsList[team][index + 1]?.["availablePlayers"] || availablePlayers;
 
       teamsList[team] = {
         ...teamsList[team],
-        [index + 1]: { ...player, availablePlayers: _.intersection(availablePlayers, previousAvailablePlayers) },
+        [index + 1]: {
+          picked: { ...pickedPlayers, [name]: { position, school } },
+          availablePlayers: _.intersection(availablePlayers, previousAvailablePlayers),
+        },
       };
     });
   });
@@ -49,9 +52,9 @@ function gatherResults(teamsList: Teams, draftOrder: string[]) {
 
 async function main() {
   let data = readFileSync("./utils/teams.json", { encoding: "utf8", flag: "r" });
-  const teamsList: { [key: string]: any } = JSON.parse(data);
 
-  // Needed for MFD scraping
+  const teamsList: Teams = JSON.parse(data);
+
   const reverseTeamsList = Object.fromEntries(
     Object.entries(teamsList).map(([key, value]) => {
       const fullName = value["fullName"];
@@ -60,17 +63,11 @@ async function main() {
     })
   );
 
-  await scrapeMFD(reverseTeamsList);
+  await scrapeMDD(reverseTeamsList);
   await scrapePFN();
   await scrapeNDB();
 
   const draftOrder = await getDraftOrder(reverseTeamsList);
-
-  // draftOrder.forEach((team) => {
-  //   teamsList[team] = { ...teamsList[team], number: (teamsList[team]["number"] || 0) + 1 };
-  // });
-
-  // console.log(teamsList);
 
   gatherResults(teamsList, draftOrder);
 }

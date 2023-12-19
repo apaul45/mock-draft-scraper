@@ -81,7 +81,6 @@ async function scrapeNDB() {
       .find(".sim-pos-cont")
       .toArray()
       .map((el) => {
-        console.log(el);
         // @ts-ignore
         const position = el.children[1].children[0].data;
         // @ts-ignore

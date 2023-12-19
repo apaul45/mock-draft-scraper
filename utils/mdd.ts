@@ -1,14 +1,19 @@
 import { load } from "cheerio";
 import puppeteer from "puppeteer";
-import { Player, Positions } from ".";
+import { Player, Positions, Teams } from ".";
 import { writeFileSync } from "fs";
+import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
+import { fetch } from "cross-fetch";
 
-async function scrapeMFD(teamsList: { [key: string]: string }) {
+async function scrapeMDD(teamsList: Teams) {
   const draft: Player[] = [];
 
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
-  page.setDefaultNavigationTimeout(0); //Ads dynamically load in, so need sufficient (infinite) timeout for loading to finish
+
+  // Ads on this site cause a insanely long timeout, so block
+  const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
+  await blocker.enableBlockingInPage(page);
 
   await page.goto("https://www.nflmockdraftdatabase.com/mock-draft-simulator");
 
@@ -81,10 +86,10 @@ async function scrapeMFD(teamsList: { [key: string]: string }) {
     draft.push(player);
   });
 
-  const currentDate = new Date();
-  writeFileSync(`./sites/MFD_${currentDate.toISOString()}.json`, JSON.stringify(draft));
+  const currentDate = new Date().toISOString();
+  writeFileSync(`./sites/MDD_${currentDate}.json`, JSON.stringify(draft));
 
   await browser.close();
 }
 
-export default scrapeMFD;
+export default scrapeMDD;
