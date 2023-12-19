@@ -11,7 +11,6 @@ async function scrapePFN() {
   const browser = await puppeteer.launch({ headless: "new", defaultViewport: null });
   const page = await browser.newPage();
 
-  // Ads on this site cause a insanely long timeout, so block
   const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
   await blocker.enableBlockingInPage(page);
 

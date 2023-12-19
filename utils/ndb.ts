@@ -68,7 +68,7 @@ async function scrapeNDB() {
     await page.$eval(`[data-round='${i}'] > a`, (el) => el.click());
     await page.waitForSelector(`.content-filter__item--active[data-round='${i}']`, { visible: true });
 
-    await new Promise((r) => setTimeout(r, 2000)); // Needed since picks don't update right away
+    await new Promise((r) => setTimeout(r, 2000)); // Needed since picks don't render right away
 
     html = load(await page.content());
 
