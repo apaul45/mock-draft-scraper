@@ -1,6 +1,6 @@
 import { readFileSync, writeFile, readdirSync } from "fs";
 import { load } from "cheerio";
-import { Player, Teams, scrapeMDD, scrapeNDB, scrapePFN, toTitleCase } from "./utils";
+import { Player, Teams, scrapeMDD, scrapeNDB, scrapePFN, scrapeSportskeeda, toTitleCase } from "./utils";
 import _ from "lodash";
 import axios from "axios";
 
@@ -66,9 +66,9 @@ async function main() {
   await scrapeMDD(reverseTeamsList);
   await scrapePFN();
   await scrapeNDB();
+  await scrapeSportskeeda();
 
   const draftOrder = await getDraftOrder(reverseTeamsList);
-
   gatherResults(teamsList, draftOrder);
 }
 

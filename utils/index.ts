@@ -1,6 +1,7 @@
 import scrapeMDD from "./mdd";
 import scrapePFN from "./pfn";
 import scrapeNDB from "./ndb";
+import scrapeSportskeeda from "./sportskeeda";
 
 enum Positions {
   Quarterback = "QB",
@@ -41,4 +42,4 @@ function removeParanthesis(str: string) {
   return str.replace(/[\])}[{(]/g, "");
 }
 
-export { Positions, Player, scrapeMDD, scrapePFN, scrapeNDB, toTitleCase, removeParanthesis, Teams };
+export { Positions, Player, scrapeMDD, scrapePFN, scrapeNDB, scrapeSportskeeda, toTitleCase, removeParanthesis, Teams };
