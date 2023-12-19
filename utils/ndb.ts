@@ -8,7 +8,7 @@ import { writeFileSync } from "fs";
 async function scrapeNDB() {
   const draft: Player[] = [];
 
-  const browser = await puppeteer.launch({ headless: false, args: [`--window-size=1920,1080`], defaultViewport: null });
+  const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
   const page = await browser.newPage();
 
   // Ads on this site cause a insanely long timeout, so block
