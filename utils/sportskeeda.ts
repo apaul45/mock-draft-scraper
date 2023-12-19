@@ -8,7 +8,7 @@ import { writeFileSync } from "fs";
 async function scrapeSportskeeda() {
   const draft: Player[] = [];
 
-  const browser = await puppeteer.launch({ headless: false, args: [`--window-size=1920,1080`], defaultViewport: null });
+  const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
   const page = await browser.newPage();
 
   const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);

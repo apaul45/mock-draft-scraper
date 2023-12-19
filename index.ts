@@ -65,8 +65,9 @@ async function main() {
 
   await scrapeMDD(reverseTeamsList);
   await scrapePFN();
-  await scrapeNDB();
   await scrapeSportskeeda();
+
+  await scrapeNDB();
 
   const draftOrder = await getDraftOrder(reverseTeamsList);
   gatherResults(teamsList, draftOrder);
