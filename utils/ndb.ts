@@ -5,7 +5,7 @@ import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
 import fetch from "cross-fetch";
 import { writeFileSync } from "fs";
 
-async function scrapeNDB() {
+async function scrape() {
   const draft: Player[] = [];
 
   const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
@@ -111,6 +111,14 @@ async function scrapeNDB() {
   writeFileSync(`./sites/NDB_${currentDate}.json`, JSON.stringify(draft));
 
   await browser.close();
+}
+
+async function scrapeNDB() {
+  try {
+    await scrape();
+  } catch (e) {
+    console.log(`Draft Buzz Simulation failed with error: ${e}`);
+  }
 }
 
 export default scrapeNDB;

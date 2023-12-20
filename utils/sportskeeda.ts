@@ -5,7 +5,7 @@ import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
 import fetch from "cross-fetch";
 import { writeFileSync } from "fs";
 
-async function scrapeSportskeeda() {
+async function scrape() {
   const draft: Player[] = [];
 
   const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
@@ -87,4 +87,12 @@ async function scrapeSportskeeda() {
   await browser.close();
 }
 
-export default scrapeSportskeeda;
+async function scrapeSKA() {
+  try {
+    await scrape();
+  } catch (e) {
+    console.log(`Sportskeeda Simulation failed with error: ${e}`);
+  }
+}
+
+export default scrapeSKA;

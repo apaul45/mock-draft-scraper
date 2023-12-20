@@ -5,7 +5,7 @@ import { writeFileSync } from "fs";
 import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
 import { fetch } from "cross-fetch";
 
-async function scrapePFN() {
+async function scrape() {
   const draft: Player[] = [];
 
   const browser = await puppeteer.launch({ headless: "new", defaultViewport: null });
@@ -68,6 +68,14 @@ async function scrapePFN() {
   writeFileSync(`./sites/PFN_${currentDate}.json`, JSON.stringify(draft));
 
   await browser.close();
+}
+
+async function scrapePFN() {
+  try {
+    await scrape();
+  } catch (e) {
+    console.log(`Pro Football Network Simulation failed with error: ${e}`);
+  }
 }
 
 export default scrapePFN;

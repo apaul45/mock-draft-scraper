@@ -5,7 +5,7 @@ import { writeFileSync } from "fs";
 import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
 import { fetch } from "cross-fetch";
 
-async function scrapeMDD(teamsList: Teams) {
+async function scrape(teamsList: Teams) {
   const draft: Player[] = [];
 
   const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
@@ -90,6 +90,14 @@ async function scrapeMDD(teamsList: Teams) {
   writeFileSync(`./sites/MDD_${currentDate}.json`, JSON.stringify(draft));
 
   await browser.close();
+}
+
+async function scrapeMDD(teamsList: Teams) {
+  try {
+    await scrape(teamsList);
+  } catch (e) {
+    console.log(`Mock Draft Database Simulation Failed with error: ${e}`);
+  }
 }
 
 export default scrapeMDD;
