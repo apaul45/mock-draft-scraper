@@ -1,6 +1,5 @@
 import axios from "axios";
 import { load } from "cheerio";
-import { writeFileSync } from "fs";
 
 enum Positions {
   Quarterback = "QB",
@@ -67,32 +66,4 @@ async function getDraftOrder(teamsList: Teams) {
   return draftOrder;
 }
 
-// async function getDraftProspects() {
-//   const players: Players = {};
-
-//   for (let i = 1; i <= 4; i++) {
-//     const res = await axios.get(`https://www.drafttek.com/2024-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2024-Page-${i}.asp`, {
-//       responseType: "document",
-//     });
-
-//     const html = load(res.data);
-
-//     html(".player-info > tbody")
-//       .children("tr:not(.cellcolor2)")
-//       .toArray()
-//       .forEach((el) => {
-//         // @ts-ignore
-//         const player = el.children[5].children[0].data;
-//         // @ts-ignore
-//         const school = el.children[7].children[0].data;
-//         // @ts-ignore
-//         const position = el.children[9].children[0].data;
-
-//         players[player] = { school, position };
-//       });
-//   }
-
-//   writeFileSync("./utils/prospects.json", JSON.stringify(players));
-// }
-
-export { Positions, Player, toTitleCase, removeParanthesis, reverseTeamsObject, getDraftOrder, Teams };
+export { Positions, Player, toTitleCase, removeParanthesis, reverseTeamsObject, getDraftOrder, Teams, Players };

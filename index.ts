@@ -1,12 +1,12 @@
 import { readFileSync, writeFile, readdirSync } from "fs";
-import { Player, Teams, getDraftOrder, reverseTeamsObject } from "./utils";
+import { Player, Players, Teams, getDraftOrder, reverseTeamsObject } from "./utils";
 import _ from "lodash";
 import scrapers from "./sites";
 import puppeteer from "puppeteer";
 import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
 import { fetch } from "cross-fetch";
 
-function gatherResults(teamsList: Teams, draftOrder: string[]) {
+function gatherResults(teamsList: Teams, draftOrder: string[], draftProspects: Players) {
   const fileNames = readdirSync("./simulations", { withFileTypes: true });
 
   fileNames.forEach(({ name }) => {
@@ -15,6 +15,8 @@ function gatherResults(teamsList: Teams, draftOrder: string[]) {
 
     players.forEach(({ name, team }, index) => {
       if (draftOrder[index] != team) return;
+
+      if (draftProspects[name]) name += ` (${draftProspects[name].position})`;
 
       const pickedPlayers = teamsList?.[team]?.[index + 1]?.["picked"] || {};
 
@@ -33,31 +35,34 @@ function gatherResults(teamsList: Teams, draftOrder: string[]) {
   });
 
   console.log(`Processed ${fileNames.length} files`);
-  writeFile(`./result.json`, JSON.stringify(teamsList), (err: any) => {});
+  writeFile(`./results/${new Date().toISOString()}.json`, JSON.stringify(teamsList), (err: any) => {});
 }
 
 async function main() {
-  let data = readFileSync("./utils/teams.json", { encoding: "utf8", flag: "r" });
+  const teamsData = readFileSync("./utils/teams.json", { encoding: "utf8", flag: "r" });
+  const prospectsData = readFileSync("./utils/prospects.json", { encoding: "utf-8", flag: "r" });
 
-  const teamsList: Teams = JSON.parse(data);
+  const teamsList: Teams = JSON.parse(teamsData);
   const reverseTeamsList = reverseTeamsObject(teamsList);
 
-  const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
+  const draftProspects = JSON.parse(prospectsData);
 
-  for (const scraper of scrapers) {
-    const page = await browser.newPage();
+  // const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
 
-    // Ads on this site cause a insanely long timeout, so block
-    const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
-    await blocker.enableBlockingInPage(page);
+  // for (const scraper of scrapers) {
+  //   const page = await browser.newPage();
 
-    await scraper(page, reverseTeamsList);
-  }
+  //   // Ads on this site cause a insanely long timeout, so block
+  //   const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
+  //   await blocker.enableBlockingInPage(page);
 
-  await browser.close();
+  //   await scraper(page, reverseTeamsList);
+  // }
+
+  // await browser.close();
 
   const draftOrder = await getDraftOrder(reverseTeamsList);
-  gatherResults(teamsList, draftOrder);
+  gatherResults(teamsList, draftOrder, draftProspects);
 }
 
 main();
