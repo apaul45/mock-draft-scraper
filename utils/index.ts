@@ -1,3 +1,6 @@
+import axios from "axios";
+import { load } from "cheerio";
+
 enum Positions {
   Quarterback = "QB",
   RunningBack = "HB",
@@ -35,4 +38,31 @@ function removeParanthesis(str: string) {
   return str.replace(/[\])}[{(]/g, "");
 }
 
-export { Positions, Player, toTitleCase, removeParanthesis, Teams };
+function reverseTeamsObject(teamsList: Teams) {
+  return Object.fromEntries(
+    Object.entries(teamsList).map(([key, value]) => {
+      const fullName = value["fullName"];
+
+      return [fullName.substring(fullName.lastIndexOf(" ") + 1), key];
+    })
+  );
+}
+
+async function getDraftOrder(teamsList: Teams) {
+  const res = await axios.get("https://www.tankathon.com/nfl/full_draft", { responseType: "document" });
+
+  const html = load(res.data);
+
+  const draftOrder = html(".team-link > a")
+    .toArray()
+    .map((el) => {
+      const link = el.attribs["href"];
+      const team = link.substring(link.lastIndexOf("/") + 1);
+
+      return teamsList[toTitleCase(team)];
+    });
+
+  return draftOrder;
+}
+
+export { Positions, Player, toTitleCase, removeParanthesis, reverseTeamsObject, getDraftOrder, Teams };
