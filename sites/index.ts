@@ -4,4 +4,6 @@ import scrapeNDB from "./ndb";
 import scrapeSKA from "./ska";
 import scrapeOTC from "./otc";
 
-export { scrapePFN, scrapeMDD, scrapeNDB, scrapeSKA, scrapeOTC };
+const scrapers = [scrapePFN, scrapeMDD, scrapeNDB, scrapeSKA, scrapeOTC];
+
+export default scrapers;

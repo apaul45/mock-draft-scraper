@@ -1,19 +1,10 @@
-import puppeteer from "puppeteer";
+import { Page } from "puppeteer";
 import { Player, removeParanthesis } from "../utils";
 import { load } from "cheerio";
-import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
-import fetch from "cross-fetch";
 import { writeFileSync } from "fs";
 
-async function scrape() {
+async function scrape(page: Page) {
   const draft: Player[] = [];
-
-  const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
-  const page = await browser.newPage();
-
-  // Ads on this site cause a insanely long timeout, so block
-  const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
-  await blocker.enableBlockingInPage(page);
 
   await page.goto("https://www.nfldraftbuzz.com/simulator");
 
@@ -95,13 +86,11 @@ async function scrape() {
 
   const currentDate = new Date().toISOString();
   writeFileSync(`./simulations/NDB_${currentDate}.json`, JSON.stringify(draft));
-
-  await browser.close();
 }
 
-async function scrapeNDB() {
+async function scrapeNDB(page: Page) {
   try {
-    await scrape();
+    await scrape(page);
     console.log("Finished Draft Buzz Simulation");
   } catch (e) {
     console.log(`Draft Buzz Simulation failed with error: ${e}`);

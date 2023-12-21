@@ -1,8 +1,6 @@
-import puppeteer, { Page } from "puppeteer";
-import { Player, Positions, Teams } from "../utils";
+import { Page } from "puppeteer";
+import { Player, Teams } from "../utils";
 import { load } from "cheerio";
-import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
-import fetch from "cross-fetch";
 import { writeFileSync } from "fs";
 
 async function scrape(page: Page, teamsList: Teams) {
@@ -68,7 +66,6 @@ async function scrape(page: Page, teamsList: Teams) {
       const text: string = el.children[2].data.trim();
 
       return {
-        position: text.substring(0, text.indexOf(" ")) as Positions,
         name: text.substring(text.indexOf(" ") + 1, text.indexOf("-") - 1),
         team: teamsList[text.substring(text.lastIndexOf(" ") + 1)],
       };
@@ -78,22 +75,12 @@ async function scrape(page: Page, teamsList: Teams) {
   writeFileSync(`./simulations/OTC_${currentDate}.json`, JSON.stringify(picks));
 }
 
-async function scrapeOTC(teamsList: Teams) {
-  const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
-
+async function scrapeOTC(page: Page, teamsList: Teams) {
   try {
-    const page = await browser.newPage();
-
-    // Ads on this site cause a insanely long timeout, so block
-    const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
-    await blocker.enableBlockingInPage(page);
-
     await scrape(page, teamsList);
     console.log("Finished On The Clock Simulation");
   } catch (e) {
     console.log(`On The Clock Simulation failed with error: ${e}`);
-  } finally {
-    await browser.close();
   }
 }
 

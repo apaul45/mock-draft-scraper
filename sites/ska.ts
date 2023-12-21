@@ -1,18 +1,12 @@
-import puppeteer from "puppeteer";
+import puppeteer, { Page } from "puppeteer";
 import { Player } from "../utils";
 import { load } from "cheerio";
 import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
 import fetch from "cross-fetch";
 import { writeFileSync } from "fs";
 
-async function scrape() {
+async function scrape(page: Page) {
   const draft: Player[] = [];
-
-  const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
-  const page = await browser.newPage();
-
-  const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
-  await blocker.enableBlockingInPage(page);
 
   await page.goto("https://www.sportskeeda.com/nfl/mock-draft-simulator");
 
@@ -74,13 +68,11 @@ async function scrape() {
 
   const currentDate = new Date().toISOString();
   writeFileSync(`./simulations/SKA_${currentDate}.json`, JSON.stringify(draft));
-
-  await browser.close();
 }
 
-async function scrapeSKA() {
+async function scrapeSKA(page: Page) {
   try {
-    await scrape();
+    await scrape(page);
     console.log("Finished Sportskeeda Simulation");
   } catch (e) {
     console.log(`Sportskeeda Simulation failed with error: ${e}`);

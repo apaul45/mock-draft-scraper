@@ -3,7 +3,10 @@ import { load } from "cheerio";
 import { Player, Teams, toTitleCase } from "./utils";
 import _ from "lodash";
 import axios from "axios";
-import { scrapeMDD, scrapeNDB, scrapeOTC, scrapePFN, scrapeSKA } from "./sites";
+import scrapers from "./sites";
+import puppeteer from "puppeteer";
+import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
+import { fetch } from "cross-fetch";
 
 async function getDraftOrder(teamsList: Teams) {
   const res = await axios.get("https://www.tankathon.com/nfl/full_draft", { responseType: "document" });
@@ -64,11 +67,19 @@ async function main() {
     })
   );
 
-  await scrapePFN();
-  await scrapeMDD(reverseTeamsList);
-  await scrapeNDB();
-  await scrapeSKA();
-  await scrapeOTC(reverseTeamsList);
+  const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
+
+  for (let i = 0; i < scrapers.length; i++) {
+    const page = await browser.newPage();
+
+    // Ads on this site cause a insanely long timeout, so block
+    const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
+    await blocker.enableBlockingInPage(page);
+
+    await scrapers[i](page, reverseTeamsList);
+  }
+
+  await browser.close();
 
   const draftOrder = await getDraftOrder(reverseTeamsList);
   gatherResults(teamsList, draftOrder);

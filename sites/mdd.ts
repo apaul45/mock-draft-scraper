@@ -1,19 +1,10 @@
 import { load } from "cheerio";
-import puppeteer from "puppeteer";
+import { Page } from "puppeteer";
 import { Player, Teams } from "../utils";
 import { writeFileSync } from "fs";
-import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
-import { fetch } from "cross-fetch";
 
-async function scrape(teamsList: Teams) {
+async function scrape(page: Page, teamsList: Teams) {
   const draft: Player[] = [];
-
-  const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
-  const page = await browser.newPage();
-
-  // Ads on this site cause a insanely long timeout, so block
-  const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
-  await blocker.enableBlockingInPage(page);
 
   await page.goto("https://www.nflmockdraftdatabase.com/mock-draft-simulator");
 
@@ -71,13 +62,11 @@ async function scrape(teamsList: Teams) {
 
   const currentDate = new Date().toISOString();
   writeFileSync(`./simulations/MDD_${currentDate}.json`, JSON.stringify(draft));
-
-  await browser.close();
 }
 
-async function scrapeMDD(teamsList: Teams) {
+async function scrapeMDD(page: Page, teamsList: Teams) {
   try {
-    await scrape(teamsList);
+    await scrape(page, teamsList);
     console.log("Finished Mock Draft Database Simulation");
   } catch (e) {
     console.log(`Mock Draft Database Simulation Failed with error: ${e}`);
