@@ -1,6 +1,6 @@
 import { load } from "cheerio";
 import puppeteer from "puppeteer";
-import { Player } from ".";
+import { Player } from "../utils";
 import { writeFileSync } from "fs";
 import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
 import { fetch } from "cross-fetch";
@@ -52,7 +52,7 @@ async function scrape() {
   }
 
   const currentDate = new Date().toISOString();
-  writeFileSync(`./sites/PFN_${currentDate}.json`, JSON.stringify(draft));
+  writeFileSync(`./simulations/PFN_${currentDate}.json`, JSON.stringify(draft));
 
   await browser.close();
 }

@@ -1,5 +1,5 @@
 import puppeteer, { Page } from "puppeteer";
-import { Player, Positions, Teams } from ".";
+import { Player, Positions, Teams } from "../utils";
 import { load } from "cheerio";
 import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
 import fetch from "cross-fetch";
@@ -75,7 +75,7 @@ async function scrape(page: Page, teamsList: Teams) {
     });
 
   const currentDate = new Date().toISOString();
-  writeFileSync(`./sites/OTC_${currentDate}.json`, JSON.stringify(picks));
+  writeFileSync(`./simulations/OTC_${currentDate}.json`, JSON.stringify(picks));
 }
 
 async function scrapeOTC(teamsList: Teams) {

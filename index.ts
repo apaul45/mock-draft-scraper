@@ -1,8 +1,9 @@
 import { readFileSync, writeFile, readdirSync } from "fs";
 import { load } from "cheerio";
-import { Player, Teams, scrapeMDD, scrapeNDB, scrapeOTC, scrapePFN, scrapeSKA, toTitleCase } from "./utils";
+import { Player, Teams, toTitleCase } from "./utils";
 import _ from "lodash";
 import axios from "axios";
+import { scrapeMDD, scrapeNDB, scrapeOTC, scrapePFN, scrapeSKA } from "./sites";
 
 async function getDraftOrder(teamsList: Teams) {
   const res = await axios.get("https://www.tankathon.com/nfl/full_draft", { responseType: "document" });
@@ -22,10 +23,10 @@ async function getDraftOrder(teamsList: Teams) {
 }
 
 function gatherResults(teamsList: Teams, draftOrder: string[]) {
-  const fileNames = readdirSync("./sites", { withFileTypes: true });
+  const fileNames = readdirSync("./simulations", { withFileTypes: true });
 
   fileNames.forEach(({ name }) => {
-    let data = readFileSync(`./sites/${name}`, { encoding: "utf8", flag: "r" });
+    let data = readFileSync(`./simulations/${name}`, { encoding: "utf8", flag: "r" });
     const players: Player[] = JSON.parse(data);
 
     players.forEach(({ name, team }, index) => {

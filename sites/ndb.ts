@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer";
-import { Player, removeParanthesis } from ".";
+import { Player, removeParanthesis } from "../utils";
 import { load } from "cheerio";
 import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
 import fetch from "cross-fetch";
@@ -94,7 +94,7 @@ async function scrape() {
   }
 
   const currentDate = new Date().toISOString();
-  writeFileSync(`./sites/NDB_${currentDate}.json`, JSON.stringify(draft));
+  writeFileSync(`./simulations/NDB_${currentDate}.json`, JSON.stringify(draft));
 
   await browser.close();
 }
