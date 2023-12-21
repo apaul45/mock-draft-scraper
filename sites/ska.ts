@@ -31,23 +31,25 @@ async function scrape(page: Page) {
     await page.$eval(".add-player", (el) => el.click());
   }
 
-  await page.waitForSelector(".result-btn", { visible: true });
-  await page.click(".result-btn");
+  await page.waitForSelector(".full-results-btn", { visible: true });
+  await page.click(".full-results-btn");
 
   await page.waitForSelector("[data-shortname='full_result']", { visible: true });
 
   for (let i = 1; i <= 7; i++) {
     // @ts-ignore
-    await page.$eval(`.rounds-holder > [data-round='${i}']`, (el) => el.click());
+    await page.$eval(`.all-rounds-container > [data-round='${i}']`, (el) => el.click());
 
     const html = load(await page.content());
 
-    const teams = html(`[data-shortname='full_result']`)
+    const roundContainer = ".round-selection-body";
+
+    const teams = html(roundContainer)
       .find(`[data-roundnumber='${i}']`)
       .toArray()
       .map((el) => el.attribs["data-shortname"]);
 
-    const players = html(`[data-shortname='full_result']`)
+    const players = html(roundContainer)
       .find(`[data-roundnumber='${i}']`)
       .find(".player-name")
       .toArray()

@@ -47,19 +47,19 @@ async function main() {
 
   const draftProspects = JSON.parse(prospectsData);
 
-  // const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
+  const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
 
-  // for (const scraper of scrapers) {
-  //   const page = await browser.newPage();
+  for (const scraper of scrapers) {
+    const page = await browser.newPage();
 
-  //   // Ads on this site cause a insanely long timeout, so block
-  //   const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
-  //   await blocker.enableBlockingInPage(page);
+    // Ads on this site cause a insanely long timeout, so block
+    const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
+    await blocker.enableBlockingInPage(page);
 
-  //   await scraper(page, reverseTeamsList);
-  // }
+    await scraper(page, reverseTeamsList);
+  }
 
-  // await browser.close();
+  await browser.close();
 
   const draftOrder = await getDraftOrder(reverseTeamsList);
   gatherResults(teamsList, draftOrder, draftProspects);
