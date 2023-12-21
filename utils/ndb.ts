@@ -116,6 +116,7 @@ async function scrape() {
 async function scrapeNDB() {
   try {
     await scrape();
+    console.log("Finished Draft Buzz Simulation");
   } catch (e) {
     console.log(`Draft Buzz Simulation failed with error: ${e}`);
   }

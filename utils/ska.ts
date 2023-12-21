@@ -90,6 +90,7 @@ async function scrape() {
 async function scrapeSKA() {
   try {
     await scrape();
+    console.log("Finished Sportskeeda Simulation");
   } catch (e) {
     console.log(`Sportskeeda Simulation failed with error: ${e}`);
   }

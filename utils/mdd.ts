@@ -95,6 +95,7 @@ async function scrape(teamsList: Teams) {
 async function scrapeMDD(teamsList: Teams) {
   try {
     await scrape(teamsList);
+    console.log("Finished Mock Draft Database Simulation");
   } catch (e) {
     console.log(`Mock Draft Database Simulation Failed with error: ${e}`);
   }

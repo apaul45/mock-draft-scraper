@@ -1,7 +1,8 @@
 import scrapeMDD from "./mdd";
 import scrapePFN from "./pfn";
 import scrapeNDB from "./ndb";
-import scrapeSKA from "./sportskeeda";
+import scrapeSKA from "./ska";
+import scrapeOTC from "./otc";
 
 enum Positions {
   Quarterback = "QB",
@@ -23,7 +24,7 @@ interface Player {
   name: string;
   team: string;
   position: Positions;
-  school: string;
+  school?: string;
 }
 
 type Teams = { [key: string]: any };
@@ -42,4 +43,4 @@ function removeParanthesis(str: string) {
   return str.replace(/[\])}[{(]/g, "");
 }
 
-export { Positions, Player, scrapeMDD, scrapePFN, scrapeNDB, scrapeSKA, toTitleCase, removeParanthesis, Teams };
+export { Positions, Player, scrapeMDD, scrapePFN, scrapeNDB, scrapeSKA, scrapeOTC, toTitleCase, removeParanthesis, Teams };
