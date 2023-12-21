@@ -51,21 +51,6 @@ async function scrape(teamsList: Teams) {
     // @ts-ignore
     .map((element) => element.children[0].data);
 
-  const positions = html(".mock-list-item")
-    .find(".player-details")
-    .toArray()
-    .map((element) => {
-      // @ts-ignore
-      const text: string = element.children[0].data;
-      return text.substring(0, text.indexOf(" "));
-    });
-
-  const schools = html(".mock-list-item")
-    .find(".player-details > a")
-    .toArray()
-    //@ts-ignore
-    .map((element) => element.children[1].data);
-
   // Need to transform teamNames to their associated abbreviation
   const teams = html(".mock-list-item")
     .find(".team-link > img")
@@ -79,8 +64,6 @@ async function scrape(teamsList: Teams) {
     const player: Player = {
       name: playerNames[index],
       team: team,
-      position: positions[index] as unknown as Positions,
-      school: schools[index],
     };
 
     draft.push(player);

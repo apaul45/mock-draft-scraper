@@ -28,10 +28,10 @@ function gatherResults(teamsList: Teams, draftOrder: string[]) {
     let data = readFileSync(`./sites/${name}`, { encoding: "utf8", flag: "r" });
     const players: Player[] = JSON.parse(data);
 
-    players.forEach(({ name, team, position, school }, index) => {
+    players.forEach(({ name, team }, index) => {
       if (draftOrder[index] != team) return;
 
-      const pickedPlayers = teamsList[team][index + 1]?.["picked"] || {};
+      const pickedPlayers = teamsList[team][index + 1]?.["picked"] || [];
 
       const availablePlayers = players.slice(index + 1).map((el) => el.name);
       const previousAvailablePlayers = teamsList[team][index + 1]?.["availablePlayers"] || availablePlayers;
@@ -39,7 +39,7 @@ function gatherResults(teamsList: Teams, draftOrder: string[]) {
       teamsList[team] = {
         ...teamsList[team],
         [index + 1]: {
-          picked: { ...pickedPlayers, [name]: { position, school } },
+          picked: [...pickedPlayers, name],
           availablePlayers: _.intersection(availablePlayers, previousAvailablePlayers),
         },
       };
@@ -63,14 +63,14 @@ async function main() {
     })
   );
 
-  // await scrapePFN();
-  // await scrapeMDD(reverseTeamsList);
-  // await scrapeNDB();
-  // await scrapeSKA();
-
-  // const draftOrder = await getDraftOrder(reverseTeamsList);
-  // gatherResults(teamsList, draftOrder);
+  await scrapePFN();
+  await scrapeMDD(reverseTeamsList);
+  await scrapeNDB();
+  await scrapeSKA();
   await scrapeOTC(reverseTeamsList);
+
+  const draftOrder = await getDraftOrder(reverseTeamsList);
+  gatherResults(teamsList, draftOrder);
 }
 
 main();

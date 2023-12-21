@@ -41,23 +41,10 @@ async function scrape() {
       //@ts-ignore
       .map((element) => element.children[0].data);
 
-    const positionSchools = draftCards
-      .find(".player-position-school")
-      .toArray()
-      .map((element) => {
-        //@ts-ignore
-        const positionSchool = element.children[0].data;
-        const splitIndex = positionSchool.indexOf(" ");
-
-        return [positionSchool.substring(0, splitIndex), positionSchool.substring(splitIndex + 1)];
-      });
-
     teams.forEach((team, index) => {
       const player: Player = {
         name: players[index],
         team: team,
-        position: positionSchools[index][0],
-        school: positionSchools[index][1],
       };
 
       draft.push(player);

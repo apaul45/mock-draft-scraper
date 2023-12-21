@@ -62,19 +62,10 @@ async function scrape() {
       // @ts-ignore
       .map((el) => el.children[0].data);
 
-    const positionSchools = html(`[data-shortname='full_result']`)
-      .find(`[data-roundnumber='${i}']`)
-      .find(".player-position")
-      .toArray()
-      // @ts-ignore
-      .map((el) => el.children[0].data.split(" "));
-
     teams.forEach((team, index) => {
       const player: Player = {
         name: players[index],
         team: team,
-        position: positionSchools[index][0],
-        school: positionSchools[index][1],
       };
 
       draft.push(player);

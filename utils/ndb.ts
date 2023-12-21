@@ -77,18 +77,6 @@ async function scrape() {
       .toArray()
       .map((el) => el.attribs["title"]);
 
-    const positionSchools = html("#combined-Pick-List > [id*='pick']")
-      .find(".sim-pos-cont")
-      .toArray()
-      .map((el) => {
-        // @ts-ignore
-        const position = el.children[1].children[0].data;
-        // @ts-ignore
-        const school = el.lastChild.children[0].data;
-
-        return [position.trim(), school.trim()];
-      });
-
     const teams = html("#combined-Pick-List > [id*='pick']")
       .find(".sim-name-container > .draftValue:last-child")
       .toArray()
@@ -99,8 +87,6 @@ async function scrape() {
       const player: Player = {
         name: playerNames[index],
         team: team,
-        position: positionSchools[index][0],
-        school: positionSchools[index][1],
       };
 
       draft.push(player);

@@ -23,8 +23,6 @@ enum Positions {
 interface Player {
   name: string;
   team: string;
-  position: Positions;
-  school?: string;
 }
 
 type Teams = { [key: string]: any };
