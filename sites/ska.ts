@@ -1,8 +1,6 @@
-import puppeteer, { Page } from "puppeteer";
+import { Page } from "puppeteer";
 import { Player } from "../utils";
 import { load } from "cheerio";
-import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
-import fetch from "cross-fetch";
 import { writeFileSync } from "fs";
 
 async function scrape(page: Page) {
