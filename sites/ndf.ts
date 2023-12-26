@@ -60,10 +60,13 @@ async function scrape(page: Page, teamsList: Teams) {
 
 async function scrapeNDF(page: Page, teamsList: Teams) {
   try {
+    console.log("Starting Draft Fanatics Simulation...");
+
     await scrape(page, teamsList);
-    console.log("Finished Draft Fanatics Simulation");
+
+    console.log("Finished Draft Fanatics Simulation\n");
   } catch (e) {
-    console.log(`Draft Fanatics Simulation failed with error: ${e}`);
+    console.log(`Draft Fanatics Simulation failed with error: ${e}\n`);
   }
 }
 

@@ -49,10 +49,13 @@ async function scrape(page: Page) {
 
 async function scrapePFN(page: Page) {
   try {
+    console.log("Starting Pro Football Network Simulation...");
+
     await scrape(page);
-    console.log("Finished Pro Football Network Simulation");
+
+    console.log("Finished Pro Football Network Simulation\n");
   } catch (e) {
-    console.log(`Pro Football Network Simulation failed with error: ${e}`);
+    console.log(`Pro Football Network Simulation failed with error: ${e}\n`);
   }
 }
 

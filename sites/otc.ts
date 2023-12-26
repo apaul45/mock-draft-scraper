@@ -77,10 +77,13 @@ async function scrape(page: Page, teamsList: Teams) {
 
 async function scrapeOTC(page: Page, teamsList: Teams) {
   try {
+    console.log("Starting On The Clock Simulation...");
+
     await scrape(page, teamsList);
-    console.log("Finished On The Clock Simulation");
+
+    console.log("Finished On The Clock Simulation\n");
   } catch (e) {
-    console.log(`On The Clock Simulation failed with error: ${e}`);
+    console.log(`On The Clock Simulation failed with error: ${e}\n`);
   }
 }
 
