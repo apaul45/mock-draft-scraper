@@ -3,7 +3,7 @@ import { Player, removeParanthesis } from "../utils";
 import { load } from "cheerio";
 import { writeFileSync } from "fs";
 
-async function scrape(page: Page) {
+async function scrapeNDB(page: Page) {
   const draft: Player[] = [];
 
   await page.goto("https://www.nfldraftbuzz.com/simulator");
@@ -86,18 +86,6 @@ async function scrape(page: Page) {
 
   const currentDate = new Date().toISOString();
   writeFileSync(`./simulations/NDB_${currentDate}.json`, JSON.stringify(draft));
-}
-
-async function scrapeNDB(page: Page) {
-  try {
-    console.log("Starting Draft Buzz Simulation...");
-
-    await scrape(page);
-
-    console.log("Finished Draft Buzz Simulation\n");
-  } catch (e) {
-    console.log(`Draft Buzz Simulation failed with error: ${e}\n`);
-  }
 }
 
 export default scrapeNDB;

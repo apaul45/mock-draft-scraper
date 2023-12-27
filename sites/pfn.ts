@@ -3,7 +3,7 @@ import { Page } from "puppeteer";
 import { Player } from "../utils";
 import { writeFileSync } from "fs";
 
-async function scrape(page: Page) {
+async function scrapePFN(page: Page) {
   const draft: Player[] = [];
 
   await page.goto("https://www.profootballnetwork.com/mockdraft");
@@ -45,18 +45,6 @@ async function scrape(page: Page) {
 
   const currentDate = new Date().toISOString();
   writeFileSync(`./simulations/PFN_${currentDate}.json`, JSON.stringify(draft));
-}
-
-async function scrapePFN(page: Page) {
-  try {
-    console.log("Starting Pro Football Network Simulation...");
-
-    await scrape(page);
-
-    console.log("Finished Pro Football Network Simulation\n");
-  } catch (e) {
-    console.log(`Pro Football Network Simulation failed with error: ${e}\n`);
-  }
 }
 
 export default scrapePFN;

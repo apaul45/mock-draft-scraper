@@ -3,7 +3,7 @@ import { Page } from "puppeteer";
 import { Player, Teams } from "../utils";
 import { writeFileSync } from "fs";
 
-async function scrape(page: Page, teamsList: Teams) {
+async function scrapeMDD(page: Page, teamsList: Teams) {
   const draft: Player[] = [];
 
   await page.goto("https://www.nflmockdraftdatabase.com/mock-draft-simulator");
@@ -62,18 +62,6 @@ async function scrape(page: Page, teamsList: Teams) {
 
   const currentDate = new Date().toISOString();
   writeFileSync(`./simulations/MDD_${currentDate}.json`, JSON.stringify(draft));
-}
-
-async function scrapeMDD(page: Page, teamsList: Teams) {
-  try {
-    console.log("Starting Mock Draft Database Simulation...");
-
-    await scrape(page, teamsList);
-
-    console.log("Finished Mock Draft Database Simulation\n");
-  } catch (e) {
-    console.log(`Mock Draft Database Simulation Failed with error: ${e}\n`);
-  }
 }
 
 export default scrapeMDD;

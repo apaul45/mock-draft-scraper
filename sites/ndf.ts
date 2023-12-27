@@ -3,7 +3,7 @@ import { Player, Teams } from "../utils";
 import { load } from "cheerio";
 import { writeFileSync } from "fs";
 
-async function scrape(page: Page, teamsList: Teams) {
+async function scrapeNDF(page: Page, teamsList: Teams) {
   const draft: Player[] = [];
 
   await page.goto("https://nfldraftfanatics.com/draft-configuration/");
@@ -56,18 +56,6 @@ async function scrape(page: Page, teamsList: Teams) {
 
   const currentDate = new Date().toISOString();
   writeFileSync(`./simulations/NDF_${currentDate}.json`, JSON.stringify(draft));
-}
-
-async function scrapeNDF(page: Page, teamsList: Teams) {
-  try {
-    console.log("Starting Draft Fanatics Simulation...");
-
-    await scrape(page, teamsList);
-
-    console.log("Finished Draft Fanatics Simulation\n");
-  } catch (e) {
-    console.log(`Draft Fanatics Simulation failed with error: ${e}\n`);
-  }
 }
 
 export default scrapeNDF;

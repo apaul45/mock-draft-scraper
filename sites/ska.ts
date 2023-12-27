@@ -3,7 +3,7 @@ import { Player } from "../utils";
 import { load } from "cheerio";
 import { writeFileSync } from "fs";
 
-async function scrape(page: Page) {
+async function scrapeSKA(page: Page) {
   const draft: Player[] = [];
 
   await page.goto("https://www.sportskeeda.com/nfl/mock-draft-simulator");
@@ -68,18 +68,6 @@ async function scrape(page: Page) {
 
   const currentDate = new Date().toISOString();
   writeFileSync(`./simulations/SKA_${currentDate}.json`, JSON.stringify(draft));
-}
-
-async function scrapeSKA(page: Page) {
-  try {
-    console.log("Starting Sportskeeda Simulation...");
-
-    await scrape(page);
-
-    console.log("Finished Sportskeeda Simulation\n");
-  } catch (e) {
-    console.log(`Sportskeeda Simulation failed with error: ${e}\n`);
-  }
 }
 
 export default scrapeSKA;

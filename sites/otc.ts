@@ -3,7 +3,7 @@ import { Player, Teams } from "../utils";
 import { load } from "cheerio";
 import { writeFileSync } from "fs";
 
-async function scrape(page: Page, teamsList: Teams) {
+async function scrapeOTC(page: Page, teamsList: Teams) {
   await page.goto("https://fanspeak.com/ontheclock-nfl-mock-draft-simulator/");
 
   await page.click("[data-team-shortname='chiefs']"); // Not auto draft, so choose team w/least picks
@@ -73,18 +73,6 @@ async function scrape(page: Page, teamsList: Teams) {
 
   const currentDate = new Date().toISOString();
   writeFileSync(`./simulations/OTC_${currentDate}.json`, JSON.stringify(picks));
-}
-
-async function scrapeOTC(page: Page, teamsList: Teams) {
-  try {
-    console.log("Starting On The Clock Simulation...");
-
-    await scrape(page, teamsList);
-
-    console.log("Finished On The Clock Simulation\n");
-  } catch (e) {
-    console.log(`On The Clock Simulation failed with error: ${e}\n`);
-  }
 }
 
 export default scrapeOTC;

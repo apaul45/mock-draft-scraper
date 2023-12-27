@@ -43,20 +43,28 @@ async function main() {
   const prospectsData = readFileSync("./utils/prospects.json", { encoding: "utf-8", flag: "r" });
 
   const teamsList: Teams = JSON.parse(teamsData);
-  const reverseTeamsList = reverseTeamsObject(teamsList);
-
   const draftProspects = JSON.parse(prospectsData);
 
+  const reverseTeamsList = reverseTeamsObject(teamsList);
+
   const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
+  const adBlocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
 
-  for (const scraper of scrapers) {
-    const page = await browser.newPage();
+  for (const { name, scraper } of scrapers) {
+    try {
+      const page = await browser.newPage();
+      await adBlocker.enableBlockingInPage(page);
 
-    // Ads on this site cause a insanely long timeout, so block
-    const blocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
-    await blocker.enableBlockingInPage(page);
+      console.log(`Starting ${name} Simulation...`);
+      const start = Date.now();
 
-    await scraper(page, reverseTeamsList);
+      await scraper(page, reverseTeamsList);
+
+      const totalTime = (Date.now() - start) / 60000;
+      console.log(`${name} Simulation completed in: ${totalTime.toFixed(2)} mins \n`);
+    } catch (e) {
+      console.log(`${name} Simulation failed with error: ${e} \n`);
+    }
   }
 
   await browser.close();
