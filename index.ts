@@ -1,7 +1,7 @@
-import { readFileSync, writeFile, readdirSync } from "fs";
+import { readFileSync, writeFile, writeFileSync, readdirSync } from "fs";
 import { Player, Players, Teams, getDraftOrder, reverseTeamsObject } from "./utils";
 import _ from "lodash";
-import scrapers from "./sites";
+import { scrapers, Scrapers } from "./sites";
 import puppeteer from "puppeteer";
 import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
 import { fetch } from "cross-fetch";
@@ -58,10 +58,14 @@ async function main() {
       console.log(`Starting ${name} Simulation...`);
       const start = Date.now();
 
-      await scraper(page, reverseTeamsList);
+      const result = await scraper(page, reverseTeamsList);
 
       const totalTime = (Date.now() - start) / 60000;
       console.log(`${name} Simulation completed in: ${totalTime.toFixed(2)} mins \n`);
+
+      const abbreviatedName = _.findKey(Scrapers, (el) => el === name);
+      const currentDate = new Date().toISOString();
+      writeFileSync(`./simulations/${abbreviatedName}_${currentDate}.json`, JSON.stringify(result));
     } catch (e) {
       console.log(`${name} Simulation failed with error: ${e} \n`);
     }

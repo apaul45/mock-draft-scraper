@@ -1,7 +1,6 @@
 import { Page } from "puppeteer";
 import { Player } from "../utils";
 import { load } from "cheerio";
-import { writeFileSync } from "fs";
 
 async function scrapeSKA(page: Page) {
   const draft: Player[] = [];
@@ -66,8 +65,7 @@ async function scrapeSKA(page: Page) {
     });
   }
 
-  const currentDate = new Date().toISOString();
-  writeFileSync(`./simulations/SKA_${currentDate}.json`, JSON.stringify(draft));
+  return draft;
 }
 
 export default scrapeSKA;

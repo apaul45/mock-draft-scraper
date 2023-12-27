@@ -1,7 +1,6 @@
 import { Page } from "puppeteer";
 import { Player, removeParanthesis } from "../utils";
 import { load } from "cheerio";
-import { writeFileSync } from "fs";
 
 async function scrapeNDB(page: Page) {
   const draft: Player[] = [];
@@ -84,8 +83,7 @@ async function scrapeNDB(page: Page) {
     });
   }
 
-  const currentDate = new Date().toISOString();
-  writeFileSync(`./simulations/NDB_${currentDate}.json`, JSON.stringify(draft));
+  return draft;
 }
 
 export default scrapeNDB;

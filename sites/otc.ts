@@ -1,7 +1,6 @@
 import { Page } from "puppeteer";
-import { Player, Teams } from "../utils";
+import { Teams } from "../utils";
 import { load } from "cheerio";
-import { writeFileSync } from "fs";
 
 async function scrapeOTC(page: Page, teamsList: Teams) {
   await page.goto("https://fanspeak.com/ontheclock-nfl-mock-draft-simulator/");
@@ -58,7 +57,7 @@ async function scrapeOTC(page: Page, teamsList: Teams) {
 
   const html = load(await page.content());
 
-  const picks: Player[] = html("#all_picks")
+  return html("#all_picks")
     .find(".pick")
     .toArray()
     .map((el) => {
@@ -70,9 +69,6 @@ async function scrapeOTC(page: Page, teamsList: Teams) {
         team: teamsList[text.substring(text.lastIndexOf(" ") + 1)],
       };
     });
-
-  const currentDate = new Date().toISOString();
-  writeFileSync(`./simulations/OTC_${currentDate}.json`, JSON.stringify(picks));
 }
 
 export default scrapeOTC;

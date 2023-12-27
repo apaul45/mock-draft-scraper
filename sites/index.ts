@@ -11,7 +11,7 @@ enum Scrapers {
   NDB = "Draft Buzz",
   SKA = "Sportkeeda",
   OTC = "On The Clock",
-  NDF = "Draft Fanatic",
+  NDF = "Draft Fanatics",
 }
 
 interface Scraper {
@@ -28,4 +28,4 @@ const scrapers: Scraper[] = [
   { name: Scrapers.NDF, scraper: scrapeNDF },
 ];
 
-export default scrapers;
+export { scrapers, Scrapers };

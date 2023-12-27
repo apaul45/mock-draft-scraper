@@ -1,7 +1,6 @@
 import { load } from "cheerio";
 import { Page } from "puppeteer";
 import { Player } from "../utils";
-import { writeFileSync } from "fs";
 
 async function scrapePFN(page: Page) {
   const draft: Player[] = [];
@@ -43,8 +42,7 @@ async function scrapePFN(page: Page) {
     });
   }
 
-  const currentDate = new Date().toISOString();
-  writeFileSync(`./simulations/PFN_${currentDate}.json`, JSON.stringify(draft));
+  return draft;
 }
 
 export default scrapePFN;

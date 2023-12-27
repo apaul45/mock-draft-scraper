@@ -1,7 +1,6 @@
 import { load } from "cheerio";
 import { Page } from "puppeteer";
 import { Player, Teams } from "../utils";
-import { writeFileSync } from "fs";
 
 async function scrapeMDD(page: Page, teamsList: Teams) {
   const draft: Player[] = [];
@@ -60,8 +59,7 @@ async function scrapeMDD(page: Page, teamsList: Teams) {
     draft.push(player);
   });
 
-  const currentDate = new Date().toISOString();
-  writeFileSync(`./simulations/MDD_${currentDate}.json`, JSON.stringify(draft));
+  return draft;
 }
 
 export default scrapeMDD;

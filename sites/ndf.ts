@@ -1,7 +1,6 @@
 import { Page } from "puppeteer";
 import { Player, Teams } from "../utils";
 import { load } from "cheerio";
-import { writeFileSync } from "fs";
 
 async function scrapeNDF(page: Page, teamsList: Teams) {
   const draft: Player[] = [];
@@ -54,8 +53,7 @@ async function scrapeNDF(page: Page, teamsList: Teams) {
       });
   }
 
-  const currentDate = new Date().toISOString();
-  writeFileSync(`./simulations/NDF_${currentDate}.json`, JSON.stringify(draft));
+  return draft;
 }
 
 export default scrapeNDF;
