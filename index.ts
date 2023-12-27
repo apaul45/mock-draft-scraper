@@ -1,16 +1,17 @@
 import { readFileSync, writeFile, writeFileSync, readdirSync } from "fs";
 import { Player, Players, Teams, getDraftOrder, reverseTeamsObject } from "./utils";
-import _ from "lodash";
+import { intersection, findKey } from "lodash";
 import { scrapers, Scrapers } from "./sites";
 import puppeteer from "puppeteer";
 import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
 import { fetch } from "cross-fetch";
 
-function gatherResults(teamsList: Teams, draftOrder: string[], draftProspects: Players) {
+function gatherResults(teamsList: Teams, draftOrder: string[]) {
+  const draftProspects: Players = JSON.parse(readFileSync("./utils/prospects.json", { encoding: "utf-8" }));
   const fileNames = readdirSync("./simulations", { withFileTypes: true });
 
   fileNames.forEach(({ name }) => {
-    let data = readFileSync(`./simulations/${name}`, { encoding: "utf8", flag: "r" });
+    let data = readFileSync(`./simulations/${name}`, { encoding: "utf8" });
     const players: Player[] = JSON.parse(data);
 
     players.forEach(({ name, team }, index) => {
@@ -27,8 +28,7 @@ function gatherResults(teamsList: Teams, draftOrder: string[], draftProspects: P
         ...teamsList[team],
         [index + 1]: {
           picked: { ...pickedPlayers, [name]: 1 + (pickedPlayers[name] || 0) },
-          availablePlayers: _.intersection(availablePlayers, previousAvailablePlayers),
-          //acquiredFromTrade: draftOrder[index] != team,
+          availablePlayers: intersection(availablePlayers, previousAvailablePlayers),
         },
       };
     });
@@ -39,12 +39,7 @@ function gatherResults(teamsList: Teams, draftOrder: string[], draftProspects: P
 }
 
 async function main() {
-  const teamsData = readFileSync("./utils/teams.json", { encoding: "utf8", flag: "r" });
-  const prospectsData = readFileSync("./utils/prospects.json", { encoding: "utf-8", flag: "r" });
-
-  const teamsList: Teams = JSON.parse(teamsData);
-  const draftProspects = JSON.parse(prospectsData);
-
+  const teamsList: Teams = JSON.parse(readFileSync("./utils/teams.json", { encoding: "utf8" }));
   const reverseTeamsList = reverseTeamsObject(teamsList);
 
   const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
@@ -63,8 +58,9 @@ async function main() {
       const totalTime = (Date.now() - start) / 60000;
       console.log(`${name} Simulation completed in: ${totalTime.toFixed(2)} mins \n`);
 
-      const abbreviatedName = _.findKey(Scrapers, (el) => el === name);
+      const abbreviatedName = findKey(Scrapers, (el) => el === name);
       const currentDate = new Date().toISOString();
+
       writeFileSync(`./simulations/${abbreviatedName}_${currentDate}.json`, JSON.stringify(result));
     } catch (e) {
       console.log(`${name} Simulation failed with error: ${e} \n`);
@@ -74,7 +70,7 @@ async function main() {
   await browser.close();
 
   const draftOrder = await getDraftOrder(reverseTeamsList);
-  gatherResults(teamsList, draftOrder, draftProspects);
+  gatherResults(teamsList, draftOrder);
 }
 
 main();
