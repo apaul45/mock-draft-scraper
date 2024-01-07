@@ -23,17 +23,17 @@ async function scrapeNDF(page: Page, teamsList: Teams) {
   const numberOfPicks = await page.$eval(".sc-gXmSlM.gMlgko", (el) => el.children.length);
 
   for (let i = 0; i < numberOfPicks; i++) {
-    await new Promise((r) => setTimeout(r, 5000)); // Needed since trade offer may pop up
+    await page.waitForSelector(".player-draft-btn", { visible: true, timeout: 50000 });
+    // @ts-ignore
+    await page.$eval(".player-draft-btn", (el) => el.click());
+    await page.waitForSelector(".player-draft-btn", { hidden: true, timeout: 50000 });
 
+    // Trade Popup stalls simulation, so remove if present
     const tradeOffer = await page.$("text/Offer Trades");
     if (tradeOffer) await page.click("text/Reject");
-
-    await page.waitForSelector(".player-draft-btn", { visible: true, timeout: 10000 });
-    await page.click(".player-draft-btn");
-    await page.waitForSelector(".player-draft-btn", { hidden: true, timeout: 5000 });
   }
 
-  await page.waitForSelector(".share-draft-wrap", { visible: true, timeout: 30000 });
+  await page.waitForSelector(".share-draft-wrap", { visible: true, timeout: 100000 });
 
   for (let i = 1; i <= 7; i++) {
     await page.click(`text/Round ${i}`);

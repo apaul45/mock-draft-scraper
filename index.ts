@@ -1,5 +1,5 @@
 import { readFileSync, writeFile, writeFileSync, readdirSync } from "fs";
-import { Player, Players, Teams, getDraftOrder, reverseTeamsObject } from "./utils";
+import { Player, Players, Teams, getDraftOrder, getTeams } from "./utils";
 import { intersection, findKey } from "lodash";
 import { scrapers, Scrapers } from "./sites";
 import puppeteer from "puppeteer";
@@ -39,8 +39,7 @@ function gatherResults(teamsList: Teams, draftOrder: string[]) {
 }
 
 async function main() {
-  const teamsList: Teams = JSON.parse(readFileSync("./utils/teams.json", { encoding: "utf8" }));
-  const reverseTeamsList = reverseTeamsObject(teamsList);
+  const { teamsList, reverseTeamsList } = getTeams();
 
   const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
   const adBlocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { load } from "cheerio";
+import { readFileSync } from "fs";
 
 enum Positions {
   Quarterback = "QB",
@@ -39,14 +40,19 @@ function removeParanthesis(str: string) {
   return str.replace(/[\])}[{(]/g, "");
 }
 
-function reverseTeamsObject(teamsList: Teams) {
-  return Object.fromEntries(
+function getTeams() {
+  const file = readFileSync("./utils/teams.json", { encoding: "utf8" });
+  const teamsList: Teams = JSON.parse(file);
+
+  const reverseTeamsList = Object.fromEntries(
     Object.entries(teamsList).map(([key, value]) => {
       const fullName = value["fullName"];
 
       return [fullName.substring(fullName.lastIndexOf(" ") + 1), key];
     })
   );
+
+  return { teamsList, reverseTeamsList };
 }
 
 async function getDraftOrder(teamsList: Teams) {
@@ -66,4 +72,4 @@ async function getDraftOrder(teamsList: Teams) {
   return draftOrder;
 }
 
-export { Positions, Player, toTitleCase, removeParanthesis, reverseTeamsObject, getDraftOrder, Teams, Players };
+export { Positions, Player, toTitleCase, removeParanthesis, getTeams, getDraftOrder, Teams, Players };
