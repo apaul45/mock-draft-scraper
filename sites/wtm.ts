@@ -1,12 +1,10 @@
 import { Page } from "puppeteer";
-import { Player } from "../utils";
 import { load } from "cheerio";
 import dotenv from "dotenv";
-import sample from "lodash.sample";
+import { sample } from "lodash";
 
 async function scrapeWTM(page: Page) {
   dotenv.config();
-  const draft: Player[] = [];
 
   await page.goto("https://www.walkthemock.com/login");
 
@@ -56,20 +54,18 @@ async function scrapeWTM(page: Page) {
   await page.waitForSelector(".results-picks", { visible: true });
   const html = load(await page.content());
 
-  html("overall-selection")
+  return html("overall-selection")
     .find("tbody")
     .find("tr.ng-scope")
     .toArray()
-    .forEach((tr) => {
+    .map((tr) => {
       // @ts-ignore
       const team = tr.children[3].children[0].attribs["alt"];
       //@ts-ignore
       const name = tr.children[5].children[0].data;
 
-      draft.push({ name, team });
+      return { team, name };
     });
-
-  return draft;
 }
 
 export default scrapeWTM;

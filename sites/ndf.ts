@@ -1,14 +1,16 @@
 import { Page } from "puppeteer";
 import { Player, Teams } from "../utils";
 import { load } from "cheerio";
+import { sample } from "lodash";
 
 async function scrapeNDF(page: Page, teamsList: Teams) {
   const draft: Player[] = [];
+  const randomTeam = sample(Object.keys(teamsList))?.split(" ").pop();
 
   await page.goto("https://nfldraftfanatics.com/draft-configuration/");
 
   await page.waitForSelector(".team-item", { visible: true });
-  await page.click(".team-item > img[alt='Chiefs']"); // Can't auto draft so choose team w/least picks (chiefs)
+  await page.click(`.team-item > img[alt='${randomTeam}']`);
 
   // @ts-ignore
   await page.$$eval(".sc-bBrHrO.jorVBw", (el) => el[el.length - 1].click());

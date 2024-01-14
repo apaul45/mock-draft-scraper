@@ -1,14 +1,16 @@
 import { Page } from "puppeteer";
-import { Player } from "../utils";
+import { Player, Teams } from "../utils";
 import { load } from "cheerio";
+import { sample } from "lodash";
 
-async function scrapeSKA(page: Page) {
+async function scrapeSKA(page: Page, teamsList: Teams) {
   const draft: Player[] = [];
+  const randomTeam = sample(Object.values(teamsList));
 
   await page.goto("https://www.sportskeeda.com/nfl/mock-draft-simulator");
 
   await page.waitForSelector(".team-selection-container");
-  await page.click("[data-shortname='KC']"); // Can't auto draft so choose team w/least picks (chiefs)
+  await page.click(`[data-shortname='${randomTeam}']`);
   await page.click("#seven");
   await page.click("#fast");
 

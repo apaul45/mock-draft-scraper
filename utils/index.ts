@@ -72,4 +72,4 @@ async function getDraftOrder(teamsList: Teams) {
   return draftOrder;
 }
 
-export { Positions, Player, toTitleCase, removeParanthesis, getTeams, getDraftOrder, Teams, Players };
+export { Positions, Player, Teams, Players, toTitleCase, removeParanthesis, getTeams, getDraftOrder };

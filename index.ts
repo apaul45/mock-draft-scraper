@@ -1,11 +1,10 @@
 import { readFileSync, writeFile, writeFileSync, readdirSync } from "fs";
 import { Player, Players, Teams, getDraftOrder, getTeams } from "./utils";
-import intersection from "lodash.intersection";
-import findKey from "lodash.findkey";
 import { scrapers, Scrapers } from "./sites";
 import puppeteer from "puppeteer";
 import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
 import { fetch } from "cross-fetch";
+import { intersection, findKey } from "lodash";
 
 function gatherResults(teamsList: Teams, draftOrder: string[]) {
   const draftProspects: Players = JSON.parse(readFileSync("./utils/prospects.json", { encoding: "utf-8" }));

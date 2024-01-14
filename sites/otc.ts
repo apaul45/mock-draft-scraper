@@ -1,11 +1,14 @@
 import { Page } from "puppeteer";
 import { Teams } from "../utils";
 import { load } from "cheerio";
+import { sample } from "lodash";
 
 async function scrapeOTC(page: Page, teamsList: Teams) {
+  const randomTeam = sample(Object.keys(teamsList));
+
   await page.goto("https://fanspeak.com/ontheclock-nfl-mock-draft-simulator/");
 
-  await page.click("[data-team-shortname='chiefs']"); // Not auto draft, so choose team w/least picks
+  await page.click(`[data-team-shortname='${randomTeam?.split(" ").pop()?.toLowerCase()}']`);
 
   const [nextBtn] = await page.$x("//a[contains(text(), 'Next')]");
   // @ts-ignore
@@ -25,16 +28,18 @@ async function scrapeOTC(page: Page, teamsList: Teams) {
 
   await page.waitForNavigation();
 
+  // 7 rounds, one page per round
   for (let i = 1; i <= 7; i++) {
     // This simulator uses it's own power rankings, so need to fetch picks for selected team
 
+    // Simulator doesn't show team picks until player is taken, so need cheerio to fetch
     const html = load(await page.content());
 
     const teamPicks = html("#picks_this_round")
       .find(".pick")
       .toArray()
       // @ts-ignore
-      .filter((el) => el.children[2].data.includes("Kansas City Chiefs"));
+      .filter((el) => el.children[2].data.includes(randomTeam));
 
     for (let j = 0; j < teamPicks.length; j++) {
       const div = await page.waitForSelector(".available-player-my-pick", { visible: true });

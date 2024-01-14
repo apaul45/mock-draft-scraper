@@ -1,9 +1,11 @@
 import { Page } from "puppeteer";
-import { Player, removeParanthesis } from "../utils";
+import { Player, Teams, removeParanthesis } from "../utils";
 import { load } from "cheerio";
+import { sample } from "lodash";
 
-async function scrapeNDB(page: Page) {
+async function scrapeNDB(page: Page, teamsList: Teams) {
   const draft: Player[] = [];
+  const randomTeam = sample(Object.keys(teamsList))?.split(" ").pop();
 
   await page.goto("https://www.nfldraftbuzz.com/simulator");
 
@@ -12,7 +14,7 @@ async function scrapeNDB(page: Page) {
   await page.click("#round-7");
   await page.click("#instant-2000");
   await page.click("#trade-NO");
-  await page.click("[teamid='48']"); //Chiefs have the least number of picks + sb contender
+  await page.click(`[title='${randomTeam}']`);
 
   await page.click(".btn.btn-default.btn-outline.btn-xs.card-header__button.openCloseTeamList");
 
@@ -20,17 +22,17 @@ async function scrapeNDB(page: Page) {
   // @ts-ignore
   await page.$eval("#startStopDraft", (el) => el.click());
 
-  await page.waitForSelector("#team-container-48");
+  await page.waitForSelector("#player-prospects-TableSub", { visible: true });
 
   // Site doesn't allow auto draft, so get # of picks and choose BPA
   let html = load(await page.content());
 
-  const length = html("#team-container-48")
+  const numberOfPicks = html("#player-prospects-TableSub")
     .find("[id*='to-select']")
     .toArray()
     .filter((el) => el.attribs["id"].match(/[0-9]/g)).length;
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < numberOfPicks; i++) {
     await page.waitForSelector(
       ".btn.btn-default.btn-outline.btn-xs.card-header__button.sim-prospect-btn.unlocked-icon-bg.sim-draft-player-btn",
       { timeout: 40000 }

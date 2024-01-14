@@ -5,6 +5,8 @@ import scrapeSKA from "./ska";
 import scrapeOTC from "./otc";
 import scrapeNDF from "./ndf";
 import scrapeWTM from "./wtm";
+import { Page } from "puppeteer";
+import { Player, Teams } from "../utils";
 
 enum Scrapers {
   PFN = "Pro Football Network",
@@ -18,7 +20,7 @@ enum Scrapers {
 
 interface Scraper {
   name: Scrapers;
-  scraper: Function;
+  scraper: (page: Page, teamsList: Teams) => Promise<Player[]>;
 }
 
 const scrapers: Scraper[] = [
