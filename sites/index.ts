@@ -4,6 +4,7 @@ import scrapeNDB from "./ndb";
 import scrapeSKA from "./ska";
 import scrapeOTC from "./otc";
 import scrapeNDF from "./ndf";
+import scrapeWTM from "./wtm";
 
 enum Scrapers {
   PFN = "Pro Football Network",
@@ -12,6 +13,7 @@ enum Scrapers {
   SKA = "Sportkeeda",
   OTC = "On The Clock",
   NDF = "Draft Fanatics",
+  WTM = "Walk The Mock",
 }
 
 interface Scraper {
@@ -26,6 +28,7 @@ const scrapers: Scraper[] = [
   { name: Scrapers.SKA, scraper: scrapeSKA },
   { name: Scrapers.OTC, scraper: scrapeOTC },
   { name: Scrapers.NDF, scraper: scrapeNDF },
+  { name: Scrapers.WTM, scraper: scrapeWTM },
 ];
 
 export { scrapers, Scrapers };

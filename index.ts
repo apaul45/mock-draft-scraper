@@ -1,6 +1,7 @@
 import { readFileSync, writeFile, writeFileSync, readdirSync } from "fs";
 import { Player, Players, Teams, getDraftOrder, getTeams } from "./utils";
-import { intersection, findKey } from "lodash";
+import intersection from "lodash.intersection";
+import findKey from "lodash.findkey";
 import { scrapers, Scrapers } from "./sites";
 import puppeteer from "puppeteer";
 import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
