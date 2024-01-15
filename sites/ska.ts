@@ -61,6 +61,7 @@ async function scrapeSKA(page: Page, teamsList: Teams) {
       const player: Player = {
         name: players[index],
         team: team,
+        selectedByScraper: randomTeam == team,
       };
 
       draft.push(player);

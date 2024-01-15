@@ -68,10 +68,12 @@ async function scrapeOTC(page: Page, teamsList: Teams) {
     .map((el) => {
       // @ts-ignore
       const text: string = el.children[2].data.trim();
+      const teamsKey = text.substring(text.lastIndexOf(" ") + 1);
 
       return {
         name: text.substring(text.indexOf(" ") + 1, text.indexOf("-") - 1),
-        team: teamsList[text.substring(text.lastIndexOf(" ") + 1)],
+        team: teamsList[teamsKey],
+        selectedByScraper: randomTeam == teamsKey,
       };
     });
 }

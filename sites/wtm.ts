@@ -54,6 +54,9 @@ async function scrapeWTM(page: Page) {
   await page.waitForSelector(".results-picks", { visible: true });
   const html = load(await page.content());
 
+  // @ts-ignore
+  const randomTeam = html("#user-picks > .draft-adv").toArray()[0].children[0].data.split(" ")[2];
+
   return html("overall-selection")
     .find("tbody")
     .find("tr.ng-scope")
@@ -64,7 +67,7 @@ async function scrapeWTM(page: Page) {
       //@ts-ignore
       const name = tr.children[5].children[0].data;
 
-      return { team, name };
+      return { team, name, selectedByScraper: team == randomTeam };
     });
 }
 

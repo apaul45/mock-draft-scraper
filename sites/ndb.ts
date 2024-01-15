@@ -5,7 +5,7 @@ import { sample } from "lodash";
 
 async function scrapeNDB(page: Page, teamsList: Teams) {
   const draft: Player[] = [];
-  const randomTeam = sample(Object.keys(teamsList))?.split(" ").pop();
+  const randomTeam = sample(Object.keys(teamsList));
 
   await page.goto("https://www.nfldraftbuzz.com/simulator");
 
@@ -14,7 +14,7 @@ async function scrapeNDB(page: Page, teamsList: Teams) {
   await page.click("#round-7");
   await page.click("#instant-2000");
   await page.click("#trade-NO");
-  await page.click(`[title='${randomTeam}']`);
+  await page.click(`[title='${randomTeam?.split(" ").pop()}']`);
 
   await page.click(".btn.btn-default.btn-outline.btn-xs.card-header__button.openCloseTeamList");
 
@@ -79,6 +79,7 @@ async function scrapeNDB(page: Page, teamsList: Teams) {
       const player: Player = {
         name: playerNames[index],
         team: team,
+        selectedByScraper: teamsList[randomTeam as string] == team,
       };
 
       draft.push(player);

@@ -5,12 +5,12 @@ import { sample } from "lodash";
 
 async function scrapeNDF(page: Page, teamsList: Teams) {
   const draft: Player[] = [];
-  const randomTeam = sample(Object.keys(teamsList))?.split(" ").pop();
+  const randomTeam = sample(Object.keys(teamsList));
 
   await page.goto("https://nfldraftfanatics.com/draft-configuration/");
 
   await page.waitForSelector(".team-item", { visible: true });
-  await page.click(`.team-item > img[alt='${randomTeam}']`);
+  await page.click(`.team-item > img[alt='${randomTeam?.split(" ").pop()}']`);
 
   // @ts-ignore
   await page.$$eval(".sc-bBrHrO.jorVBw", (el) => el[el.length - 1].click());
@@ -46,11 +46,15 @@ async function scrapeNDF(page: Page, teamsList: Teams) {
     html(".draft-result-team-log")
       .toArray()
       .forEach((el) => {
+        // @ts-ignore
+        const teamKey = el.children[0].attribs["alt"];
+
         draft.push({
           // @ts-ignore
-          team: teamsList[el.children[0].attribs["alt"]],
+          team: teamsList[teamKey],
           // @ts-ignore
           name: el.children[1].children[0].data,
+          selectedByScraper: randomTeam == teamKey,
         });
       });
   }

@@ -14,8 +14,8 @@ function gatherResults(teamsList: Teams, draftOrder: string[]) {
     let data = readFileSync(`./simulations/${name}`, { encoding: "utf8" });
     const players: Player[] = JSON.parse(data);
 
-    players.forEach(({ name, team }, index) => {
-      if (draftOrder[index] != team) return;
+    players.forEach(({ name, team, selectedByScraper }, index) => {
+      if (draftOrder[index] != team || selectedByScraper) return;
 
       if (draftProspects[name]) name += ` (${draftProspects[name].position})`;
 

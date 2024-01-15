@@ -21,6 +21,7 @@ enum Positions {
 interface Player {
   name: string;
   team: string;
+  selectedByScraper?: boolean;
 }
 
 type Teams = { [key: string]: any };
