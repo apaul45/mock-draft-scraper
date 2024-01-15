@@ -39,6 +39,8 @@ async function scrapeWTM(page: Page) {
   // @ts-ignore
   await page.$eval(".fa-times-square", (btn) => btn.click());
 
+  // Need to wait for page to fully load to prevent simulation getting stuck
+  await page.waitForSelector(".row.rt-lists", { visible: true });
   await page.click("text/Start Draft");
 
   await page.waitForSelector(".my-picks", { visible: true });

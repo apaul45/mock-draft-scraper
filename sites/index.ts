@@ -23,6 +23,14 @@ interface Scraper {
   scraper: (page: Page) => Promise<Simulation>;
 }
 
-const scrapers: Scraper[] = [];
+const scrapers: Scraper[] = [
+  { name: Scrapers.PFN, scraper: scrapePFN },
+  { name: Scrapers.MDD, scraper: scrapeMDD },
+  { name: Scrapers.NDB, scraper: scrapeNDB },
+  { name: Scrapers.SKA, scraper: scrapeSKA },
+  { name: Scrapers.OTC, scraper: scrapeOTC },
+  { name: Scrapers.NDF, scraper: scrapeNDF },
+  { name: Scrapers.WTM, scraper: scrapeWTM },
+];
 
 export { scrapers, Scrapers };
