@@ -2,8 +2,11 @@ import { Page } from "puppeteer";
 import { load } from "cheerio";
 import dotenv from "dotenv";
 import { sample } from "lodash";
+import { Simulation } from "../utils";
 
 async function scrapeWTM(page: Page) {
+  const draft: Simulation = { players: [] };
+
   dotenv.config();
 
   await page.goto("https://www.walkthemock.com/login");
@@ -55,20 +58,22 @@ async function scrapeWTM(page: Page) {
   const html = load(await page.content());
 
   // @ts-ignore
-  const randomTeam = html("#user-picks > .draft-adv").toArray()[0].children[0].data.split(" ")[2];
+  draft.pickedFor = html("#user-picks > .draft-adv").toArray()[0].children[0].data.split(" ")[2];
 
-  return html("overall-selection")
+  draft.players = html("overall-selection")
     .find("tbody")
     .find("tr.ng-scope")
     .toArray()
     .map((tr) => {
-      // @ts-ignore
-      const team = tr.children[3].children[0].attribs["alt"];
-      //@ts-ignore
-      const name = tr.children[5].children[0].data;
-
-      return { team, name, selectedByScraper: team == randomTeam };
+      return {
+        // @ts-ignore
+        team: tr.children[3].children[0].attribs["alt"],
+        // @ts-ignore
+        name: tr.children[5].children[0].data,
+      };
     });
+
+  return draft;
 }
 
 export default scrapeWTM;

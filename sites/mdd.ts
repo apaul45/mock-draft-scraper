@@ -1,8 +1,10 @@
 import { load } from "cheerio";
 import { Page } from "puppeteer";
-import { Teams } from "../utils";
+import { Simulation } from "../utils";
 
-async function scrapeMDD(page: Page, teamsList: Teams) {
+async function scrapeMDD(page: Page) {
+  const draft: Simulation = { players: [] };
+
   await page.goto("https://www.nflmockdraftdatabase.com/mock-draft-simulator");
 
   await page.waitForSelector("li[value='1']");
@@ -45,15 +47,17 @@ async function scrapeMDD(page: Page, teamsList: Teams) {
     .toArray()
     .map((element) => {
       const alt = element.attribs["alt"];
-      return teamsList[alt.substring(0, alt.indexOf(" "))];
+      return alt.substring(0, alt.indexOf(" "));
     });
 
-  return teams.map((team, index) => {
+  draft.players = teams.map((team, index) => {
     return {
       name: playerNames[index],
       team: team,
     };
   });
+
+  return draft;
 }
 
 export default scrapeMDD;

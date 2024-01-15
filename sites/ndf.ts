@@ -1,16 +1,16 @@
 import { Page } from "puppeteer";
-import { Player, Teams } from "../utils";
+import { Simulation } from "../utils";
 import { load } from "cheerio";
 import { sample } from "lodash";
 
-async function scrapeNDF(page: Page, teamsList: Teams) {
-  const draft: Player[] = [];
-  const randomTeam = sample(Object.keys(teamsList));
+async function scrapeNDF(page: Page) {
+  const draft: Simulation = { players: [] };
 
   await page.goto("https://nfldraftfanatics.com/draft-configuration/");
 
   await page.waitForSelector(".team-item", { visible: true });
-  await page.click(`.team-item > img[alt='${randomTeam?.split(" ").pop()}']`);
+  const teamContainers = await page.$$(".team-item");
+  sample(teamContainers)?.click();
 
   // @ts-ignore
   await page.$$eval(".sc-bBrHrO.jorVBw", (el) => el[el.length - 1].click());
@@ -37,24 +37,23 @@ async function scrapeNDF(page: Page, teamsList: Teams) {
 
   await page.waitForSelector(".share-draft-wrap", { visible: true, timeout: 100000 });
 
+  let html = load(await page.content());
+  draft.pickedFor = html(".draft-result-pick-logo").first().children()[0].attribs["alt"];
+
   for (let i = 1; i <= 7; i++) {
     await page.click(`text/Round ${i}`);
     await page.waitForSelector(".sc-gYMRRK.hKUgMV", { visible: true });
 
-    const html = load(await page.content());
+    html = load(await page.content());
 
     html(".draft-result-team-log")
       .toArray()
       .forEach((el) => {
-        // @ts-ignore
-        const teamKey = el.children[0].attribs["alt"];
-
-        draft.push({
+        draft.players.push({
           // @ts-ignore
-          team: teamsList[teamKey],
+          team: el.children[0].attribs["alt"],
           // @ts-ignore
           name: el.children[1].children[0].data,
-          selectedByScraper: randomTeam == teamKey,
         });
       });
   }

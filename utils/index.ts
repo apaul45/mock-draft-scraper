@@ -18,14 +18,18 @@ enum Positions {
   Linebacker = "LB",
 }
 
+type Teams = { [key: string]: any };
+type Players = { [player: string]: { school: string; position: string } };
+
 interface Player {
   name: string;
   team: string;
-  selectedByScraper?: boolean;
 }
 
-type Teams = { [key: string]: any };
-type Players = { [player: string]: { school: string; position: string } };
+interface Simulation {
+  pickedFor?: string;
+  players: Player[];
+}
 
 function toTitleCase(str: string) {
   return str
@@ -49,7 +53,7 @@ function getTeams() {
     Object.entries(teamsList).map(([key, value]) => {
       const fullName = value["fullName"];
 
-      return [fullName.substring(fullName.lastIndexOf(" ") + 1), key];
+      return [fullName.split(" ").pop(), key];
     })
   );
 
@@ -73,4 +77,4 @@ async function getDraftOrder(teamsList: Teams) {
   return draftOrder;
 }
 
-export { Positions, Player, Teams, Players, toTitleCase, removeParanthesis, getTeams, getDraftOrder };
+export { Positions, Teams, Players, Player, Simulation, toTitleCase, removeParanthesis, getTeams, getDraftOrder };

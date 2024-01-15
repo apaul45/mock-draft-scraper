@@ -1,22 +1,18 @@
 import { Page } from "puppeteer";
-import { Player, Teams, removeParanthesis } from "../utils";
+import { Player, Simulation, removeParanthesis } from "../utils";
 import { load } from "cheerio";
-import { sample } from "lodash";
 
-async function scrapeNDB(page: Page, teamsList: Teams) {
-  const draft: Player[] = [];
-  const randomTeam = sample(Object.keys(teamsList));
+async function scrapeNDB(page: Page) {
+  const draft: Simulation = { players: [] };
 
   await page.goto("https://www.nfldraftbuzz.com/simulator");
 
   await page.waitForSelector("#team-list-subcontainer");
 
   await page.click("#round-7");
-  await page.click("#instant-2000");
+  await page.click("#speed-250");
   await page.click("#trade-NO");
-  await page.click(`[title='${randomTeam?.split(" ").pop()}']`);
-
-  await page.click(".btn.btn-default.btn-outline.btn-xs.card-header__button.openCloseTeamList");
+  await page.click("text/ENTER DRAFT");
 
   await page.waitForSelector("#startStopDraft");
   // @ts-ignore
@@ -24,33 +20,7 @@ async function scrapeNDB(page: Page, teamsList: Teams) {
 
   await page.waitForSelector("#player-prospects-TableSub", { visible: true });
 
-  // Site doesn't allow auto draft, so get # of picks and choose BPA
-  let html = load(await page.content());
-
-  const numberOfPicks = html("#player-prospects-TableSub")
-    .find("[id*='to-select']")
-    .toArray()
-    .filter((el) => el.attribs["id"].match(/[0-9]/g)).length;
-
-  for (let i = 0; i < numberOfPicks; i++) {
-    await page.waitForSelector(
-      ".btn.btn-default.btn-outline.btn-xs.card-header__button.sim-prospect-btn.unlocked-icon-bg.sim-draft-player-btn",
-      { timeout: 40000 }
-    );
-
-    await page.$eval(
-      ".btn.btn-default.btn-outline.btn-xs.card-header__button.sim-prospect-btn.unlocked-icon-bg.sim-draft-player-btn",
-      // @ts-ignore
-      (el) => el.click()
-    );
-
-    // Draft button doesn't change to locked right away, so need to manually wait for it
-    await page.waitForSelector(
-      ".btn.btn-default.btn-outline.btn-xs.card-header__button.sim-prospect-btn.locked-icon-bg.disabled-hover.no-click"
-    );
-  }
-
-  await page.waitForSelector("#finish-header");
+  await page.waitForSelector("#finish-header", { visible: true, timeout: 200000 });
 
   // Need visible: true to identify only once it's on the screen
   const closeBtn = await page.waitForSelector("#finish-header > div > .closeModel", { visible: true });
@@ -62,7 +32,7 @@ async function scrapeNDB(page: Page, teamsList: Teams) {
 
     await new Promise((r) => setTimeout(r, 2000)); // Needed since picks don't render right away
 
-    html = load(await page.content());
+    const html = load(await page.content());
 
     const playerNames = html("#combined-Pick-List > [id*='pick']")
       .find(".team-meta__info.playerRankWidgetNameInfo")
@@ -79,10 +49,9 @@ async function scrapeNDB(page: Page, teamsList: Teams) {
       const player: Player = {
         name: playerNames[index],
         team: team,
-        selectedByScraper: teamsList[randomTeam as string] == team,
       };
 
-      draft.push(player);
+      draft.players.push(player);
     });
   }
 

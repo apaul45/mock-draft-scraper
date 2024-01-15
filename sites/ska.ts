@@ -1,41 +1,20 @@
 import { Page } from "puppeteer";
-import { Player, Teams } from "../utils";
+import { Player, Simulation } from "../utils";
 import { load } from "cheerio";
-import { sample } from "lodash";
 
-async function scrapeSKA(page: Page, teamsList: Teams) {
-  const draft: Player[] = [];
-  const randomTeam = sample(Object.values(teamsList));
+async function scrapeSKA(page: Page) {
+  const draft: Simulation = { players: [] };
 
   await page.goto("https://www.sportskeeda.com/nfl/mock-draft-simulator");
 
   await page.waitForSelector(".team-selection-container");
-  await page.click(`[data-shortname='${randomTeam}']`);
   await page.click("#seven");
   await page.click("#fast");
 
   await page.click(".start-draft-btn");
   await page.waitForSelector(".draft-simulation-container", { visible: true });
 
-  await page.click(".my-picks-btn");
-  await page.waitForSelector(".mypicks-container", { visible: true });
-
-  const numberOfPicks = (await page.$$(".single-pick")).length;
-
-  // @ts-ignore
-  await page.$eval(".resume-draft", (el) => (el ? el.click() : el));
-
-  for (let i = 0; i < numberOfPicks; i++) {
-    await page.waitForSelector(".add-player", { visible: true });
-
-    // @ts-ignore
-    await page.$eval(".add-player", (el) => el.click());
-  }
-
-  await page.waitForSelector(".full-results-btn", { visible: true });
-  await page.click(".full-results-btn");
-
-  await page.waitForSelector("[data-shortname='full_result']", { visible: true });
+  await page.waitForSelector("[data-shortname='full_result']", { visible: true, timeout: 50000 });
 
   for (let i = 1; i <= 7; i++) {
     // @ts-ignore
@@ -61,10 +40,9 @@ async function scrapeSKA(page: Page, teamsList: Teams) {
       const player: Player = {
         name: players[index],
         team: team,
-        selectedByScraper: randomTeam == team,
       };
 
-      draft.push(player);
+      draft.players.push(player);
     });
   }
 

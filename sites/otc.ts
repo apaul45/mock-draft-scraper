@@ -1,14 +1,15 @@
 import { Page } from "puppeteer";
-import { Teams } from "../utils";
 import { load } from "cheerio";
 import { sample } from "lodash";
+import { Simulation, toTitleCase } from "../utils";
 
-async function scrapeOTC(page: Page, teamsList: Teams) {
-  const randomTeam = sample(Object.keys(teamsList));
+async function scrapeOTC(page: Page) {
+  const draft: Simulation = { players: [] };
 
   await page.goto("https://fanspeak.com/ontheclock-nfl-mock-draft-simulator/");
 
-  await page.click(`[data-team-shortname='${randomTeam?.split(" ").pop()?.toLowerCase()}']`);
+  const teamContainers = await page.$$(".team-select-name.center");
+  sample(teamContainers)?.click();
 
   const [nextBtn] = await page.$x("//a[contains(text(), 'Next')]");
   // @ts-ignore
@@ -27,6 +28,9 @@ async function scrapeOTC(page: Page, teamsList: Teams) {
   btn?.click();
 
   await page.waitForNavigation();
+
+  let randomTeam = await page.$eval(".team-select-name", (el) => el.textContent);
+  randomTeam = toTitleCase(randomTeam as string);
 
   // 7 rounds, one page per round
   for (let i = 1; i <= 7; i++) {
@@ -62,20 +66,22 @@ async function scrapeOTC(page: Page, teamsList: Teams) {
 
   const html = load(await page.content());
 
-  return html("#all_picks")
+  draft.pickedFor = randomTeam;
+
+  draft.players = html("#all_picks")
     .find(".pick")
     .toArray()
     .map((el) => {
       // @ts-ignore
       const text: string = el.children[2].data.trim();
-      const teamsKey = text.substring(text.lastIndexOf(" ") + 1);
 
       return {
         name: text.substring(text.indexOf(" ") + 1, text.indexOf("-") - 1),
-        team: teamsList[teamsKey],
-        selectedByScraper: randomTeam == teamsKey,
+        team: text.substring(text.lastIndexOf(" ") + 1),
       };
     });
+
+  return draft;
 }
 
 export default scrapeOTC;

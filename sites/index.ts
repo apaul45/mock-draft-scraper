@@ -6,13 +6,13 @@ import scrapeOTC from "./otc";
 import scrapeNDF from "./ndf";
 import scrapeWTM from "./wtm";
 import { Page } from "puppeteer";
-import { Player, Teams } from "../utils";
+import { Simulation } from "../utils";
 
 enum Scrapers {
   PFN = "Pro Football Network",
   MDD = "Mock Draft Database",
   NDB = "Draft Buzz",
-  SKA = "Sportkeeda",
+  SKA = "Sportskeeda",
   OTC = "On The Clock",
   NDF = "Draft Fanatics",
   WTM = "Walk The Mock",
@@ -20,17 +20,9 @@ enum Scrapers {
 
 interface Scraper {
   name: Scrapers;
-  scraper: (page: Page, teamsList: Teams) => Promise<Player[]>;
+  scraper: (page: Page) => Promise<Simulation>;
 }
 
-const scrapers: Scraper[] = [
-  { name: Scrapers.PFN, scraper: scrapePFN },
-  { name: Scrapers.MDD, scraper: scrapeMDD },
-  { name: Scrapers.NDB, scraper: scrapeNDB },
-  { name: Scrapers.SKA, scraper: scrapeSKA },
-  { name: Scrapers.OTC, scraper: scrapeOTC },
-  { name: Scrapers.NDF, scraper: scrapeNDF },
-  { name: Scrapers.WTM, scraper: scrapeWTM },
-];
+const scrapers: Scraper[] = [];
 
 export { scrapers, Scrapers };

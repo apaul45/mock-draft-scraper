@@ -1,27 +1,35 @@
 import { readFileSync, writeFile, writeFileSync, readdirSync } from "fs";
-import { Player, Players, Teams, getDraftOrder, getTeams } from "./utils";
+import { Players, Simulation, Teams, getDraftOrder, getTeams } from "./utils";
 import { scrapers, Scrapers } from "./sites";
 import puppeteer from "puppeteer";
 import { PuppeteerBlocker } from "@cliqz/adblocker-puppeteer";
 import { fetch } from "cross-fetch";
 import { intersection, findKey } from "lodash";
 
-function gatherResults(teamsList: Teams, draftOrder: string[]) {
+function gatherResults(draftOrder: string[]) {
+  const { teamsList, reverseTeamsList } = getTeams();
   const draftProspects: Players = JSON.parse(readFileSync("./utils/prospects.json", { encoding: "utf-8" }));
+
   const fileNames = readdirSync("./simulations", { withFileTypes: true });
 
   fileNames.forEach(({ name }) => {
     let data = readFileSync(`./simulations/${name}`, { encoding: "utf8" });
-    const players: Player[] = JSON.parse(data);
+    const simulation: Simulation = JSON.parse(data);
 
-    players.forEach(({ name, team, selectedByScraper }, index) => {
-      if (draftOrder[index] != team || selectedByScraper) return;
+    // Some sims return the team name rather than abbrev., so account for it
+    simulation.pickedFor = reverseTeamsList[simulation.pickedFor || ""] || simulation.pickedFor;
+
+    simulation.players.forEach(({ name, team }, index) => {
+      // Some sims return the team name rather than abbrev., so account for it
+      team = reverseTeamsList[team] || team;
+
+      if (draftOrder[index] != team || team == simulation.pickedFor) return;
 
       if (draftProspects[name]) name += ` (${draftProspects[name].position})`;
 
       const pickedPlayers = teamsList?.[team]?.[index + 1]?.["picked"] || {};
 
-      const availablePlayers = players.slice(index + 1).map((el) => el.name);
+      const availablePlayers = simulation.players.slice(index + 1).map((el) => el.name);
       const previousAvailablePlayers = teamsList?.[team]?.[index + 1]?.["availablePlayers"] || availablePlayers;
 
       teamsList[team] = {
@@ -39,7 +47,7 @@ function gatherResults(teamsList: Teams, draftOrder: string[]) {
 }
 
 async function main() {
-  const { teamsList, reverseTeamsList } = getTeams();
+  const { reverseTeamsList } = getTeams();
 
   const browser = await puppeteer.launch({ headless: "new", args: [`--window-size=1920,1080`], defaultViewport: null });
   const adBlocker = await PuppeteerBlocker.fromPrebuiltAdsAndTracking(fetch);
@@ -52,7 +60,7 @@ async function main() {
       console.log(`Starting ${name} Simulation...`);
       const start = Date.now();
 
-      const result = await scraper(page, reverseTeamsList);
+      const result = await scraper(page);
 
       const totalTime = (Date.now() - start) / 60000;
       console.log(`${name} Simulation completed in: ${totalTime.toFixed(2)} mins \n`);
@@ -69,7 +77,7 @@ async function main() {
   await browser.close();
 
   const draftOrder = await getDraftOrder(reverseTeamsList);
-  gatherResults(teamsList, draftOrder);
+  gatherResults(draftOrder);
 }
 
 main();

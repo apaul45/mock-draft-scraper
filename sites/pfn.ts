@@ -1,9 +1,9 @@
 import { load } from "cheerio";
 import { Page } from "puppeteer";
-import { Player } from "../utils";
+import { Player, Simulation } from "../utils";
 
 async function scrapePFN(page: Page) {
-  const draft: Player[] = [];
+  const draft: Simulation = { players: [] };
 
   await page.goto("https://www.profootballnetwork.com/mockdraft");
 
@@ -32,13 +32,13 @@ async function scrapePFN(page: Page) {
       //@ts-ignore
       .map((element) => element.children[0].data);
 
-    teams.forEach((team, index) => {
+    teams.map((team, index) => {
       const player: Player = {
         name: players[index],
         team: team,
       };
 
-      draft.push(player);
+      draft.players.push(player);
     });
   }
 
