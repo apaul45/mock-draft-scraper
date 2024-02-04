@@ -1,6 +1,6 @@
 import axios from "axios";
 import { load } from "cheerio";
-import { readFileSync } from "fs";
+import { readFileSync, readdirSync } from "fs";
 
 enum Positions {
   Quarterback = "QB",
@@ -77,4 +77,12 @@ async function getDraftOrder(teamsList: Teams) {
   return draftOrder;
 }
 
-export { Positions, Teams, Players, Player, Simulation, toTitleCase, removeParanthesis, getTeams, getDraftOrder };
+function getMostRecentResult() {
+  const [{ name: mostRecentResult }] = readdirSync("./results", { withFileTypes: true }).slice(-1);
+  const file = readFileSync(`./results/${mostRecentResult}`, { encoding: "utf8" });
+  const teamsList: Teams = JSON.parse(file);
+
+  return teamsList;
+}
+
+export { Positions, Teams, Players, Player, Simulation, toTitleCase, removeParanthesis, getTeams, getDraftOrder, getMostRecentResult };

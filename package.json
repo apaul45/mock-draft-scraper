@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "tsc && concurrently \"tsc --watch\" \"nodemon dist/index.js\""
+    "start": "tsc && concurrently \"tsc --watch\" \"nodemon dist/index.js\"",
+    "sims": "tsc && node dist/index.js"
   },
   "keywords": [],
   "author": "",

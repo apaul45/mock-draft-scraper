@@ -25,10 +25,10 @@ async function scrapeNDF(page: Page) {
   const numberOfPicks = await page.$eval(".sc-gXmSlM.gMlgko", (el) => el.children.length);
 
   for (let i = 0; i < numberOfPicks; i++) {
-    await page.waitForSelector(".player-draft-btn", { visible: true, timeout: 50000 });
+    await page.waitForSelector(".player-draft-btn", { visible: true, timeout: 100000 });
     // @ts-ignore
     await page.$eval(".player-draft-btn", (el) => el.click());
-    await page.waitForSelector(".player-draft-btn", { hidden: true, timeout: 50000 });
+    await page.waitForSelector(".player-draft-btn", { hidden: true, timeout: 80000 });
 
     // Trade Popup stalls simulation, so remove if present
     const tradeOffer = await page.$("text/Offer Trades");
@@ -42,7 +42,7 @@ async function scrapeNDF(page: Page) {
 
   for (let i = 1; i <= 7; i++) {
     await page.click(`text/Round ${i}`);
-    await page.waitForSelector(".sc-gYMRRK.hKUgMV", { visible: true });
+    await page.waitForSelector(".draft-result-team-log", { visible: true });
 
     html = load(await page.content());
 
