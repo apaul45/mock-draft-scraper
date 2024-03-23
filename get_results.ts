@@ -1,11 +1,11 @@
-import { readFileSync, writeFile } from "fs";
-import { Players, Simulation, getDraftOrder, getMostRecentResult, getTeams } from "./utils";
+import { writeFile } from "fs";
+import { Simulation, getDraftOrder, getDraftProspects, getMostRecentResult, getTeams } from "./utils";
 import { intersection } from "lodash";
 
 async function gatherResults(simulations: Simulation[]) {
   const { reverseTeamsList } = getTeams();
+  const draftProspects = getDraftProspects();
   const draftOrder = await getDraftOrder(reverseTeamsList);
-  const draftProspects: Players = JSON.parse(readFileSync("./utils/prospects.json", { encoding: "utf-8" }));
 
   // Add to the most recent result to prevent overcomputation
   const teamsList = getMostRecentResult();
@@ -40,7 +40,7 @@ async function gatherResults(simulations: Simulation[]) {
     });
   });
 
-  console.log(`Processed ${simulations.length} simulations`);
+  console.log(`Added ${simulations.length} simulations`);
   writeFile(`./results/${new Date().toISOString()}.json`, JSON.stringify(teamsList), (err: any) => {});
 }
 

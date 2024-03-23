@@ -77,6 +77,11 @@ async function getDraftOrder(teamsList: Teams) {
   return draftOrder;
 }
 
+function getDraftProspects(): Players {
+  const file = readFileSync("./utils/prospects.json", { encoding: "utf-8" });
+  return JSON.parse(file);
+}
+
 function getMostRecentResult() {
   const [{ name: mostRecentResult }] = readdirSync("./results", { withFileTypes: true }).slice(-1);
   const file = readFileSync(`./results/${mostRecentResult}`, { encoding: "utf8" });
@@ -85,4 +90,16 @@ function getMostRecentResult() {
   return teamsList;
 }
 
-export { Positions, Teams, Players, Player, Simulation, toTitleCase, removeParanthesis, getTeams, getDraftOrder, getMostRecentResult };
+export {
+  Positions,
+  Teams,
+  Players,
+  Player,
+  Simulation,
+  toTitleCase,
+  removeParanthesis,
+  getTeams,
+  getDraftOrder,
+  getDraftProspects,
+  getMostRecentResult,
+};

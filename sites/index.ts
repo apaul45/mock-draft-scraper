@@ -18,7 +18,7 @@ enum Scrapers {
   WTM = "Walk The Mock",
 }
 
-interface Scraper {
+export interface Scraper {
   name: Scrapers;
   scraper: (page: Page) => Promise<Simulation>;
 }
