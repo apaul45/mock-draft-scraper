@@ -89,20 +89,19 @@ function getDraftProspects(): Players {
   return JSON.parse(file);
 }
 
-function isDateInThisWeek(date: Date) {
+function isDateWithin(date: Date, range: number = 31) {
   const todayObj = new Date();
   const todayDate = todayObj.getDate();
   const todayDay = todayObj.getDay();
 
-  // get first date of week
-  const lastDayOfWeek = new Date(todayObj.setDate(todayDate - todayDay));
+  const end = new Date(todayObj.setDate(todayDate - todayDay));
 
   // get last date of week
-  const firstDayOfWeek = new Date(lastDayOfWeek);
-  firstDayOfWeek.setDate(lastDayOfWeek.getDate() - 6);
+  const start = new Date(end);
+  start.setDate(end.getDate() - range);
 
   // if date is equal or within the first and last dates of the week
-  return date >= firstDayOfWeek && date <= lastDayOfWeek;
+  return date >= start && date <= end;
 }
 
 // Only use results from within the week
@@ -111,7 +110,7 @@ function getMostRecentResult() {
 
   // Result files formatted as {date as iso string}.json
   const fileNameWithoutExt = Path.parse(mostRecentResult).name;
-  if (!isDateInThisWeek(new Date(fileNameWithoutExt))) return;
+  if (!isDateWithin(new Date(fileNameWithoutExt), 6)) return;
 
   const file = readFileSync(`./results/${mostRecentResult}`, {
     encoding: "utf8",
@@ -130,7 +129,7 @@ function getMostRecentSimulations(): Simulation[] {
       const fileNameWithoutExt = Path.parse(fileName).name;
       const fileDate = fileNameWithoutExt.split("_")[1];
 
-      return isDateInThisWeek(new Date(fileDate));
+      return isDateWithin(new Date(fileDate));
     })
     .map((fileName) => {
       const data = readFileSync(`./simulations/${fileName}`, {
