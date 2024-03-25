@@ -14,11 +14,16 @@ async function scrapeSKA(page: Page) {
   await page.click(".start-draft-btn");
   await page.waitForSelector(".draft-simulation-container", { visible: true });
 
-  await page.waitForSelector("[data-shortname='full_result']", { visible: true, timeout: 50000 });
+  await page.waitForSelector("[data-shortname='full_result']", {
+    visible: true,
+    timeout: 50000,
+  });
 
   for (let i = 1; i <= 7; i++) {
-    // @ts-ignore
-    await page.$eval(`.all-rounds-container > [data-round='${i}']`, (el) => el.click());
+    await page.$eval(`.all-rounds-container > [data-round='${i}']`, (el) =>
+      // @ts-ignore
+      el.click()
+    );
 
     const html = load(await page.content());
 

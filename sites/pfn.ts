@@ -7,40 +7,42 @@ async function scrapePFN(page: Page) {
 
   await page.goto("https://www.profootballnetwork.com/mockdraft");
 
-  await page.waitForSelector("#lets-draft-button-desktop");
-  await page.click("[id='7']");
+  await page.waitForSelector(".inputs-container", { visible: true });
+  await page.click("#seven");
+
   await page.click("#fast");
-  await page.click("#lets-draft-button-desktop");
+  await page.click(".start-draft-btn");
 
-  await page.waitForSelector("#full-sim-results-div", { timeout: 70000 });
+  await page.waitForSelector(".final-result-container", {
+    visible: true,
+    timeout: 70000,
+  });
 
-  for (let i = 1; i <= 7; i++) {
-    await page.click(`[data-round='${i}']`);
+  const html = load(await page.content());
 
-    const html = load(await page.content());
+  const draftCards = html(".draft-simulation-container.hidden").find(
+    ".pic-container"
+  );
 
-    const draftCards = html(".round-picks-holder > .draft-card");
+  const teams = draftCards
+    .find(".team-logo-container")
+    .toArray()
+    .map((element) => element.attribs["data-teamname"]);
 
-    const teams = draftCards
-      .find(".team-logo-sm")
-      .toArray()
-      .map((element) => element.attribs["alt"]);
+  const players = draftCards
+    .find(".player-name")
+    .toArray()
+    //@ts-ignore
+    .map((element) => element.children[0].data);
 
-    const players = draftCards
-      .find(".player-name")
-      .toArray()
-      //@ts-ignore
-      .map((element) => element.children[0].data);
+  teams.map((team, index) => {
+    const player: Player = {
+      name: players[index],
+      team: team,
+    };
 
-    teams.map((team, index) => {
-      const player: Player = {
-        name: players[index],
-        team: team,
-      };
-
-      draft.players.push(player);
-    });
-  }
+    draft.players.push(player);
+  });
 
   return draft;
 }

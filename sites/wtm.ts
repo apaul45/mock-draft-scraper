@@ -44,7 +44,10 @@ async function scrapeWTM(page: Page) {
   await page.click("text/Start Draft");
 
   await page.waitForSelector(".my-picks", { visible: true });
-  const numberOfPicks = await page.$$eval(".pick-content", (picks) => picks.length);
+  const numberOfPicks = await page.$$eval(
+    ".pick-content",
+    (picks) => picks.length
+  );
 
   for (let i = 0; i < numberOfPicks; i++) {
     await page.waitForSelector("[uib-tooltip='Draft']", { visible: true });
@@ -59,8 +62,10 @@ async function scrapeWTM(page: Page) {
   await page.waitForSelector(".results-picks", { visible: true });
   const html = load(await page.content());
 
-  // @ts-ignore
-  draft.pickedFor = html("#user-picks > .draft-adv").toArray()[0].children[0].data.split(" ")[2];
+  draft.pickedFor = html("#user-picks > .draft-adv")
+    .toArray()[0]
+    // @ts-ignore
+    .children[0].data.split(" ")[2];
 
   draft.players = html("overall-selection")
     .find("tbody")

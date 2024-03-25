@@ -1779,7 +1779,11 @@
       "traded": true
     },
     "160": {
-      "picked": { "Braiden McGregor ()": 1, "Braelon Allen (RB)": 1, "Brennan Jackson (EDGE)": 1 },
+      "picked": {
+        "Braiden McGregor ()": 1,
+        "Braelon Allen (RB)": 1,
+        "Brennan Jackson (EDGE)": 1
+      },
       "availablePlayers": [
         "Andrew Raym",
         "Brevyn Spann-Ford",
@@ -2024,7 +2028,11 @@
       "traded": true
     },
     "171": {
-      "picked": { "Jordan Jefferson ()": 1, "Cedric Johnson (EDGE)": 1, "Jase McClellan (RB)": 1 },
+      "picked": {
+        "Jordan Jefferson ()": 1,
+        "Cedric Johnson (EDGE)": 1,
+        "Jase McClellan (RB)": 1
+      },
       "availablePlayers": [
         "Layden Robinson",
         "Jawhar Jordan",
@@ -2042,7 +2050,12 @@
       "traded": false
     },
     "172": {
-      "picked": { "Zion Tupuola-Fetui (EDGE)": 2, "Emani Bailey (RB)": 1, "Jaylan Ford (ILB)": 1, "Austin Booker ()": 1 },
+      "picked": {
+        "Zion Tupuola-Fetui (EDGE)": 2,
+        "Emani Bailey (RB)": 1,
+        "Jaylan Ford (ILB)": 1,
+        "Austin Booker ()": 1
+      },
       "availablePlayers": [
         "Gabe Hall",
         "Curtis Jacobs",
@@ -2249,7 +2262,11 @@
       "traded": true
     },
     "176": {
-      "picked": { "Mohamed Kamara (EDGE)": 1, "James Williams (S)": 2, "Kitan Oladapo (S)": 1 },
+      "picked": {
+        "Mohamed Kamara (EDGE)": 1,
+        "James Williams (S)": 2,
+        "Kitan Oladapo (S)": 1
+      },
       "availablePlayers": [
         "Tyler Harrell",
         "Jamari Thrash",
@@ -2330,7 +2347,14 @@
         "Jaylan Ford (ILB)": 1,
         "Joe Milton ()": 1
       },
-      "availablePlayers": ["Miyan Williams", "Kingsley Eguakun", "Darius Muasau", "Tanor Bortolini", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Kingsley Eguakun",
+        "Darius Muasau",
+        "Tanor Bortolini",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "184": {
@@ -2412,7 +2436,13 @@
       "traded": true
     },
     "186": {
-      "picked": { "Marshawn Kneeland (EDGE)": 1, "Zemaiah Vaughn ()": 2, "MJ Devonshire ()": 2, "Jeremy Flax ()": 1, "Zy Alexander ()": 1 },
+      "picked": {
+        "Marshawn Kneeland (EDGE)": 1,
+        "Zemaiah Vaughn ()": 2,
+        "MJ Devonshire ()": 2,
+        "Jeremy Flax ()": 1,
+        "Zy Alexander ()": 1
+      },
       "availablePlayers": [
         "Brennan Jackson",
         "Kingsley Eguakun",
@@ -3657,7 +3687,12 @@
         "Sedrick Van Pran (OC)": 1,
         "Andru Phillips (CB)": 1
       },
-      "availablePlayers": ["Theo Johnson", "Zion Tupuola-Fetui", "Jaylin Simpson", "Brevyn Spann-Ford"],
+      "availablePlayers": [
+        "Theo Johnson",
+        "Zion Tupuola-Fetui",
+        "Jaylin Simpson",
+        "Brevyn Spann-Ford"
+      ],
       "traded": true
     },
     "100": {
@@ -4825,7 +4860,11 @@
       "traded": true
     },
     "176": {
-      "picked": { "Javon Baker (WR)": 1, "Michael Wiley ()": 1, "Blake Watson (RB)": 1 },
+      "picked": {
+        "Javon Baker (WR)": 1,
+        "Michael Wiley ()": 1,
+        "Blake Watson (RB)": 1
+      },
       "availablePlayers": [
         "Layden Robinson",
         "Gabe Hall",
@@ -4852,7 +4891,14 @@
         "Braelon Allen (RB)": 1,
         "Jett Johnson (OLB)": 1
       },
-      "availablePlayers": ["Brevyn Spann-Ford", "Isaiah Williams", "Omar Speights", "Josh Proctor", "Sheridan Jones", "Braiden McGregor"],
+      "availablePlayers": [
+        "Brevyn Spann-Ford",
+        "Isaiah Williams",
+        "Omar Speights",
+        "Josh Proctor",
+        "Sheridan Jones",
+        "Braiden McGregor"
+      ],
       "traded": false
     },
     "178": {
@@ -5101,7 +5147,12 @@
       "traded": true
     },
     "207": {
-      "picked": { "Brian Ugwu ()": 1, "Brevyn Span ()": 1, "Ja'Quan Sheppard ()": 1, "Storm Duck (CB)": 1 },
+      "picked": {
+        "Brian Ugwu ()": 1,
+        "Brevyn Span ()": 1,
+        "Ja'Quan Sheppard ()": 1,
+        "Storm Duck (CB)": 1
+      },
       "availablePlayers": [
         "Marcus Rosem",
         "David Ugwoegbu",
@@ -5295,7 +5346,11 @@
       "traded": false
     },
     "229": {
-      "picked": { "Jaylen Harrell (EDGE)": 1, "Nathan Thomas (OT)": 1, "Myles Harden ()": 1 },
+      "picked": {
+        "Jaylen Harrell (EDGE)": 1,
+        "Nathan Thomas (OT)": 1,
+        "Myles Harden ()": 1
+      },
       "availablePlayers": [
         "Isaiah Williams",
         "Deantre Prince",
@@ -5364,7 +5419,15 @@
       "availablePlayers": [],
       "traded": true
     },
-    "248": { "picked": { "Ainias Smith (WRS)": 1, "KT Leveston ()": 1, "Thor Griffith ()": 1 }, "availablePlayers": [], "traded": true },
+    "248": {
+      "picked": {
+        "Ainias Smith (WRS)": 1,
+        "KT Leveston ()": 1,
+        "Thor Griffith ()": 1
+      },
+      "availablePlayers": [],
+      "traded": true
+    },
     "249": {
       "picked": {
         "Isaac Rex (TE)": 1,
@@ -5394,8 +5457,16 @@
       "availablePlayers": [],
       "traded": true
     },
-    "250": { "picked": { "Andru Phillips (CB)": 1, "Jaylon Carlies (S)": 1 }, "availablePlayers": ["Daequan Hardy"], "traded": false },
-    "251": { "picked": { "Daequan Hardy ()": 3, "Jaylon Carlies (S)": 1 }, "availablePlayers": [], "traded": true },
+    "250": {
+      "picked": { "Andru Phillips (CB)": 1, "Jaylon Carlies (S)": 1 },
+      "availablePlayers": ["Daequan Hardy"],
+      "traded": false
+    },
+    "251": {
+      "picked": { "Daequan Hardy ()": 3, "Jaylon Carlies (S)": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
     "252": {
       "picked": {
         "Aaron Frost ()": 1,
@@ -5653,7 +5724,12 @@
       "traded": true
     },
     "29": {
-      "picked": { "Jordan Morgan (OT)": 2, "Tyler Nubin (S)": 1, "Kamren Kinchens (S)": 1, "Byron Murphy II (DL3T)": 1 },
+      "picked": {
+        "Jordan Morgan (OT)": 2,
+        "Tyler Nubin (S)": 1,
+        "Kamren Kinchens (S)": 1,
+        "Byron Murphy II (DL3T)": 1
+      },
       "availablePlayers": [
         "Jonah Elliss",
         "Chop Robinson",
@@ -8173,7 +8249,11 @@
       "traded": true
     },
     "133": {
-      "picked": { "Ben Sinnott (TE)": 1, "Malik Mustapha (S)": 1, "Jamari Thrash (WR)": 1 },
+      "picked": {
+        "Ben Sinnott (TE)": 1,
+        "Malik Mustapha (S)": 1,
+        "Jamari Thrash (WR)": 1
+      },
       "availablePlayers": [
         "Myles Cole",
         "Erick All",
@@ -8610,7 +8690,11 @@
       "traded": true
     },
     "158": {
-      "picked": { "Nathaniel Watson (ILB)": 1, "Keith Randolph Jr. (DL3T)": 1, "Beaux Limmer (OC)": 1 },
+      "picked": {
+        "Nathaniel Watson (ILB)": 1,
+        "Keith Randolph Jr. (DL3T)": 1,
+        "Beaux Limmer (OC)": 1
+      },
       "availablePlayers": [
         "Andrew Raym",
         "Brevyn Spann-Ford",
@@ -8719,7 +8803,12 @@
       "traded": true
     },
     "161": {
-      "picked": { "McCallan Castles (TE)": 1, "Frank Gore Jr. (RB)": 1, "Grayson Murphy (EDGE)": 2, "Delmar Glaze ()": 1 },
+      "picked": {
+        "McCallan Castles (TE)": 1,
+        "Frank Gore Jr. (RB)": 1,
+        "Grayson Murphy (EDGE)": 2,
+        "Delmar Glaze ()": 1
+      },
       "availablePlayers": [
         "Jaylan Ford",
         "Zion Tupuola-Fetui",
@@ -8798,7 +8887,11 @@
       "traded": true
     },
     "164": {
-      "picked": { "Nehemiah Pritchett (CB)": 1, "Andrew Coker (OT)": 1, "Tory Taylor (P)": 1 },
+      "picked": {
+        "Nehemiah Pritchett (CB)": 1,
+        "Andrew Coker (OT)": 1,
+        "Tory Taylor (P)": 1
+      },
       "availablePlayers": [
         "Isaiah Davis",
         "Andru Phillips",
@@ -9008,11 +9101,19 @@
         "Walter Rouse ()": 1,
         "Kenny Logan Jr. (S)": 1
       },
-      "availablePlayers": ["Kingsley Eguakun", "Tanor Bortolini", "Andru Phillips"],
+      "availablePlayers": [
+        "Kingsley Eguakun",
+        "Tanor Bortolini",
+        "Andru Phillips"
+      ],
       "traded": true
     },
     "173": {
-      "picked": { "Caelen Carson (CB)": 2, "Theo Johnson (TE)": 1, "Marcus Rosemy-Jacksaint (WR)": 1 },
+      "picked": {
+        "Caelen Carson (CB)": 2,
+        "Theo Johnson (TE)": 1,
+        "Marcus Rosemy-Jacksaint (WR)": 1
+      },
       "availablePlayers": [
         "Kitan Oladapo",
         "Tyler Harrell",
@@ -9058,7 +9159,13 @@
       "traded": false
     },
     "175": {
-      "picked": { "Kitan Oladapo (S)": 1, "AJ Barner ()": 1, "Jaylin Simpson (CB)": 1, "Layden Robinson (OG)": 1, "Emani Bailey (RB)": 1 },
+      "picked": {
+        "Kitan Oladapo (S)": 1,
+        "AJ Barner ()": 1,
+        "Jaylin Simpson (CB)": 1,
+        "Layden Robinson (OG)": 1,
+        "Emani Bailey (RB)": 1
+      },
       "availablePlayers": [
         "Trey Knox",
         "Isaiah Davis",
@@ -9156,7 +9263,11 @@
       "traded": true
     },
     "208": {
-      "picked": { "Josiah Ezirim (OT)": 1, "Michael Wiley ()": 1, "Kimani Vidal ()": 1 },
+      "picked": {
+        "Josiah Ezirim (OT)": 1,
+        "Michael Wiley ()": 1,
+        "Kimani Vidal ()": 1
+      },
       "availablePlayers": [
         "Devin Leary",
         "Marcus Rosemy-Jacksaint",
@@ -9331,9 +9442,19 @@
       "availablePlayers": [],
       "traded": true
     },
-    "249": { "picked": { "Casey Washington ()": 1, "Zamari Walton ()": 1 }, "availablePlayers": [], "traded": true },
+    "249": {
+      "picked": { "Casey Washington ()": 1, "Zamari Walton ()": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
     "250": {
-      "picked": { "Daequan Hardy ()": 1, "BJ Mayes ()": 2, "Donell Harris Jr. ()": 1, "Mark Perry (S)": 1, "Brevyn Spann-Ford (TE)": 1 },
+      "picked": {
+        "Daequan Hardy ()": 1,
+        "BJ Mayes ()": 2,
+        "Donell Harris Jr. ()": 1,
+        "Mark Perry (S)": 1,
+        "Brevyn Spann-Ford (TE)": 1
+      },
       "availablePlayers": [],
       "traded": true
     },
@@ -10486,7 +10607,13 @@
         "Curtis Jacobs (OLB)": 1,
         "Mohamed Kamara (EDGE)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Malik Mustapha", "Nehemiah Pritchett", "Kitan Oladapo", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Malik Mustapha",
+        "Nehemiah Pritchett",
+        "Kitan Oladapo",
+        "Theo Johnson"
+      ],
       "traded": true
     },
     "91": {
@@ -10519,7 +10646,13 @@
         "Malik Washington (WRS)": 1,
         "Cam Hart (CB)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Malik Mustapha", "Nehemiah Pritchett", "Kitan Oladapo", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Malik Mustapha",
+        "Nehemiah Pritchett",
+        "Kitan Oladapo",
+        "Theo Johnson"
+      ],
       "traded": true
     },
     "96": {
@@ -11459,7 +11592,13 @@
       "traded": true
     },
     "135": {
-      "picked": { "Drake Nugent (OC)": 1, "Jalyx Hunt ()": 1, "Cam Hart (CB)": 1, "Jordan Travis (QB)": 1, "Daijun Edwards ()": 1 },
+      "picked": {
+        "Drake Nugent (OC)": 1,
+        "Jalyx Hunt ()": 1,
+        "Cam Hart (CB)": 1,
+        "Jordan Travis (QB)": 1,
+        "Daijun Edwards ()": 1
+      },
       "availablePlayers": [
         "Javion Cohen",
         "Dallin Holker",
@@ -11902,7 +12041,11 @@
       "traded": true
     },
     "166": {
-      "picked": { "Jo'quavious Marks ()": 3, "Javion Cohen (OG)": 1, "Tykee Smith (S)": 1 },
+      "picked": {
+        "Jo'quavious Marks ()": 3,
+        "Javion Cohen (OG)": 1,
+        "Tykee Smith (S)": 1
+      },
       "availablePlayers": [
         "Fabien Lovett",
         "Evan Williams",
@@ -11948,7 +12091,11 @@
       "traded": true
     },
     "168": {
-      "picked": { "McCallan Castles (TE)": 1, "Trey Knox ()": 1, "Ainias Smith (WRS)": 1 },
+      "picked": {
+        "McCallan Castles (TE)": 1,
+        "Trey Knox ()": 1,
+        "Ainias Smith (WRS)": 1
+      },
       "availablePlayers": [
         "Brevyn Spann-Ford",
         "Jase McClellan",
@@ -12244,8 +12391,18 @@
       "traded": true
     },
     "204": {
-      "picked": { "Maema Njongmeta ()": 1, "Javontae Jean-Baptiste ()": 1, "Dylan Laube (RB)": 1 },
-      "availablePlayers": ["Cody Schrader", "Kingsley Eguakun", "Luke Reimer", "Carter Bradley", "Julian Pearl"],
+      "picked": {
+        "Maema Njongmeta ()": 1,
+        "Javontae Jean-Baptiste ()": 1,
+        "Dylan Laube (RB)": 1
+      },
+      "availablePlayers": [
+        "Cody Schrader",
+        "Kingsley Eguakun",
+        "Luke Reimer",
+        "Carter Bradley",
+        "Julian Pearl"
+      ],
       "traded": true
     },
     "207": {
@@ -12348,7 +12505,13 @@
       "traded": true
     },
     "217": {
-      "picked": { "De'Corian Clark ()": 1, "Erick All (TE)": 1, "Jalen Berger ()": 1, "Trevor Keegan ()": 1, "Jontrey Hunter (OLB)": 1 },
+      "picked": {
+        "De'Corian Clark ()": 1,
+        "Erick All (TE)": 1,
+        "Jalen Berger ()": 1,
+        "Trevor Keegan ()": 1,
+        "Jontrey Hunter (OLB)": 1
+      },
       "availablePlayers": [
         "Steele Chambers",
         "Maurice Smith",
@@ -12393,7 +12556,12 @@
       "traded": true
     },
     "219": {
-      "picked": { "Jontrey Hunter (OLB)": 1, "Brian Ugwu ()": 1, "Sam Hartman (QB)": 2, "Steele Chambers (ILB)": 1 },
+      "picked": {
+        "Jontrey Hunter (OLB)": 1,
+        "Brian Ugwu ()": 1,
+        "Sam Hartman (QB)": 2,
+        "Steele Chambers (ILB)": 1
+      },
       "availablePlayers": [
         "Maurice Smith",
         "Matthew Jones",
@@ -12437,7 +12605,15 @@
       "availablePlayers": [],
       "traded": true
     },
-    "243": { "picked": { "Charles Turner III ()": 1, "Jeremy James ()": 1, "Jesus Gibbs ()": 1 }, "availablePlayers": [], "traded": true },
+    "243": {
+      "picked": {
+        "Charles Turner III ()": 1,
+        "Jeremy James ()": 1,
+        "Jesus Gibbs ()": 1
+      },
+      "availablePlayers": [],
+      "traded": true
+    },
     "244": {
       "picked": {
         "Gavin Hardison ()": 1,
@@ -12450,7 +12626,13 @@
       "traded": false
     },
     "246": {
-      "picked": { "Tatum Bethune (OLB)": 1, "Trevor Keegan ()": 1, "Matthew Jones (OG)": 1, "Caleb Murphy ()": 1, "Chad Lindberg ()": 1 },
+      "picked": {
+        "Tatum Bethune (OLB)": 1,
+        "Trevor Keegan ()": 1,
+        "Matthew Jones (OG)": 1,
+        "Caleb Murphy ()": 1,
+        "Chad Lindberg ()": 1
+      },
       "availablePlayers": ["DeMonte Capehart"],
       "traded": true
     },
@@ -12482,7 +12664,15 @@
       "availablePlayers": [],
       "traded": true
     },
-    "251": { "picked": { "Myles Cole (EDGE)": 1, "Derek Wingo ()": 1, "Kedon Slovis ()": 1 }, "availablePlayers": [], "traded": true },
+    "251": {
+      "picked": {
+        "Myles Cole (EDGE)": 1,
+        "Derek Wingo ()": 1,
+        "Kedon Slovis ()": 1
+      },
+      "availablePlayers": [],
+      "traded": true
+    },
     "fullName": "Green Bay Packers"
   },
   "BUF": {
@@ -13891,7 +14081,12 @@
         "Cole Bishop (S)": 2,
         "Jalen McMillan (WR)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Zion Tupuola-Fetui", "Brevyn Spann-Ford", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Zion Tupuola-Fetui",
+        "Brevyn Spann-Ford",
+        "Theo Johnson"
+      ],
       "traded": true
     },
     "109": {
@@ -14661,7 +14856,11 @@
       "traded": true
     },
     "129": {
-      "picked": { "Jaden Hicks ()": 1, "Justin Eboigbe (DL5T)": 1, "DeWayne Carter (DL3T)": 1 },
+      "picked": {
+        "Jaden Hicks ()": 1,
+        "Justin Eboigbe (DL5T)": 1,
+        "DeWayne Carter (DL3T)": 1
+      },
       "availablePlayers": [
         "Myles Cole",
         "Erick All",
@@ -14860,7 +15059,11 @@
       "traded": true
     },
     "159": {
-      "picked": { "Jordan Whittington (WR)": 1, "Andrew Coker (OT)": 1, "Jared Wiley (TE)": 1 },
+      "picked": {
+        "Jordan Whittington (WR)": 1,
+        "Andrew Coker (OT)": 1,
+        "Jared Wiley (TE)": 1
+      },
       "availablePlayers": [
         "Andrew Raym",
         "Brevyn Spann-Ford",
@@ -15275,7 +15478,13 @@
     },
     "198": {
       "picked": { "Brenden Rice (WR)": 1, "Cedric Johnson (EDGE)": 2 },
-      "availablePlayers": ["Luke McCaffrey", "Cody Schrader", "Darius Muasau", "Maema Njongmeta", "Mason McCormick"],
+      "availablePlayers": [
+        "Luke McCaffrey",
+        "Cody Schrader",
+        "Darius Muasau",
+        "Maema Njongmeta",
+        "Mason McCormick"
+      ],
       "traded": true
     },
     "199": {
@@ -15327,7 +15536,10 @@
       "traded": false
     },
     "200": {
-      "picked": { "Dadrion Taylor-Demerson (CB)": 1, "Dominique Hampton ()": 1 },
+      "picked": {
+        "Dadrion Taylor-Demerson (CB)": 1,
+        "Dominique Hampton ()": 1
+      },
       "availablePlayers": [
         "Mohamed Kamara",
         "Blake Watson",
@@ -15452,7 +15664,11 @@
     },
     "212": {
       "picked": { "Micah Abraham ()": 1, "Jordan Jefferson ()": 1 },
-      "availablePlayers": ["Caedan Wallace", "Isaiah Williams", "Maema Njongmeta"],
+      "availablePlayers": [
+        "Caedan Wallace",
+        "Isaiah Williams",
+        "Maema Njongmeta"
+      ],
       "traded": true
     },
     "215": {
@@ -15553,7 +15769,11 @@
       "traded": true
     },
     "246": {
-      "picked": { "Maema Njongmeta ()": 1, "Myles Cole (EDGE)": 1, "Jordan Jefferson ()": 1 },
+      "picked": {
+        "Maema Njongmeta ()": 1,
+        "Myles Cole (EDGE)": 1,
+        "Jordan Jefferson ()": 1
+      },
       "availablePlayers": [],
       "traded": true
     },
@@ -15570,13 +15790,25 @@
       "traded": false
     },
     "249": {
-      "picked": { "DeMonte Capehart ()": 1, "Jeremy James ()": 2, "Tatum Bethune (OLB)": 1, "Evan Anderson (DL1T)": 1 },
+      "picked": {
+        "DeMonte Capehart ()": 1,
+        "Jeremy James ()": 2,
+        "Tatum Bethune (OLB)": 1,
+        "Evan Anderson (DL1T)": 1
+      },
       "availablePlayers": [],
       "traded": true
     },
     "250": {
       "picked": { "Jaden Davis ()": 1 },
-      "availablePlayers": ["Miles Battle", "Kendall Milton", "Anthony Goodlow", "Andrew Raym", "Travis Glover", "Kimani Vidal"],
+      "availablePlayers": [
+        "Miles Battle",
+        "Kendall Milton",
+        "Anthony Goodlow",
+        "Andrew Raym",
+        "Travis Glover",
+        "Kimani Vidal"
+      ],
       "traded": true
     },
     "fullName": "Buffalo Bills"
@@ -17154,7 +17386,13 @@
       "traded": true
     },
     "158": {
-      "picked": { "Austin Booker ()": 1, "Cam Hart (CB)": 1, "Layden Robinson (OG)": 1, "Jaylen Wright (RB)": 1, "Kamal Hadden (CB)": 1 },
+      "picked": {
+        "Austin Booker ()": 1,
+        "Cam Hart (CB)": 1,
+        "Layden Robinson (OG)": 1,
+        "Jaylen Wright (RB)": 1,
+        "Kamal Hadden (CB)": 1
+      },
       "availablePlayers": [
         "Jaylin Simpson",
         "Cody Schrader",
@@ -17499,7 +17737,12 @@
       "traded": true
     },
     "183": {
-      "picked": { "Zemaiah Vaughn ()": 2, "Brevyn Span ()": 1, "Dallin Holker (TE)": 2, "Micah Abraham ()": 1 },
+      "picked": {
+        "Zemaiah Vaughn ()": 2,
+        "Brevyn Span ()": 1,
+        "Dallin Holker (TE)": 2,
+        "Micah Abraham ()": 1
+      },
       "availablePlayers": [
         "Ja'Quan Sheppard",
         "Kingsley Eguakun",
@@ -17734,7 +17977,13 @@
       "traded": true
     },
     "197": {
-      "picked": { "Dallin Holker (TE)": 2, "Myles Harden ()": 1, "Zy Alexander ()": 1, "Kaden Prather ()": 1, "Dallas Gant (OLB)": 1 },
+      "picked": {
+        "Dallin Holker (TE)": 2,
+        "Myles Harden ()": 1,
+        "Zy Alexander ()": 1,
+        "Kaden Prather ()": 1,
+        "Dallas Gant (OLB)": 1
+      },
       "availablePlayers": [
         "Storm Duck",
         "Jaylin Simpson",
@@ -17858,18 +18107,41 @@
       "availablePlayers": [],
       "traded": true
     },
-    "239": { "picked": { "P.J. Jules ()": 1, "BJ Mayes ()": 1, "Drake Stoops (WRS)": 1 }, "availablePlayers": [], "traded": true },
+    "239": {
+      "picked": {
+        "P.J. Jules ()": 1,
+        "BJ Mayes ()": 1,
+        "Drake Stoops (WRS)": 1
+      },
+      "availablePlayers": [],
+      "traded": true
+    },
     "240": {
-      "picked": { "Xavier Watts (S)": 2, "Xavier Weaver (WR)": 1, "Desmond Evans ()": 2, "Zakhari Franklin (WR)": 1 },
+      "picked": {
+        "Xavier Watts (S)": 2,
+        "Xavier Weaver (WR)": 1,
+        "Desmond Evans ()": 2,
+        "Zakhari Franklin (WR)": 1
+      },
       "availablePlayers": [],
       "traded": false
     },
     "242": {
-      "picked": { "Maurice Smith ()": 1, "Mark Perry (S)": 1, "Aaron Frost ()": 1, "Daequan Hardy ()": 1, "Zion Logue (DL3T)": 1 },
+      "picked": {
+        "Maurice Smith ()": 1,
+        "Mark Perry (S)": 1,
+        "Aaron Frost ()": 1,
+        "Daequan Hardy ()": 1,
+        "Zion Logue (DL3T)": 1
+      },
       "availablePlayers": ["DeMonte Capehart"],
       "traded": true
     },
-    "256": { "picked": { "Al Blades Jr. ()": 1 }, "availablePlayers": [], "traded": true },
+    "256": {
+      "picked": { "Al Blades Jr. ()": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
     "fullName": "Miami Dolphins"
   },
   "DET": {
@@ -17967,7 +18239,12 @@
       "traded": false
     },
     "30": {
-      "picked": { "Kool-Aid McKinstry (CB)": 1, "Quinyon Mitchell (CB)": 1, "Ennis Rakestraw Jr. (CB)": 2, "Nate Wiggins (CB)": 1 },
+      "picked": {
+        "Kool-Aid McKinstry (CB)": 1,
+        "Quinyon Mitchell (CB)": 1,
+        "Ennis Rakestraw Jr. (CB)": 2,
+        "Nate Wiggins (CB)": 1
+      },
       "availablePlayers": [
         "Jonah Elliss",
         "Chop Robinson",
@@ -19872,11 +20149,22 @@
         "Sione Vaki ()": 1,
         "Jermaine Burton (WR)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Malik Mustapha", "Nehemiah Pritchett", "Kitan Oladapo", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Malik Mustapha",
+        "Nehemiah Pritchett",
+        "Kitan Oladapo",
+        "Theo Johnson"
+      ],
       "traded": true
     },
     "93": {
-      "picked": { "Javon Solomon (EDGE)": 1, "Maason Smith (DL3T)": 2, "Marshawn Kneeland (EDGE)": 1, "Gabriel Murphy (EDGE)": 1 },
+      "picked": {
+        "Javon Solomon (EDGE)": 1,
+        "Maason Smith (DL3T)": 2,
+        "Marshawn Kneeland (EDGE)": 1,
+        "Gabriel Murphy (EDGE)": 1
+      },
       "availablePlayers": [
         "Audric Estime",
         "Zak Zinter",
@@ -20801,7 +21089,11 @@
       "traded": true
     },
     "163": {
-      "picked": { "Jack Plummer ()": 1, "Javon Baker (WR)": 1, "Jaylin Simpson (CB)": 1 },
+      "picked": {
+        "Jack Plummer ()": 1,
+        "Javon Baker (WR)": 1,
+        "Jaylin Simpson (CB)": 1
+      },
       "availablePlayers": [
         "Andrew Raym",
         "Brevyn Spann-Ford",
@@ -21060,7 +21352,12 @@
       "traded": true
     },
     "204": {
-      "picked": { "Zy Alexander ()": 3, "Luke McCaffrey (WR)": 1, "Andrew Raym (OC)": 2, "Storm Duck (CB)": 1 },
+      "picked": {
+        "Zy Alexander ()": 3,
+        "Luke McCaffrey (WR)": 1,
+        "Andrew Raym (OC)": 2,
+        "Storm Duck (CB)": 1
+      },
       "availablePlayers": [
         "Brian Ugwu",
         "David Ugwoegbu",
@@ -21123,12 +21420,22 @@
       "traded": true
     },
     "207": {
-      "picked": { "Jahdae Barron (S)": 1, "Travis Glover ()": 1, "Kenny Logan Jr. (S)": 1, "Malik Mustapha (S)": 1 },
+      "picked": {
+        "Jahdae Barron (S)": 1,
+        "Travis Glover ()": 1,
+        "Kenny Logan Jr. (S)": 1,
+        "Malik Mustapha (S)": 1
+      },
       "availablePlayers": [],
       "traded": true
     },
     "208": {
-      "picked": { "Isaiah Neyor ()": 2, "Marcus Harris (DL3T)": 1, "J.J. Weaver (ILB)": 1, "Christian Jones (OT)": 1 },
+      "picked": {
+        "Isaiah Neyor ()": 2,
+        "Marcus Harris (DL3T)": 1,
+        "J.J. Weaver (ILB)": 1,
+        "Christian Jones (OT)": 1
+      },
       "availablePlayers": [
         "Jaden Crumedy",
         "Jeremy Flax",
@@ -21326,7 +21633,12 @@
       "traded": false
     },
     "251": {
-      "picked": { "Caleb Murphy ()": 1, "Demani Richardson (S)": 2, "DeMonte Capehart ()": 1, "Ja'Had Carter ()": 1 },
+      "picked": {
+        "Caleb Murphy ()": 1,
+        "Demani Richardson (S)": 2,
+        "DeMonte Capehart ()": 1,
+        "Ja'Had Carter ()": 1
+      },
       "availablePlayers": [],
       "traded": true
     },
@@ -22404,7 +22716,11 @@
       "traded": true
     },
     "112": {
-      "picked": { "Ainias Smith (WRS)": 1, "Beau Brade (S)": 1, "Christian Haynes (OG)": 1 },
+      "picked": {
+        "Ainias Smith (WRS)": 1,
+        "Beau Brade (S)": 1,
+        "Christian Haynes (OG)": 1
+      },
       "availablePlayers": [
         "Josh Proctor",
         "Braelon Allen",
@@ -22497,7 +22813,14 @@
         "Blake Fisher (OT)": 1,
         "Beau Brade (S)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Zion Tupuola-Fetui", "Brevyn Spann-Ford", "Kitan Oladapo", "Theo Johnson", "Evan Williams"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Zion Tupuola-Fetui",
+        "Brevyn Spann-Ford",
+        "Kitan Oladapo",
+        "Theo Johnson",
+        "Evan Williams"
+      ],
       "traded": false
     },
     "114": {
@@ -23601,11 +23924,24 @@
         "Grayson Murphy (EDGE)": 1,
         "Javon Solomon (EDGE)": 1
       },
-      "availablePlayers": ["Miyan Williams", "Kingsley Eguakun", "Darius Muasau", "Tanor Bortolini", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Kingsley Eguakun",
+        "Darius Muasau",
+        "Tanor Bortolini",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "219": {
-      "picked": { "Evan Williams (S)": 1, "Rasheen Ali (RB)": 1, "Malik Mustapha (S)": 2, "Brian Ugwu ()": 1, "Jah Joyner ()": 1 },
+      "picked": {
+        "Evan Williams (S)": 1,
+        "Rasheen Ali (RB)": 1,
+        "Malik Mustapha (S)": 2,
+        "Brian Ugwu ()": 1,
+        "Jah Joyner ()": 1
+      },
       "availablePlayers": [
         "Ladarius Henderson",
         "Tanor Bortolini",
@@ -23659,8 +23995,21 @@
       "traded": true
     },
     "229": {
-      "picked": { "Steele Chambers (ILB)": 1, "Jeremy Flax ()": 1, "Daequan Hardy ()": 1, "Jaden Crumedy (DL3T)": 1, "Jalen Berger ()": 1 },
-      "availablePlayers": ["Maurice Smith", "Xavier Thomas", "Sheridan Jones", "Nathaniel Watson", "Myles Cole", "DeMonte Capehart"],
+      "picked": {
+        "Steele Chambers (ILB)": 1,
+        "Jeremy Flax ()": 1,
+        "Daequan Hardy ()": 1,
+        "Jaden Crumedy (DL3T)": 1,
+        "Jalen Berger ()": 1
+      },
+      "availablePlayers": [
+        "Maurice Smith",
+        "Xavier Thomas",
+        "Sheridan Jones",
+        "Nathaniel Watson",
+        "Myles Cole",
+        "DeMonte Capehart"
+      ],
       "traded": true
     },
     "243": {
@@ -23734,7 +24083,13 @@
     },
     "251": {
       "picked": { "Sean Martin ()": 1 },
-      "availablePlayers": ["Nick Correia", "Maema Njongmeta", "Spencer Rattler", "Jalon Calhoun", "Tahj Washington"],
+      "availablePlayers": [
+        "Nick Correia",
+        "Maema Njongmeta",
+        "Spencer Rattler",
+        "Jalon Calhoun",
+        "Tahj Washington"
+      ],
       "traded": true
     },
     "252": {
@@ -23850,7 +24205,11 @@
       "traded": true
     },
     "257": {
-      "picked": { "Akeem Dent (S)": 1, "Rondell Bothroyd (EDGE)": 1, "Marcellas Dial ()": 1 },
+      "picked": {
+        "Akeem Dent (S)": 1,
+        "Rondell Bothroyd (EDGE)": 1,
+        "Marcellas Dial ()": 1
+      },
       "availablePlayers": [],
       "traded": true
     },
@@ -24597,7 +24956,11 @@
       "traded": true
     },
     "111": {
-      "picked": { "Ricky Pearsall (WR)": 1, "Jaden Hicks ()": 1, "Jalen McMillan (WR)": 1 },
+      "picked": {
+        "Ricky Pearsall (WR)": 1,
+        "Jaden Hicks ()": 1,
+        "Jalen McMillan (WR)": 1
+      },
       "availablePlayers": [
         "Josh Proctor",
         "Braelon Allen",
@@ -24945,7 +25308,11 @@
       "traded": true
     },
     "143": {
-      "picked": { "Jarrian Jones (CB)": 1, "Brandon Coleman (OG)": 1, "Myles Murphy ()": 1 },
+      "picked": {
+        "Jarrian Jones (CB)": 1,
+        "Brandon Coleman (OG)": 1,
+        "Myles Murphy ()": 1
+      },
       "availablePlayers": [
         "Jeremy Flax",
         "Keith Randolph Jr.",
@@ -26167,7 +26534,11 @@
       "traded": true
     },
     "104": {
-      "picked": { "Dillon Johnson (RB)": 1, "Tyler Davis (DL3T)": 1, "Nelson Ceaser ()": 1 },
+      "picked": {
+        "Dillon Johnson (RB)": 1,
+        "Tyler Davis (DL3T)": 1,
+        "Nelson Ceaser ()": 1
+      },
       "availablePlayers": [
         "Ray Davis",
         "Johnny Dixon",
@@ -26545,7 +26916,11 @@
       "traded": true
     },
     "136": {
-      "picked": { "Andrew Coker (OT)": 1, "Cole Bishop (S)": 1, "Erick All (TE)": 1 },
+      "picked": {
+        "Andrew Coker (OT)": 1,
+        "Cole Bishop (S)": 1,
+        "Erick All (TE)": 1
+      },
       "availablePlayers": [
         "Jaheim Bell",
         "Marcus Harris",
@@ -26689,7 +27064,13 @@
       "traded": true
     },
     "139": {
-      "picked": { "James Williams (S)": 1, "Dylan Laube (RB)": 1, "Tykee Smith (S)": 1, "Cedric Gray (ILB)": 1, "Javion Cohen (OG)": 1 },
+      "picked": {
+        "James Williams (S)": 1,
+        "Dylan Laube (RB)": 1,
+        "Tykee Smith (S)": 1,
+        "Cedric Gray (ILB)": 1,
+        "Javion Cohen (OG)": 1
+      },
       "availablePlayers": [
         "Dallin Holker",
         "McCallan Castles",
@@ -27010,7 +27391,14 @@
         "Rasheen Ali (RB)": 1,
         "Layden Robinson (OG)": 1
       },
-      "availablePlayers": ["Miyan Williams", "Kingsley Eguakun", "Darius Muasau", "Tanor Bortolini", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Kingsley Eguakun",
+        "Darius Muasau",
+        "Tanor Bortolini",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "185": {
@@ -27192,15 +27580,43 @@
       "availablePlayers": [],
       "traded": true
     },
-    "229": { "picked": { "Zion Logue (DL3T)": 1, "Dylan McMahon (OC)": 1, "Logan Lee (DL5T)": 1 }, "availablePlayers": [], "traded": true },
+    "229": {
+      "picked": {
+        "Zion Logue (DL3T)": 1,
+        "Dylan McMahon (OC)": 1,
+        "Logan Lee (DL5T)": 1
+      },
+      "availablePlayers": [],
+      "traded": true
+    },
     "230": {
-      "picked": { "Hudson Clark ()": 1, "Jah Joyner ()": 2, "Quincy Riley (CB)": 2, "Michael Wiley ()": 2 },
-      "availablePlayers": ["Trey Knox", "Noah Daniels", "Brennan Armstrong", "Jaylon Carlies"],
+      "picked": {
+        "Hudson Clark ()": 1,
+        "Jah Joyner ()": 2,
+        "Quincy Riley (CB)": 2,
+        "Michael Wiley ()": 2
+      },
+      "availablePlayers": [
+        "Trey Knox",
+        "Noah Daniels",
+        "Brennan Armstrong",
+        "Jaylon Carlies"
+      ],
       "traded": false
     },
     "232": {
-      "picked": { "Brian Ugwu ()": 1, "Myles Cole (EDGE)": 1, "Isaiah Neyor ()": 1, "Kedon Slovis ()": 1, "Marcus Harris (DL3T)": 1 },
-      "availablePlayers": ["Xavier Thomas", "Nathaniel Watson", "DeMonte Capehart"],
+      "picked": {
+        "Brian Ugwu ()": 1,
+        "Myles Cole (EDGE)": 1,
+        "Isaiah Neyor ()": 1,
+        "Kedon Slovis ()": 1,
+        "Marcus Harris (DL3T)": 1
+      },
+      "availablePlayers": [
+        "Xavier Thomas",
+        "Nathaniel Watson",
+        "DeMonte Capehart"
+      ],
       "traded": true
     },
     "240": {
@@ -28994,7 +29410,11 @@
       "traded": true
     },
     "113": {
-      "picked": { "Braelon Allen (RB)": 1, "Sataoa Laumea (OT)": 1, "Kiran Amegadjie (OT)": 1 },
+      "picked": {
+        "Braelon Allen (RB)": 1,
+        "Sataoa Laumea (OT)": 1,
+        "Kiran Amegadjie (OT)": 1
+      },
       "availablePlayers": [
         "Josh Proctor",
         "Brandon Coleman",
@@ -29456,7 +29876,11 @@
       "traded": true
     },
     "147": {
-      "picked": { "Drake Nugent (OC)": 1, "Cam Hart (CB)": 1, "Trevor Keegan ()": 1 },
+      "picked": {
+        "Drake Nugent (OC)": 1,
+        "Cam Hart (CB)": 1,
+        "Trevor Keegan ()": 1
+      },
       "availablePlayers": [
         "Jaylen Harrell",
         "Isaiah Davis",
@@ -30345,12 +30769,19 @@
       "traded": true
     },
     "209": {
-      "picked": { "Walter Rouse ()": 1, "Micah Abraham ()": 1, "Daijun Edwards ()": 1 },
+      "picked": {
+        "Walter Rouse ()": 1,
+        "Micah Abraham ()": 1,
+        "Daijun Edwards ()": 1
+      },
       "availablePlayers": ["Jaylin Simpson"],
       "traded": true
     },
     "210": {
-      "picked": { "Brevyn Spann-Ford (TE)": 1, "Marcus Rosemy-Jacksaint (WR)": 1 },
+      "picked": {
+        "Brevyn Spann-Ford (TE)": 1,
+        "Marcus Rosemy-Jacksaint (WR)": 1
+      },
       "availablePlayers": [
         "Kingsley Eguakun",
         "Edefuan Ulofoshio",
@@ -30401,7 +30832,11 @@
       "traded": true
     },
     "221": {
-      "picked": { "Jaxon Janke ()": 1, "Jalen Green ()": 1, "Tanner McLachlan ()": 1 },
+      "picked": {
+        "Jaxon Janke ()": 1,
+        "Jalen Green ()": 1,
+        "Tanner McLachlan ()": 1
+      },
       "availablePlayers": ["Zion Logue"],
       "traded": true
     },
@@ -30516,7 +30951,14 @@
         "Jaden Davis ()": 1,
         "Tanor Bortolini (OC)": 1
       },
-      "availablePlayers": ["Quincy Riley", "Trey Knox", "Noah Daniels", "Brennan Armstrong", "Jaylon Carlies", "Andru Phillips"],
+      "availablePlayers": [
+        "Quincy Riley",
+        "Trey Knox",
+        "Noah Daniels",
+        "Brennan Armstrong",
+        "Jaylon Carlies",
+        "Andru Phillips"
+      ],
       "traded": false
     },
     "229": {
@@ -32516,7 +32958,12 @@
       "traded": true
     },
     "81": {
-      "picked": { "Cedric Gray (ILB)": 2, "Malachi Corley (WR)": 1, "Javion Cohen (OG)": 1, "Ladd McConkey (WR)": 1 },
+      "picked": {
+        "Cedric Gray (ILB)": 2,
+        "Malachi Corley (WR)": 1,
+        "Javion Cohen (OG)": 1,
+        "Ladd McConkey (WR)": 1
+      },
       "availablePlayers": [
         "Will Shipley",
         "Cedric Johnson",
@@ -33330,11 +33777,19 @@
         "Isaiah Adams (OG)": 1,
         "Gabe Hall (DL3T)": 1
       },
-      "availablePlayers": ["Zion Tupuola-Fetui", "Brevyn Spann-Ford", "Theo Johnson"],
+      "availablePlayers": [
+        "Zion Tupuola-Fetui",
+        "Brevyn Spann-Ford",
+        "Theo Johnson"
+      ],
       "traded": true
     },
     "122": {
-      "picked": { "Johnny Wilson (WR)": 1, "Maason Smith (DL3T)": 1, "Jordan Travis (QB)": 1 },
+      "picked": {
+        "Johnny Wilson (WR)": 1,
+        "Maason Smith (DL3T)": 1,
+        "Jordan Travis (QB)": 1
+      },
       "availablePlayers": [
         "Tommy Eichenberg",
         "Myles Cole",
@@ -33542,7 +33997,13 @@
       "traded": true
     },
     "148": {
-      "picked": { "Jordan Travis (QB)": 2, "Kitan Oladapo (S)": 1, "Curtis Jacobs (OLB)": 2, "Joe Milton ()": 1, "Jawhar Jordan (RB)": 1 },
+      "picked": {
+        "Jordan Travis (QB)": 2,
+        "Kitan Oladapo (S)": 1,
+        "Curtis Jacobs (OLB)": 2,
+        "Joe Milton ()": 1,
+        "Jawhar Jordan (RB)": 1
+      },
       "availablePlayers": [
         "Ty'Ron Hopper",
         "Kimani Vidal",
@@ -33625,7 +34086,13 @@
       "traded": true
     },
     "149": {
-      "picked": { "Kamal Hadden (CB)": 1, "Luke McCaffrey (WR)": 1, "Jalyx Hunt ()": 1, "Cam Hart (CB)": 1, "Cedric Johnson (EDGE)": 1 },
+      "picked": {
+        "Kamal Hadden (CB)": 1,
+        "Luke McCaffrey (WR)": 1,
+        "Jalyx Hunt ()": 1,
+        "Cam Hart (CB)": 1,
+        "Cedric Johnson (EDGE)": 1
+      },
       "availablePlayers": [
         "Ty'Ron Hopper",
         "Marcus Rosemy-Jacksaint",
@@ -33717,7 +34184,11 @@
       "traded": true
     },
     "154": {
-      "picked": { "Keith Randolph Jr. (DL3T)": 1, "Marist Liufau (OLB)": 1, "Marcellas Dial ()": 1 },
+      "picked": {
+        "Keith Randolph Jr. (DL3T)": 1,
+        "Marist Liufau (OLB)": 1,
+        "Marcellas Dial ()": 1
+      },
       "availablePlayers": [
         "Jordan Whittington",
         "Zion Tupuola-Fetui",
@@ -34078,16 +34549,28 @@
     },
     "206": {
       "picked": { "Jarrett Kingston ()": 1, "Frank Gore Jr. (RB)": 2 },
-      "availablePlayers": ["Moose Muhammad III", "Evan Williams", "Jaylon Carlies"],
+      "availablePlayers": [
+        "Moose Muhammad III",
+        "Evan Williams",
+        "Jaylon Carlies"
+      ],
       "traded": true
     },
     "207": {
-      "picked": { "Decorian Patterson ()": 1, "Marshawn Kneeland (EDGE)": 1, "Keith Randolph Jr. (DL3T)": 1 },
+      "picked": {
+        "Decorian Patterson ()": 1,
+        "Marshawn Kneeland (EDGE)": 1,
+        "Keith Randolph Jr. (DL3T)": 1
+      },
       "availablePlayers": ["Dylan McMahon", "Khari Coleman"],
       "traded": true
     },
     "208": {
-      "picked": { "Maema Njongmeta ()": 1, "Jarrett Kingston ()": 1, "Marcus Rosemy-Jacksaint (WR)": 1 },
+      "picked": {
+        "Maema Njongmeta ()": 1,
+        "Jarrett Kingston ()": 1,
+        "Marcus Rosemy-Jacksaint (WR)": 1
+      },
       "availablePlayers": ["Kyle Hergel"],
       "traded": true
     },
@@ -34142,7 +34625,13 @@
       "traded": true
     },
     "233": {
-      "picked": { "David Ugwoegbu ()": 1, "Xavier Thomas (EDGE)": 1, "Stefon Thompson ()": 1, "Jeremy Flax ()": 1, "J.J. Weaver (ILB)": 1 },
+      "picked": {
+        "David Ugwoegbu ()": 1,
+        "Xavier Thomas (EDGE)": 1,
+        "Stefon Thompson ()": 1,
+        "Jeremy Flax ()": 1,
+        "J.J. Weaver (ILB)": 1
+      },
       "availablePlayers": ["Nathaniel Watson", "DeMonte Capehart"],
       "traded": true
     },
@@ -34164,9 +34653,18 @@
       "availablePlayers": [],
       "traded": true
     },
-    "237": { "picked": { "Julian Pearl (OT)": 2, "Donovan Jennings ()": 1 }, "availablePlayers": [], "traded": true },
+    "237": {
+      "picked": { "Julian Pearl (OT)": 2, "Donovan Jennings ()": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
     "240": {
-      "picked": { "Dylan McMahon (OC)": 2, "Chad Lindberg ()": 1, "Xavier Thomas (EDGE)": 1, "Sheridan Jones (CB)": 1 },
+      "picked": {
+        "Dylan McMahon (OC)": 2,
+        "Chad Lindberg ()": 1,
+        "Xavier Thomas (EDGE)": 1,
+        "Sheridan Jones (CB)": 1
+      },
       "availablePlayers": ["DeMonte Capehart"],
       "traded": true
     },
@@ -37147,7 +37645,11 @@
       "traded": true
     },
     "108": {
-      "picked": { "Nehemiah Pritchett (CB)": 1, "Tyrice Knight (ILB)": 1, "Johnny Dixon (CB)": 1 },
+      "picked": {
+        "Nehemiah Pritchett (CB)": 1,
+        "Tyrice Knight (ILB)": 1,
+        "Johnny Dixon (CB)": 1
+      },
       "availablePlayers": [
         "Josh Proctor",
         "Braelon Allen",
@@ -37824,7 +38326,11 @@
       "traded": true
     },
     "140": {
-      "picked": { "Jared Wiley (TE)": 1, "Dylan Laube (RB)": 1, "Marcus Harris (DL3T)": 1 },
+      "picked": {
+        "Jared Wiley (TE)": 1,
+        "Dylan Laube (RB)": 1,
+        "Marcus Harris (DL3T)": 1
+      },
       "availablePlayers": [
         "Jeremy Flax",
         "Keith Randolph Jr.",
@@ -37960,7 +38466,13 @@
       "traded": true
     },
     "143": {
-      "picked": { "Sataoa Laumea (OT)": 1, "Will Shipley (RB)": 1, "Dylan Laube (RB)": 1, "Jaheim Bell (TE)": 1, "Ben Sinnott (TE)": 1 },
+      "picked": {
+        "Sataoa Laumea (OT)": 1,
+        "Will Shipley (RB)": 1,
+        "Dylan Laube (RB)": 1,
+        "Jaheim Bell (TE)": 1,
+        "Ben Sinnott (TE)": 1
+      },
       "availablePlayers": [
         "Dallin Holker",
         "McCallan Castles",
@@ -38449,7 +38961,14 @@
         "Beau Brade (S)": 2,
         "Layden Robinson (OG)": 1
       },
-      "availablePlayers": ["Miyan Williams", "Kingsley Eguakun", "Darius Muasau", "Tanor Bortolini", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Kingsley Eguakun",
+        "Darius Muasau",
+        "Tanor Bortolini",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "186": {
@@ -38702,7 +39221,12 @@
       "traded": true
     },
     "223": {
-      "picked": { "Walter Rouse ()": 1, "Tanner McLachlan ()": 1, "Dadrion Taylor-Demerson (CB)": 1, "Kimani Vidal ()": 1 },
+      "picked": {
+        "Walter Rouse ()": 1,
+        "Tanner McLachlan ()": 1,
+        "Dadrion Taylor-Demerson (CB)": 1,
+        "Kimani Vidal ()": 1
+      },
       "availablePlayers": ["Dylan McMahon", "Aaron Casey"],
       "traded": true
     },
@@ -40146,7 +40670,11 @@
       "traded": true
     },
     "116": {
-      "picked": { "Christian Jones (OT)": 1, "Leonard Taylor III (DL3T)": 1, "Jermaine Burton (WR)": 1 },
+      "picked": {
+        "Christian Jones (OT)": 1,
+        "Leonard Taylor III (DL3T)": 1,
+        "Jermaine Burton (WR)": 1
+      },
       "availablePlayers": [
         "Brandon Coleman",
         "Jordan Travis",
@@ -40507,7 +41035,11 @@
       "traded": true
     },
     "151": {
-      "picked": { "McCallan Castles (TE)": 2, "Theo Johnson (TE)": 1, "Sincere Haynesworth (OC)": 1 },
+      "picked": {
+        "McCallan Castles (TE)": 2,
+        "Theo Johnson (TE)": 1,
+        "Sincere Haynesworth (OC)": 1
+      },
       "availablePlayers": [
         "Marcus Rosemy-Jacksaint",
         "Jaylin Simpson",
@@ -40977,7 +41509,12 @@
       "traded": true
     },
     "173": {
-      "picked": { "Chau Smith-Wade (CB)": 1, "Cody Schrader (RB)": 1, "Nathan Thomas (OT)": 1, "Gabe Hall (DL3T)": 1 },
+      "picked": {
+        "Chau Smith-Wade (CB)": 1,
+        "Cody Schrader (RB)": 1,
+        "Nathan Thomas (OT)": 1,
+        "Gabe Hall (DL3T)": 1
+      },
       "availablePlayers": [
         "Curtis Jacobs",
         "Trey Knox",
@@ -41072,7 +41609,11 @@
       "traded": true
     },
     "175": {
-      "picked": { "Jawhar Jordan (RB)": 1, "Andrew Raym (OC)": 1, "Renardo Green (CB)": 1 },
+      "picked": {
+        "Jawhar Jordan (RB)": 1,
+        "Andrew Raym (OC)": 1,
+        "Renardo Green (CB)": 1
+      },
       "availablePlayers": [
         "Layden Robinson",
         "Gabe Hall",
@@ -41178,7 +41719,12 @@
         "Cody Schrader (RB)": 1,
         "Michael Furtney ()": 1
       },
-      "availablePlayers": ["Miyan Williams", "Darius Muasau", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Darius Muasau",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "202": {
@@ -41351,7 +41897,11 @@
       "traded": true
     },
     "235": {
-      "picked": { "Jackson Mitchell (OLB)": 1, "Trevor Keegan ()": 1, "Daijun Edwards ()": 1 },
+      "picked": {
+        "Jackson Mitchell (OLB)": 1,
+        "Trevor Keegan ()": 1,
+        "Daijun Edwards ()": 1
+      },
       "availablePlayers": [],
       "traded": true
     },
@@ -41393,7 +41943,12 @@
       "traded": true
     },
     "238": {
-      "picked": { "Zion Logue (DL3T)": 1, "Darius Muasau (ILB)": 1, "Matthew Jones (OG)": 1, "Jase McClellan (RB)": 1 },
+      "picked": {
+        "Zion Logue (DL3T)": 1,
+        "Darius Muasau (ILB)": 1,
+        "Matthew Jones (OG)": 1,
+        "Jase McClellan (RB)": 1
+      },
       "availablePlayers": ["DeMonte Capehart"],
       "traded": true
     },
@@ -41438,9 +41993,22 @@
       "availablePlayers": [],
       "traded": true
     },
-    "252": { "picked": { "Khalid Duke (EDGE)": 1, "Walter Rouse ()": 1, "Mason Fairchild ()": 1 }, "availablePlayers": [], "traded": true },
+    "252": {
+      "picked": {
+        "Khalid Duke (EDGE)": 1,
+        "Walter Rouse ()": 1,
+        "Mason Fairchild ()": 1
+      },
+      "availablePlayers": [],
+      "traded": true
+    },
     "254": {
-      "picked": { "DeMonte Capehart ()": 1, "Donovan Jennings ()": 1, "Eric Gentry (OLB)": 1, "Aaron Frost ()": 1 },
+      "picked": {
+        "DeMonte Capehart ()": 1,
+        "Donovan Jennings ()": 1,
+        "Eric Gentry (OLB)": 1,
+        "Aaron Frost ()": 1
+      },
       "availablePlayers": [],
       "traded": true
     },
@@ -44012,7 +44580,11 @@
       "traded": true
     },
     "119": {
-      "picked": { "Austin Booker ()": 1, "Jordan Travis (QB)": 1, "Jarvis Brownlee Jr. (CB)": 1 },
+      "picked": {
+        "Austin Booker ()": 1,
+        "Jordan Travis (QB)": 1,
+        "Jarvis Brownlee Jr. (CB)": 1
+      },
       "availablePlayers": [
         "Tommy Eichenberg",
         "Delmar Glaze",
@@ -44706,7 +45278,11 @@
       "traded": true
     },
     "151": {
-      "picked": { "Michael Barrett ()": 1, "MarShawn Lloyd (RB)": 1, "Austin Booker ()": 1 },
+      "picked": {
+        "Michael Barrett ()": 1,
+        "MarShawn Lloyd (RB)": 1,
+        "Austin Booker ()": 1
+      },
       "availablePlayers": [
         "Isaiah Davis",
         "Andrew Raym",
@@ -44827,7 +45403,12 @@
       "traded": true
     },
     "154": {
-      "picked": { "Edefuan Ulofoshio ()": 3, "Delmar Glaze ()": 1, "Jaheim Bell (TE)": 1, "McCallan Castles (TE)": 1 },
+      "picked": {
+        "Edefuan Ulofoshio ()": 3,
+        "Delmar Glaze ()": 1,
+        "Jaheim Bell (TE)": 1,
+        "McCallan Castles (TE)": 1
+      },
       "availablePlayers": [
         "LaDarius Henderson",
         "Zion Tupuola-Fetui",
@@ -45020,7 +45601,13 @@
         "Curtis Jacobs (OLB)": 1,
         "Trevin Wallace (ILB)": 1
       },
-      "availablePlayers": ["Miyan Williams", "Kingsley Eguakun", "Darius Muasau", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Kingsley Eguakun",
+        "Darius Muasau",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "202": {
@@ -45108,7 +45695,15 @@
       "availablePlayers": [],
       "traded": true
     },
-    "233": { "picked": { "Khristian Boyd ()": 1, "Maurice Smith ()": 1, "P.J. Jules ()": 1 }, "availablePlayers": [], "traded": true },
+    "233": {
+      "picked": {
+        "Khristian Boyd ()": 1,
+        "Maurice Smith ()": 1,
+        "P.J. Jules ()": 1
+      },
+      "availablePlayers": [],
+      "traded": true
+    },
     "234": {
       "picked": {
         "Gavin Bartholomew (TE)": 1,
@@ -45733,7 +46328,11 @@
       "traded": false
     },
     "32": {
-      "picked": { "Quinyon Mitchell (CB)": 1, "Byron Murphy II (DL3T)": 1, "Adonai Mitchell (WR)": 1 },
+      "picked": {
+        "Quinyon Mitchell (CB)": 1,
+        "Byron Murphy II (DL3T)": 1,
+        "Adonai Mitchell (WR)": 1
+      },
       "availablePlayers": [
         "Jonah Elliss",
         "Chop Robinson",
@@ -46416,7 +47015,11 @@
       "traded": false
     },
     "64": {
-      "picked": { "Brenden Rice (WR)": 1, "Kingsley Suamataia (OT)": 1, "Josh Newton (CB)": 1 },
+      "picked": {
+        "Brenden Rice (WR)": 1,
+        "Kingsley Suamataia (OT)": 1,
+        "Josh Newton (CB)": 1
+      },
       "availablePlayers": [
         "Michael Hall Jr.",
         "D.J. James",
@@ -46984,11 +47587,21 @@
         "Johnny Wilson (WR)": 1,
         "Braden Fiske (DL3T)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Malik Mustapha", "Nehemiah Pritchett", "Kitan Oladapo", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Malik Mustapha",
+        "Nehemiah Pritchett",
+        "Kitan Oladapo",
+        "Theo Johnson"
+      ],
       "traded": true
     },
     "95": {
-      "picked": { "DeWayne Carter (DL3T)": 1, "Malik Washington (WRS)": 1, "Blake Fisher (OT)": 1 },
+      "picked": {
+        "DeWayne Carter (DL3T)": 1,
+        "Malik Washington (WRS)": 1,
+        "Blake Fisher (OT)": 1
+      },
       "availablePlayers": [
         "Audric Estime",
         "Zak Zinter",
@@ -47311,7 +47924,11 @@
       "traded": true
     },
     "131": {
-      "picked": { "Jalen McMillan (WR)": 1, "Drake Nugent (OC)": 1, "Nehemiah Pritchett (CB)": 1 },
+      "picked": {
+        "Jalen McMillan (WR)": 1,
+        "Drake Nugent (OC)": 1,
+        "Nehemiah Pritchett (CB)": 1
+      },
       "availablePlayers": [
         "Myles Cole",
         "Erick All",
@@ -47365,7 +47982,11 @@
       "traded": true
     },
     "132": {
-      "picked": { "Beaux Limmer (OC)": 1, "Kamal Hadden (CB)": 1, "MarShawn Lloyd (RB)": 1 },
+      "picked": {
+        "Beaux Limmer (OC)": 1,
+        "Kamal Hadden (CB)": 1,
+        "MarShawn Lloyd (RB)": 1
+      },
       "availablePlayers": [
         "Drake Nugent",
         "Keith Randolph Jr.",
@@ -47677,7 +48298,11 @@
       "traded": true
     },
     "164": {
-      "picked": { "Johnny Dixon (CB)": 1, "Jordan Jefferson ()": 1, "Andrew Raym (OC)": 1 },
+      "picked": {
+        "Johnny Dixon (CB)": 1,
+        "Jordan Jefferson ()": 1,
+        "Andrew Raym (OC)": 1
+      },
       "availablePlayers": [
         "Brevyn Spann-Ford",
         "Jase McClellan",
@@ -47775,7 +48400,11 @@
       "traded": true
     },
     "169": {
-      "picked": { "LaDarius Henderson ()": 1, "Andrew Raym (OC)": 1, "Justin Rogers (DL1T)": 1 },
+      "picked": {
+        "LaDarius Henderson ()": 1,
+        "Andrew Raym (OC)": 1,
+        "Justin Rogers (DL1T)": 1
+      },
       "availablePlayers": [
         "Kitan Oladapo",
         "Nathan Thomas",
@@ -48090,7 +48719,11 @@
       ],
       "traded": false
     },
-    "246": { "picked": { "Dylan McMahon (OC)": 1, "Kyle Hergel ()": 1 }, "availablePlayers": ["KT Leveston"], "traded": true },
+    "246": {
+      "picked": { "Dylan McMahon (OC)": 1, "Kyle Hergel ()": 1 },
+      "availablePlayers": ["KT Leveston"],
+      "traded": true
+    },
     "247": {
       "picked": {
         "M.J. Devonshire (CB)": 6,
@@ -48116,22 +48749,48 @@
       "traded": true
     },
     "248": {
-      "picked": { "Jaden Shirden ()": 1, "Carson Steele (RB)": 1, "Kenny Logan Jr. (S)": 1 },
+      "picked": {
+        "Jaden Shirden ()": 1,
+        "Carson Steele (RB)": 1,
+        "Kenny Logan Jr. (S)": 1
+      },
       "availablePlayers": [],
       "traded": true
     },
     "249": {
-      "picked": { "LaMiles Brooks ()": 1, "Malcolm Ray ()": 2, "Tip Reiman ()": 2, "Caedan Wallace (OT)": 1 },
+      "picked": {
+        "LaMiles Brooks ()": 1,
+        "Malcolm Ray ()": 2,
+        "Tip Reiman ()": 2,
+        "Caedan Wallace (OT)": 1
+      },
       "availablePlayers": [],
       "traded": false
     },
     "252": {
       "picked": { "Myles Murphy ()": 1 },
-      "availablePlayers": ["Brevyn Spann-Ford", "Noah Whittington", "Hunter Nourzad", "Kyle Hergel"],
+      "availablePlayers": [
+        "Brevyn Spann-Ford",
+        "Noah Whittington",
+        "Hunter Nourzad",
+        "Kyle Hergel"
+      ],
       "traded": true
     },
-    "253": { "picked": { "Donell Harris Jr. ()": 1, "Jeremy Flax ()": 1, "Will Putnam (OC)": 1 }, "availablePlayers": [], "traded": true },
-    "256": { "picked": { "Kyle Hergel ()": 1 }, "availablePlayers": [], "traded": true },
+    "253": {
+      "picked": {
+        "Donell Harris Jr. ()": 1,
+        "Jeremy Flax ()": 1,
+        "Will Putnam (OC)": 1
+      },
+      "availablePlayers": [],
+      "traded": true
+    },
+    "256": {
+      "picked": { "Kyle Hergel ()": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
     "fullName": "Baltimore Ravens"
   },
   "MIN": {
@@ -49272,7 +49931,12 @@
       "traded": true
     },
     "109": {
-      "picked": { "Jaden Hicks ()": 1, "MarShawn Lloyd (RB)": 1, "Matt Goncalves (OT)": 1, "Will Shipley (RB)": 1 },
+      "picked": {
+        "Jaden Hicks ()": 1,
+        "MarShawn Lloyd (RB)": 1,
+        "Matt Goncalves (OT)": 1,
+        "Will Shipley (RB)": 1
+      },
       "availablePlayers": [
         "Josh Proctor",
         "Sataoa Laumea",
@@ -49966,7 +50630,12 @@
       "traded": true
     },
     "148": {
-      "picked": { "Javion Cohen (OG)": 3, "Sincere Haynesworth (OC)": 1, "Malik Mustapha (S)": 1, "Steele Chambers (ILB)": 1 },
+      "picked": {
+        "Javion Cohen (OG)": 3,
+        "Sincere Haynesworth (OC)": 1,
+        "Malik Mustapha (S)": 1,
+        "Steele Chambers (ILB)": 1
+      },
       "availablePlayers": [
         "Zion Tupuola-Fetui",
         "Blake Watson",
@@ -50555,7 +51224,11 @@
       "traded": true
     },
     "168": {
-      "picked": { "Kimani Vidal ()": 1, "Tory Taylor (P)": 1, "Taulia Tagovailoa (QB)": 1 },
+      "picked": {
+        "Kimani Vidal ()": 1,
+        "Tory Taylor (P)": 1,
+        "Taulia Tagovailoa (QB)": 1
+      },
       "availablePlayers": [
         "Isaiah Williams",
         "Kendall Milton",
@@ -50624,7 +51297,14 @@
         "Aki Ogunbiyi ()": 1,
         "Michael Barrett ()": 1
       },
-      "availablePlayers": ["Miyan Williams", "Kingsley Eguakun", "Darius Muasau", "Tanor Bortolini", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Kingsley Eguakun",
+        "Darius Muasau",
+        "Tanor Bortolini",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "183": {
@@ -50650,7 +51330,11 @@
       "traded": true
     },
     "186": {
-      "picked": { "Tarheeb Still ()": 1, "Jacob Cowing (WRS)": 1, "Maema Njongmeta ()": 1 },
+      "picked": {
+        "Tarheeb Still ()": 1,
+        "Jacob Cowing (WRS)": 1,
+        "Maema Njongmeta ()": 1
+      },
       "availablePlayers": [
         "Marshawn Kneeland",
         "Evan Williams",
@@ -50846,7 +51530,13 @@
     },
     "218": {
       "picked": { "Austin Reed (QB)": 1, "Carson Steele (RB)": 1 },
-      "availablePlayers": ["Isaiah Williams", "Darius Muasau", "Nathaniel Watson", "Jaylin Simpson", "Miles Battle"],
+      "availablePlayers": [
+        "Isaiah Williams",
+        "Darius Muasau",
+        "Nathaniel Watson",
+        "Jaylin Simpson",
+        "Miles Battle"
+      ],
       "traded": true
     },
     "221": {
@@ -50908,7 +51598,12 @@
       "traded": true
     },
     "229": {
-      "picked": { "Andru Phillips (CB)": 1, "Hudson Clark ()": 1, "Jaden Davis ()": 1, "Gavin Bartholomew (TE)": 2 },
+      "picked": {
+        "Andru Phillips (CB)": 1,
+        "Hudson Clark ()": 1,
+        "Jaden Davis ()": 1,
+        "Gavin Bartholomew (TE)": 2
+      },
       "availablePlayers": [
         "Quincy Riley",
         "Noah Daniels",
@@ -50929,7 +51624,13 @@
         "Zion Logue (DL3T)": 1,
         "Maurice Smith ()": 1
       },
-      "availablePlayers": ["Xavier Thomas", "Sheridan Jones", "Nathaniel Watson", "Myles Cole", "DeMonte Capehart"],
+      "availablePlayers": [
+        "Xavier Thomas",
+        "Sheridan Jones",
+        "Nathaniel Watson",
+        "Myles Cole",
+        "DeMonte Capehart"
+      ],
       "traded": true
     },
     "233": {
@@ -50961,7 +51662,11 @@
       ],
       "traded": true
     },
-    "239": { "picked": { "Savion Williams ()": 1, "Charles Turner ()": 1 }, "availablePlayers": ["Nathaniel Watson"], "traded": true },
+    "239": {
+      "picked": { "Savion Williams ()": 1, "Charles Turner ()": 1 },
+      "availablePlayers": ["Nathaniel Watson"],
+      "traded": true
+    },
     "242": {
       "picked": {
         "Trey Knox ()": 1,
@@ -50988,8 +51693,16 @@
       ],
       "traded": true
     },
-    "252": { "picked": { "Isaiah Williams (WR)": 1, "Daijun Edwards ()": 1 }, "availablePlayers": [], "traded": true },
-    "256": { "picked": { "Khari Coleman ()": 1, "Keandre Lambert-Smith ()": 1 }, "availablePlayers": [], "traded": true },
+    "252": {
+      "picked": { "Isaiah Williams (WR)": 1, "Daijun Edwards ()": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
+    "256": {
+      "picked": { "Khari Coleman ()": 1, "Keandre Lambert-Smith ()": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
     "fullName": "Minnesota Vikings"
   },
   "WAS": {
@@ -53688,7 +54401,11 @@
       "traded": true
     },
     "95": {
-      "picked": { "Ty'Ron Hopper (OLB)": 1, "Cole Bishop (S)": 1, "Junior Colson (ILB)": 1 },
+      "picked": {
+        "Ty'Ron Hopper (OLB)": 1,
+        "Cole Bishop (S)": 1,
+        "Junior Colson (ILB)": 1
+      },
       "availablePlayers": [
         "Christian Haynes",
         "Darius Robinson",
@@ -54302,7 +55019,13 @@
         "Trevin Wallace (ILB)": 1,
         "Audric Estime (RB)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Sam Hartman", "Kitan Oladapo", "Theo Johnson", "Evan Williams"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Sam Hartman",
+        "Kitan Oladapo",
+        "Theo Johnson",
+        "Evan Williams"
+      ],
       "traded": false
     },
     "103": {
@@ -57191,7 +57914,14 @@
         "Ruke Orhorhoro (DL3T)": 1,
         "Trey Benson (RB)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Malik Mustapha", "Delmar Glaze", "Nehemiah Pritchett", "Kitan Oladapo", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Malik Mustapha",
+        "Delmar Glaze",
+        "Nehemiah Pritchett",
+        "Kitan Oladapo",
+        "Theo Johnson"
+      ],
       "traded": false
     },
     "86": {
@@ -57927,7 +58657,11 @@
       "traded": true
     },
     "135": {
-      "picked": { "Jalyx Hunt ()": 1, "Beaux Limmer (OC)": 1, "Myles Cole (EDGE)": 1 },
+      "picked": {
+        "Jalyx Hunt ()": 1,
+        "Beaux Limmer (OC)": 1,
+        "Myles Cole (EDGE)": 1
+      },
       "availablePlayers": [
         "Erick All",
         "Jaheim Bell",
@@ -58074,7 +58808,12 @@
       "traded": true
     },
     "138": {
-      "picked": { "Delmar Glaze ()": 1, "Beaux Limmer (OC)": 1, "Edefuan Ulofoshio ()": 1, "Drake Nugent (OC)": 1 },
+      "picked": {
+        "Delmar Glaze ()": 1,
+        "Beaux Limmer (OC)": 1,
+        "Edefuan Ulofoshio ()": 1,
+        "Drake Nugent (OC)": 1
+      },
       "availablePlayers": [
         "Keith Randolph Jr.",
         "Nehemiah Pritchett",
@@ -58339,7 +59078,11 @@
       "traded": true
     },
     "145": {
-      "picked": { "DeWayne Carter (DL3T)": 1, "Tory Taylor (P)": 1, "Jordan Jefferson ()": 1 },
+      "picked": {
+        "DeWayne Carter (DL3T)": 1,
+        "Tory Taylor (P)": 1,
+        "Jordan Jefferson ()": 1
+      },
       "availablePlayers": [
         "Theo Johnson",
         "Gabriel Murphy",
@@ -58812,7 +59555,12 @@
       "traded": false
     },
     "157": {
-      "picked": { "Ainias Smith (WRS)": 2, "Nelson Ceaser ()": 1, "Ty'Ron Hopper (OLB)": 3, "Chau Smit ()": 1 },
+      "picked": {
+        "Ainias Smith (WRS)": 2,
+        "Nelson Ceaser ()": 1,
+        "Ty'Ron Hopper (OLB)": 3,
+        "Chau Smit ()": 1
+      },
       "availablePlayers": [
         "Zion Nelson",
         "Brandon Coleman",
@@ -58889,7 +59637,11 @@
       "traded": true
     },
     "159": {
-      "picked": { "Jordan Jefferson ()": 2, "Frank Gore Jr. (RB)": 1, "Brandon Coleman (OG)": 1 },
+      "picked": {
+        "Jordan Jefferson ()": 2,
+        "Frank Gore Jr. (RB)": 1,
+        "Brandon Coleman (OG)": 1
+      },
       "availablePlayers": [
         "Kitan Oladapo",
         "Michael Barrett",
@@ -59363,9 +60115,17 @@
       "availablePlayers": [],
       "traded": true
     },
-    "208": { "picked": { "Cody Schrader (RB)": 2, "Christian Jones (OT)": 1 }, "availablePlayers": ["Zion Logue"], "traded": true },
+    "208": {
+      "picked": { "Cody Schrader (RB)": 2, "Christian Jones (OT)": 1 },
+      "availablePlayers": ["Zion Logue"],
+      "traded": true
+    },
     "210": {
-      "picked": { "Jha'Quan Jackson ()": 1, "Jawhar Jordan (RB)": 1, "Omar Speights (ILB)": 2 },
+      "picked": {
+        "Jha'Quan Jackson ()": 1,
+        "Jawhar Jordan (RB)": 1,
+        "Omar Speights (ILB)": 2
+      },
       "availablePlayers": [
         "Darius Muasau",
         "Trevor Keegan",
@@ -59408,18 +60168,38 @@
       "traded": true
     },
     "228": {
-      "picked": { "Carter Bradley ()": 1, "Chris Morris ()": 1, "Kamal Hadden (CB)": 1 },
+      "picked": {
+        "Carter Bradley ()": 1,
+        "Chris Morris ()": 1,
+        "Kamal Hadden (CB)": 1
+      },
       "availablePlayers": ["Zion Logue"],
       "traded": true
     },
     "229": {
-      "picked": { "Jarius Monroe (CB)": 1, "Edefuan Ulofoshio ()": 1, "Jaden Davis ()": 1 },
+      "picked": {
+        "Jarius Monroe (CB)": 1,
+        "Edefuan Ulofoshio ()": 1,
+        "Jaden Davis ()": 1
+      },
       "availablePlayers": [],
       "traded": false
     },
     "231": {
-      "picked": { "Zion Logue (DL3T)": 1, "Sheridan Jones (CB)": 1, "Kenny Logan Jr. (S)": 1, "Miyan Williams (RB)": 1 },
-      "availablePlayers": ["Xavier Thomas", "Maurice Smith", "Donell Harris Jr.", "Myles Cole", "Nathaniel Watson", "DeMonte Capehart"],
+      "picked": {
+        "Zion Logue (DL3T)": 1,
+        "Sheridan Jones (CB)": 1,
+        "Kenny Logan Jr. (S)": 1,
+        "Miyan Williams (RB)": 1
+      },
+      "availablePlayers": [
+        "Xavier Thomas",
+        "Maurice Smith",
+        "Donell Harris Jr.",
+        "Myles Cole",
+        "Nathaniel Watson",
+        "DeMonte Capehart"
+      ],
       "traded": true
     },
     "240": {
@@ -61407,7 +62187,11 @@
       "traded": true
     },
     "149": {
-      "picked": { "Erick All (TE)": 1, "Jaheim Bell (TE)": 1, "Myles Harden ()": 1 },
+      "picked": {
+        "Erick All (TE)": 1,
+        "Jaheim Bell (TE)": 1,
+        "Myles Harden ()": 1
+      },
       "availablePlayers": [
         "Jaylen Harrell",
         "Isaiah Davis",
@@ -61532,7 +62316,12 @@
       "traded": true
     },
     "152": {
-      "picked": { "Ty'Ron Hopper (OLB)": 2, "Marcus Rosemy-Jacksaint (WR)": 1, "Braelon Allen (RB)": 1, "Cedric Gray (ILB)": 1 },
+      "picked": {
+        "Ty'Ron Hopper (OLB)": 2,
+        "Marcus Rosemy-Jacksaint (WR)": 1,
+        "Braelon Allen (RB)": 1,
+        "Cedric Gray (ILB)": 1
+      },
       "availablePlayers": [
         "Jaylin Simpson",
         "Cody Schrader",
@@ -61850,8 +62639,19 @@
       "traded": true
     },
     "167": {
-      "picked": { "Miyan Williams (RB)": 2, "Tory Taylor (P)": 2, "Edefuan Ulofoshio ()": 1, "Jared Wiley (TE)": 1 },
-      "availablePlayers": ["Brevyn Spann-Ford", "Layden Robinson", "Cedric Johnson", "Cody Schrader", "Julian Pearl"],
+      "picked": {
+        "Miyan Williams (RB)": 2,
+        "Tory Taylor (P)": 2,
+        "Edefuan Ulofoshio ()": 1,
+        "Jared Wiley (TE)": 1
+      },
+      "availablePlayers": [
+        "Brevyn Spann-Ford",
+        "Layden Robinson",
+        "Cedric Johnson",
+        "Cody Schrader",
+        "Julian Pearl"
+      ],
       "traded": true
     },
     "168": {
@@ -61881,7 +62681,11 @@
       "traded": false
     },
     "169": {
-      "picked": { "Keith Randolph Jr. (DL3T)": 1, "Jaylen Wright (RB)": 1, "Javion Cohen (OG)": 1 },
+      "picked": {
+        "Keith Randolph Jr. (DL3T)": 1,
+        "Jaylen Wright (RB)": 1,
+        "Javion Cohen (OG)": 1
+      },
       "availablePlayers": [
         "Brevyn Spann-Ford",
         "Jase McClellan",
@@ -61978,7 +62782,12 @@
       "traded": true
     },
     "172": {
-      "picked": { "Renardo Green (CB)": 1, "Justin Eboigbe (DL5T)": 1, "Shemar Turner (DL3T)": 1, "Jahdae Barron (S)": 1 },
+      "picked": {
+        "Renardo Green (CB)": 1,
+        "Justin Eboigbe (DL5T)": 1,
+        "Shemar Turner (DL3T)": 1,
+        "Jahdae Barron (S)": 1
+      },
       "availablePlayers": [
         "Kitan Oladapo",
         "Brevyn Spann-Ford",
@@ -62022,7 +62831,11 @@
       "traded": true
     },
     "174": {
-      "picked": { "Daequan Hardy ()": 1, "Josh Proctor (S)": 1, "Matt Goncalves (OT)": 1 },
+      "picked": {
+        "Daequan Hardy ()": 1,
+        "Josh Proctor (S)": 1,
+        "Matt Goncalves (OT)": 1
+      },
       "availablePlayers": [
         "Layden Robinson",
         "Jawhar Jordan",
@@ -62040,7 +62853,13 @@
       "traded": true
     },
     "176": {
-      "picked": { "Frank Gore Jr. (RB)": 1, "Curtis Jacobs (OLB)": 1, "Jordan Jefferson ()": 1, "Delmar Glaze ()": 1, "Trey Knox ()": 1 },
+      "picked": {
+        "Frank Gore Jr. (RB)": 1,
+        "Curtis Jacobs (OLB)": 1,
+        "Jordan Jefferson ()": 1,
+        "Delmar Glaze ()": 1,
+        "Trey Knox ()": 1
+      },
       "availablePlayers": [
         "Isaiah Davis",
         "Jaylen Harrell",
@@ -62193,7 +63012,13 @@
         "De'Corian Clark ()": 1,
         "Dillon Johnson (RB)": 1
       },
-      "availablePlayers": ["Miyan Williams", "Kingsley Eguakun", "Darius Muasau", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Kingsley Eguakun",
+        "Darius Muasau",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "197": {
@@ -64293,7 +65118,11 @@
       "traded": true
     },
     "106": {
-      "picked": { "Javon Solomon (EDGE)": 1, "Khyree Jackson (CB)": 1, "Ray Davis (RB)": 1 },
+      "picked": {
+        "Javon Solomon (EDGE)": 1,
+        "Khyree Jackson (CB)": 1,
+        "Ray Davis (RB)": 1
+      },
       "availablePlayers": [
         "Johnny Dixon",
         "Josh Proctor",
@@ -64689,7 +65518,11 @@
       "traded": true
     },
     "139": {
-      "picked": { "Tanner McLachlan ()": 1, "Marcus Rosemy-Jacksaint (WR)": 1, "A.J. Barner (TE)": 1 },
+      "picked": {
+        "Tanner McLachlan ()": 1,
+        "Marcus Rosemy-Jacksaint (WR)": 1,
+        "A.J. Barner (TE)": 1
+      },
       "availablePlayers": [
         "Marcus Harris",
         "Jeremy Flax",
@@ -64830,7 +65663,12 @@
       "traded": true
     },
     "142": {
-      "picked": { "Malik Mustapha (S)": 2, "Jaheim Bell (TE)": 1, "Cedric Johnson (EDGE)": 1, "Dylan Laube (RB)": 1 },
+      "picked": {
+        "Malik Mustapha (S)": 2,
+        "Jaheim Bell (TE)": 1,
+        "Cedric Johnson (EDGE)": 1,
+        "Dylan Laube (RB)": 1
+      },
       "availablePlayers": [
         "Dallin Holker",
         "McCallan Castles",
@@ -65123,7 +65961,14 @@
         "Jordan Jefferson ()": 1,
         "Roger Rosengarten (OT)": 2
       },
-      "availablePlayers": ["Miyan Williams", "Kingsley Eguakun", "Darius Muasau", "Tanor Bortolini", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Kingsley Eguakun",
+        "Darius Muasau",
+        "Tanor Bortolini",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "193": {
@@ -65224,7 +66069,11 @@
       "traded": true
     },
     "223": {
-      "picked": { "Omar Speights (ILB)": 1, "Erick All (TE)": 1, "Carlton Johnson ()": 1 },
+      "picked": {
+        "Omar Speights (ILB)": 1,
+        "Erick All (TE)": 1,
+        "Carlton Johnson ()": 1
+      },
       "availablePlayers": ["Zion Logue"],
       "traded": true
     },
@@ -65300,7 +66149,11 @@
       "traded": true
     },
     "256": {
-      "picked": { "Blake Watson (RB)": 1, "MJ Sherman ()": 1, "Garret Greenfield (OT)": 1 },
+      "picked": {
+        "Blake Watson (RB)": 1,
+        "MJ Sherman ()": 1,
+        "Garret Greenfield (OT)": 1
+      },
       "availablePlayers": [],
       "traded": true
     },
@@ -67699,7 +68552,14 @@
         "Max Melton (CB)": 1,
         "Kiran Amegadjie (OT)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Malik Mustapha", "Delmar Glaze", "Nehemiah Pritchett", "Kitan Oladapo", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Malik Mustapha",
+        "Delmar Glaze",
+        "Nehemiah Pritchett",
+        "Kitan Oladapo",
+        "Theo Johnson"
+      ],
       "traded": true
     },
     "90": {
@@ -68052,7 +68912,12 @@
       "traded": true
     },
     "124": {
-      "picked": { "Javon Solomon (EDGE)": 1, "Mar'Keise Irving ()": 1, "Kris Abrams-Draine (CBN)": 1, "Jaden Hicks ()": 1 },
+      "picked": {
+        "Javon Solomon (EDGE)": 1,
+        "Mar'Keise Irving ()": 1,
+        "Kris Abrams-Draine (CBN)": 1,
+        "Jaden Hicks ()": 1
+      },
       "availablePlayers": [
         "Erick All",
         "Jaheim Bell",
@@ -68108,7 +68973,11 @@
       "traded": true
     },
     "128": {
-      "picked": { "Audric Estime (RB)": 1, "Will Shipley (RB)": 1, "Tommy Eichenberg (ILB)": 1 },
+      "picked": {
+        "Audric Estime (RB)": 1,
+        "Will Shipley (RB)": 1,
+        "Tommy Eichenberg (ILB)": 1
+      },
       "availablePlayers": [
         "Myles Cole",
         "Erick All",
@@ -68291,7 +69160,11 @@
       "traded": true
     },
     "160": {
-      "picked": { "Ladarius Henderson (OT)": 2, "Jaylin Simpson (CB)": 1, "Micah Abraham ()": 1 },
+      "picked": {
+        "Ladarius Henderson (OT)": 2,
+        "Jaylin Simpson (CB)": 1,
+        "Micah Abraham ()": 1
+      },
       "availablePlayers": [
         "Javon Baker",
         "Dillon Johnson",
@@ -68695,7 +69568,11 @@
       "traded": true
     },
     "223": {
-      "picked": { "Ethan Driskell ()": 3, "Theo Johnson (TE)": 2, "Ladarius Henderson (OT)": 1 },
+      "picked": {
+        "Ethan Driskell ()": 3,
+        "Theo Johnson (TE)": 2,
+        "Ladarius Henderson (OT)": 1
+      },
       "availablePlayers": [
         "Quincy Riley",
         "Trey Knox",
@@ -68737,9 +69614,19 @@
       "availablePlayers": [],
       "traded": true
     },
-    "236": { "picked": { "Andru Phillips (CB)": 2, "Eric Gentry (OLB)": 1 }, "availablePlayers": [], "traded": true },
+    "236": {
+      "picked": { "Andru Phillips (CB)": 2, "Eric Gentry (OLB)": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
     "237": {
-      "picked": { "Jah Joyner ()": 2, "Tory Taylor (P)": 1, "Noah Daniels ()": 1, "Trey Knox ()": 1, "Ethan Driskell ()": 1 },
+      "picked": {
+        "Jah Joyner ()": 2,
+        "Tory Taylor (P)": 1,
+        "Noah Daniels ()": 1,
+        "Trey Knox ()": 1,
+        "Ethan Driskell ()": 1
+      },
       "availablePlayers": ["Austin Reed"],
       "traded": false
     },
@@ -68801,7 +69688,11 @@
       "availablePlayers": [],
       "traded": true
     },
-    "245": { "picked": { "Mason McCormick (OG)": 2, "Jontrey Hunter (OLB)": 1 }, "availablePlayers": [], "traded": true },
+    "245": {
+      "picked": { "Mason McCormick (OG)": 2, "Jontrey Hunter (OLB)": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
     "246": {
       "picked": {
         "Malcolm Ray ()": 1,
@@ -68833,7 +69724,11 @@
       "availablePlayers": [],
       "traded": true
     },
-    "249": { "picked": { "Emani Bailey (RB)": 1, "Jaxon Janke ()": 1 }, "availablePlayers": [], "traded": true },
+    "249": {
+      "picked": { "Emani Bailey (RB)": 1, "Jaxon Janke ()": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
     "250": {
       "picked": {
         "Dwight McFlothern ()": 1,
@@ -68849,7 +69744,12 @@
     },
     "251": {
       "picked": { "Andru Phillips (CB)": 1 },
-      "availablePlayers": ["Daequan Hardy", "Gavin Hardison", "Joshua Cephus", "Tyrice Knight"],
+      "availablePlayers": [
+        "Daequan Hardy",
+        "Gavin Hardison",
+        "Joshua Cephus",
+        "Tyrice Knight"
+      ],
       "traded": false
     },
     "fullName": "Houston Texans"
@@ -70380,7 +71280,12 @@
         "Jamari Thrash (WR)": 1,
         "Tyler Nubin (S)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Malik Mustapha", "Nehemiah Pritchett", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Malik Mustapha",
+        "Nehemiah Pritchett",
+        "Theo Johnson"
+      ],
       "traded": true
     },
     "114": {
@@ -70422,7 +71327,11 @@
       "traded": true
     },
     "115": {
-      "picked": { "Nelson Ceaser ()": 1, "Darius Robinson (DL5T)": 1, "Braelon Allen (RB)": 1 },
+      "picked": {
+        "Nelson Ceaser ()": 1,
+        "Darius Robinson (DL5T)": 1,
+        "Braelon Allen (RB)": 1
+      },
       "availablePlayers": [
         "Brandon Coleman",
         "Jordan Travis",
@@ -70523,7 +71432,11 @@
       "traded": false
     },
     "117": {
-      "picked": { "Jaylan Ford (ILB)": 1, "Jalyx Hunt ()": 1, "Sataoa Laumea (OT)": 1 },
+      "picked": {
+        "Jaylan Ford (ILB)": 1,
+        "Jalyx Hunt ()": 1,
+        "Sataoa Laumea (OT)": 1
+      },
       "availablePlayers": [
         "Brandon Coleman",
         "Jordan Travis",
@@ -70976,7 +71889,12 @@
       "traded": true
     },
     "152": {
-      "picked": { "Tommy Eichenberg (ILB)": 1, "Austin Booker ()": 1, "Austin Reed (QB)": 1, "Malachi Moore (S)": 1 },
+      "picked": {
+        "Tommy Eichenberg (ILB)": 1,
+        "Austin Booker ()": 1,
+        "Austin Reed (QB)": 1,
+        "Malachi Moore (S)": 1
+      },
       "availablePlayers": [
         "Zion Tupuola-Fetui",
         "Edefuan Ulofoshio",
@@ -71169,7 +72087,11 @@
       "traded": true
     },
     "178": {
-      "picked": { "Keith Randolph Jr. (DL3T)": 1, "Cody Schrader (RB)": 2, "Trevin Wallace (ILB)": 1 },
+      "picked": {
+        "Keith Randolph Jr. (DL3T)": 1,
+        "Cody Schrader (RB)": 2,
+        "Trevin Wallace (ILB)": 1
+      },
       "availablePlayers": [
         "Drake Nugent",
         "A.J. Barner",
@@ -71275,7 +72197,12 @@
         "Kingsley Eguakun ()": 1,
         "Jackson Sirmon ()": 1
       },
-      "availablePlayers": ["Miyan Williams", "Darius Muasau", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Darius Muasau",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "210": {
@@ -71375,9 +72302,19 @@
       "availablePlayers": [],
       "traded": true
     },
-    "234": { "picked": { "Tanor Bortolini (OC)": 2, "Xavier Thomas (EDGE)": 1 }, "availablePlayers": [], "traded": true },
+    "234": {
+      "picked": { "Tanor Bortolini (OC)": 2, "Xavier Thomas (EDGE)": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
     "235": {
-      "picked": { "Jaden Davis ()": 1, "Andru Phillips (CB)": 1, "Devin Kirkwood ()": 3, "Noah Daniels ()": 1, "Austin Booker ()": 1 },
+      "picked": {
+        "Jaden Davis ()": 1,
+        "Andru Phillips (CB)": 1,
+        "Devin Kirkwood ()": 3,
+        "Noah Daniels ()": 1,
+        "Austin Booker ()": 1
+      },
       "availablePlayers": [],
       "traded": false
     },
@@ -71392,7 +72329,11 @@
       "availablePlayers": ["DeMonte Capehart"],
       "traded": true
     },
-    "256": { "picked": { "Jake Briningstool ()": 3, "Joshua Cephus ()": 1 }, "availablePlayers": [], "traded": true },
+    "256": {
+      "picked": { "Jake Briningstool ()": 3, "Joshua Cephus ()": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
     "fullName": "Jacksonville Jaguars"
   },
   "LAR": {
@@ -72385,7 +73326,12 @@
       "traded": true
     },
     "51": {
-      "picked": { "Tyler Nubin (S)": 1, "Jonathon Brooks (RB)": 1, "Calen Bullock (S)": 1, "Kiran Amegadjie (OT)": 1 },
+      "picked": {
+        "Tyler Nubin (S)": 1,
+        "Jonathon Brooks (RB)": 1,
+        "Calen Bullock (S)": 1,
+        "Kiran Amegadjie (OT)": 1
+      },
       "availablePlayers": [
         "Ruke Orhorhoro",
         "Sedrick Van Pran",
@@ -72867,7 +73813,13 @@
         "Kris Abrams-Draine (CBN)": 1,
         "Christian Haynes (OG)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Malik Mustapha", "Nehemiah Pritchett", "Kitan Oladapo", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Malik Mustapha",
+        "Nehemiah Pritchett",
+        "Kitan Oladapo",
+        "Theo Johnson"
+      ],
       "traded": false
     },
     "86": {
@@ -73765,7 +74717,11 @@
       "traded": true
     },
     "154": {
-      "picked": { "Jaylen Nichols ()": 1, "Dylan Laube (RB)": 1, "Drake Nugent (OC)": 1 },
+      "picked": {
+        "Jaylen Nichols ()": 1,
+        "Dylan Laube (RB)": 1,
+        "Drake Nugent (OC)": 1
+      },
       "availablePlayers": [
         "Nathaniel Watson",
         "Brevyn Spann-Ford",
@@ -73790,7 +74746,12 @@
       "traded": false
     },
     "155": {
-      "picked": { "Justin Walley ()": 2, "Christian Jones (OT)": 2, "Taulia Tagovailoa (QB)": 2, "JD Bertrand ()": 1 },
+      "picked": {
+        "Justin Walley ()": 2,
+        "Christian Jones (OT)": 2,
+        "Taulia Tagovailoa (QB)": 2,
+        "JD Bertrand ()": 1
+      },
       "availablePlayers": [
         "Ty'Ron Hopper",
         "Walter Rouse",
@@ -73909,7 +74870,12 @@
       "traded": true
     },
     "157": {
-      "picked": { "Justin Rogers (DL1T)": 1, "Dallin Holker (TE)": 1, "Sincere Haynesworth (OC)": 1, "Nehemiah Pritchett (CB)": 1 },
+      "picked": {
+        "Justin Rogers (DL1T)": 1,
+        "Dallin Holker (TE)": 1,
+        "Sincere Haynesworth (OC)": 1,
+        "Nehemiah Pritchett (CB)": 1
+      },
       "availablePlayers": [
         "Jaylin Simpson",
         "Cody Schrader",
@@ -74152,7 +75118,13 @@
       "traded": true
     },
     "188": {
-      "picked": { "Marshawn Lloyd ()": 1, "MJ Devonshire ()": 2, "Power Echols ()": 2, "Akeem Dent (S)": 1, "Sione Vaki ()": 1 },
+      "picked": {
+        "Marshawn Lloyd ()": 1,
+        "MJ Devonshire ()": 2,
+        "Power Echols ()": 2,
+        "Akeem Dent (S)": 1,
+        "Sione Vaki ()": 1
+      },
       "availablePlayers": [
         "Brennan Jackson",
         "Brant Kuithe",
@@ -74235,7 +75207,13 @@
         "Layden Robinson (OG)": 1,
         "Gabe Hall (DL3T)": 1
       },
-      "availablePlayers": ["Miyan Williams", "Kingsley Eguakun", "Darius Muasau", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Kingsley Eguakun",
+        "Darius Muasau",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "195": {
@@ -74355,7 +75333,12 @@
       "traded": true
     },
     "213": {
-      "picked": { "JD Bertrand ()": 1, "Grayson Murphy (EDGE)": 1, "Michael Barrett ()": 1, "Benjamin Yurosek (TE)": 1 },
+      "picked": {
+        "JD Bertrand ()": 1,
+        "Grayson Murphy (EDGE)": 1,
+        "Michael Barrett ()": 1,
+        "Benjamin Yurosek (TE)": 1
+      },
       "availablePlayers": [
         "Sheridan Jones",
         "Zion Tupuola-Fetui",
@@ -74465,7 +75448,12 @@
       "traded": false
     },
     "221": {
-      "picked": { "Jaden Crumedy (DL3T)": 1, "Matthew Jones (OG)": 1, "Stefon Thompson ()": 1, "Trevor Keegan ()": 1 },
+      "picked": {
+        "Jaden Crumedy (DL3T)": 1,
+        "Matthew Jones (OG)": 1,
+        "Stefon Thompson ()": 1,
+        "Trevor Keegan ()": 1
+      },
       "availablePlayers": [
         "Maurice Smith",
         "Marcus Harris",
@@ -74554,7 +75542,11 @@
       "availablePlayers": [],
       "traded": true
     },
-    "256": { "picked": { "Tahj Washington (WRS)": 1 }, "availablePlayers": [], "traded": true },
+    "256": {
+      "picked": { "Tahj Washington (WRS)": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
     "fullName": "Los Angeles Rams"
   },
   "CAR": {
@@ -75617,7 +76609,11 @@
       "traded": true
     },
     "102": {
-      "picked": { "Theo Johnson (TE)": 1, "Mohamed Kamara (EDGE)": 1, "Brandon Dorlus (DL3T)": 1 },
+      "picked": {
+        "Theo Johnson (TE)": 1,
+        "Mohamed Kamara (EDGE)": 1,
+        "Brandon Dorlus (DL3T)": 1
+      },
       "availablePlayers": [
         "Nelson Ceaser",
         "Ray Davis",
@@ -76651,7 +77647,14 @@
         "AJ Barner ()": 1,
         "Javon Baker (WR)": 1
       },
-      "availablePlayers": ["Miyan Williams", "Kingsley Eguakun", "Darius Muasau", "Tanor Bortolini", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Kingsley Eguakun",
+        "Darius Muasau",
+        "Tanor Bortolini",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "219": {
@@ -76699,7 +77702,12 @@
       "traded": true
     },
     "222": {
-      "picked": { "Brevyn Spann-Ford (TE)": 2, "Trevor Keegan ()": 1, "Marcus Harris (DL3T)": 1, "Isaiah Neyor ()": 1 },
+      "picked": {
+        "Brevyn Spann-Ford (TE)": 2,
+        "Trevor Keegan ()": 1,
+        "Marcus Harris (DL3T)": 1,
+        "Isaiah Neyor ()": 1
+      },
       "availablePlayers": [
         "Maurice Smith",
         "Dylan McMahon",
@@ -78167,7 +79175,12 @@
       "traded": true
     },
     "110": {
-      "picked": { "Darick Vann ()": 1, "Beaux Limmer (OC)": 1, "Nelson Ceaser ()": 1, "Josh Newton (CB)": 1 },
+      "picked": {
+        "Darick Vann ()": 1,
+        "Beaux Limmer (OC)": 1,
+        "Nelson Ceaser ()": 1,
+        "Josh Newton (CB)": 1
+      },
       "availablePlayers": [
         "Jaylan Ford",
         "Erick All",
@@ -78698,7 +79711,11 @@
       "traded": true
     },
     "142": {
-      "picked": { "Nathan Thomas (OT)": 1, "Theo Johnson (TE)": 1, "Charles Turner III ()": 1 },
+      "picked": {
+        "Nathan Thomas (OT)": 1,
+        "Theo Johnson (TE)": 1,
+        "Charles Turner III ()": 1
+      },
       "availablePlayers": [
         "Jeremy Flax",
         "Keith Randolph Jr.",
@@ -79444,7 +80461,12 @@
       "traded": true
     },
     "188": {
-      "picked": { "Jarrian Jones (CB)": 1, "Josh Proctor (S)": 1, "Trevor Keegan ()": 1, "Ladarius Henderson (OT)": 1 },
+      "picked": {
+        "Jarrian Jones (CB)": 1,
+        "Josh Proctor (S)": 1,
+        "Trevor Keegan ()": 1,
+        "Ladarius Henderson (OT)": 1
+      },
       "availablePlayers": [
         "Khalid Duke",
         "Kingsley Eguakun",
@@ -79686,7 +80708,12 @@
       "traded": true
     },
     "201": {
-      "picked": { "Jaylen Harrell (EDGE)": 2, "Braiden McGregor ()": 2, "Kimani Vidal ()": 1, "Nathan Thomas (OT)": 1 },
+      "picked": {
+        "Jaylen Harrell (EDGE)": 2,
+        "Braiden McGregor ()": 2,
+        "Kimani Vidal ()": 1,
+        "Nathan Thomas (OT)": 1
+      },
       "availablePlayers": [
         "David Ugwoegbu",
         "Kenny Logan Jr.",
@@ -79917,7 +80944,13 @@
       "traded": true
     },
     "244": {
-      "picked": { "BJ Mayes ()": 1, "Daequan Hardy ()": 1, "Maurice Smith ()": 1, "Myles Cole (EDGE)": 1, "Kedon Slovis ()": 1 },
+      "picked": {
+        "BJ Mayes ()": 1,
+        "Daequan Hardy ()": 1,
+        "Maurice Smith ()": 1,
+        "Myles Cole (EDGE)": 1,
+        "Kedon Slovis ()": 1
+      },
       "availablePlayers": ["DeMonte Capehart"],
       "traded": true
     },
@@ -81309,7 +82342,13 @@
         "Brenden Rice (WR)": 1,
         "Blake Fisher (OT)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Malik Mustapha", "Nehemiah Pritchett", "Kitan Oladapo", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Malik Mustapha",
+        "Nehemiah Pritchett",
+        "Kitan Oladapo",
+        "Theo Johnson"
+      ],
       "traded": true
     },
     "118": {
@@ -81930,7 +82969,12 @@
       "traded": true
     },
     "201": {
-      "picked": { "Jase McClellan (RB)": 1, "Akeem Dent (S)": 2, "Myles Harden ()": 1, "Jeremy Flax ()": 1 },
+      "picked": {
+        "Jase McClellan (RB)": 1,
+        "Akeem Dent (S)": 2,
+        "Myles Harden ()": 1,
+        "Jeremy Flax ()": 1
+      },
       "availablePlayers": [
         "Malik Mustapha",
         "Andrew Coker",
@@ -82106,7 +83150,11 @@
       "traded": true
     },
     "244": {
-      "picked": { "Renardo Green (CB)": 1, "Zion Logue (DL3T)": 1, "Davon Ferguson ()": 1 },
+      "picked": {
+        "Renardo Green (CB)": 1,
+        "Zion Logue (DL3T)": 1,
+        "Davon Ferguson ()": 1
+      },
       "availablePlayers": [],
       "traded": true
     },
@@ -82134,7 +83182,12 @@
     },
     "252": {
       "picked": { "Luke McCaffrey (WR)": 1 },
-      "availablePlayers": ["Brevyn Spann-Ford", "Jaheim Thomas", "Jadon Janke", "Trente Jones"],
+      "availablePlayers": [
+        "Brevyn Spann-Ford",
+        "Jaheim Thomas",
+        "Jadon Janke",
+        "Trente Jones"
+      ],
       "traded": true
     },
     "254": {
@@ -82163,8 +83216,16 @@
       "availablePlayers": [],
       "traded": true
     },
-    "255": { "picked": { "Kendall Milton (RB)": 2, "Tatum Bethune (OLB)": 1 }, "availablePlayers": [], "traded": true },
-    "256": { "picked": { "Trente Jones ()": 1 }, "availablePlayers": [], "traded": true },
+    "255": {
+      "picked": { "Kendall Milton (RB)": 2, "Tatum Bethune (OLB)": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
+    "256": {
+      "picked": { "Trente Jones ()": 1 },
+      "availablePlayers": [],
+      "traded": true
+    },
     "fullName": "Tampa Bay Buccaneers"
   },
   "IND": {
@@ -84251,7 +85312,14 @@
         "Mekhi Wingo (DL3T)": 1,
         "Ricky Pearsall (WR)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Malik Mustapha", "Delmar Glaze", "Nehemiah Pritchett", "Kitan Oladapo", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Malik Mustapha",
+        "Delmar Glaze",
+        "Nehemiah Pritchett",
+        "Kitan Oladapo",
+        "Theo Johnson"
+      ],
       "traded": false
     },
     "98": {
@@ -84602,7 +85670,11 @@
       "traded": true
     },
     "118": {
-      "picked": { "Marshawn Kneeland (EDGE)": 1, "Daijun Edwards ()": 1, "Brandon Coleman (OG)": 1 },
+      "picked": {
+        "Marshawn Kneeland (EDGE)": 1,
+        "Daijun Edwards ()": 1,
+        "Brandon Coleman (OG)": 1
+      },
       "availablePlayers": [
         "Jordan Travis",
         "Tommy Eichenberg",
@@ -84691,7 +85763,11 @@
       "traded": true
     },
     "150": {
-      "picked": { "Marcus Harris (DL3T)": 1, "Ben Sinnott (TE)": 1, "Jaylen Harrell (EDGE)": 1 },
+      "picked": {
+        "Marcus Harris (DL3T)": 1,
+        "Ben Sinnott (TE)": 1,
+        "Jaylen Harrell (EDGE)": 1
+      },
       "availablePlayers": [
         "Isaiah Davis",
         "Andrew Raym",
@@ -84925,7 +86001,12 @@
       "traded": true
     },
     "153": {
-      "picked": { "Theo Johnson (TE)": 2, "Sincere Haynesworth (OC)": 1, "Luke McCaffrey (WR)": 1, "Ty'Ron Hopper (OLB)": 1 },
+      "picked": {
+        "Theo Johnson (TE)": 2,
+        "Sincere Haynesworth (OC)": 1,
+        "Luke McCaffrey (WR)": 1,
+        "Ty'Ron Hopper (OLB)": 1
+      },
       "availablePlayers": [
         "Jaylin Simpson",
         "Cody Schrader",
@@ -85102,7 +86183,13 @@
         "Joe Milton III (QB)": 1,
         "Justin Eboigbe (DL5T)": 1
       },
-      "availablePlayers": ["Miyan Williams", "Kingsley Eguakun", "Darius Muasau", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Kingsley Eguakun",
+        "Darius Muasau",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "231": {
@@ -85134,9 +86221,23 @@
       "availablePlayers": [],
       "traded": true
     },
-    "232": { "picked": { "J.D. Bertrand ()": 1, "Jaden Crumedy (DL3T)": 1, "Mark Perry (S)": 1 }, "availablePlayers": [], "traded": true },
+    "232": {
+      "picked": {
+        "J.D. Bertrand ()": 1,
+        "Jaden Crumedy (DL3T)": 1,
+        "Mark Perry (S)": 1
+      },
+      "availablePlayers": [],
+      "traded": true
+    },
     "233": {
-      "picked": { "Quincy Riley (CB)": 2, "Tip Reiman ()": 1, "Trey Knox ()": 2, "Devin Kirkwood ()": 1, "Jah Joyner ()": 1 },
+      "picked": {
+        "Quincy Riley (CB)": 2,
+        "Tip Reiman ()": 1,
+        "Trey Knox ()": 2,
+        "Devin Kirkwood ()": 1,
+        "Jah Joyner ()": 1
+      },
       "availablePlayers": ["Noah Daniels"],
       "traded": false
     },
@@ -88666,7 +89767,13 @@
         "Beaux Limmer (OC)": 1,
         "Michael Pratt (QB)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Malik Mustapha", "Nehemiah Pritchett", "Kitan Oladapo", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Malik Mustapha",
+        "Nehemiah Pritchett",
+        "Kitan Oladapo",
+        "Theo Johnson"
+      ],
       "traded": true
     },
     "92": {
@@ -89319,7 +90426,11 @@
       "traded": true
     },
     "137": {
-      "picked": { "Trevor Keegan ()": 1, "Tommy Eichenberg (ILB)": 1, "Jaheim Bell (TE)": 1 },
+      "picked": {
+        "Trevor Keegan ()": 1,
+        "Tommy Eichenberg (ILB)": 1,
+        "Jaheim Bell (TE)": 1
+      },
       "availablePlayers": [
         "Marcus Harris",
         "Jeremy Flax",
@@ -89462,7 +90573,12 @@
       "traded": true
     },
     "140": {
-      "picked": { "Andrew Coker (OT)": 2, "Brandon Coleman (OG)": 1, "Jordan Travis (QB)": 1, "Keith Randolph Jr. (DL3T)": 1 },
+      "picked": {
+        "Andrew Coker (OT)": 2,
+        "Brandon Coleman (OG)": 1,
+        "Jordan Travis (QB)": 1,
+        "Keith Randolph Jr. (DL3T)": 1
+      },
       "availablePlayers": [
         "Dallin Holker",
         "McCallan Castles",
@@ -89563,7 +90679,12 @@
       "traded": true
     },
     "154": {
-      "picked": { "Roger Rosengarten (OT)": 1, "Malik Washington (WRS)": 1, "Sam Hartman (QB)": 1, "Brevyn Spann-Ford (TE)": 1 },
+      "picked": {
+        "Roger Rosengarten (OT)": 1,
+        "Malik Washington (WRS)": 1,
+        "Sam Hartman (QB)": 1,
+        "Brevyn Spann-Ford (TE)": 1
+      },
       "availablePlayers": [
         "Josh Proctor",
         "Javon Baker",
@@ -90040,7 +91161,14 @@
         "Zion Tupuola-Fetui (EDGE)": 2,
         "Braiden McGregor ()": 1
       },
-      "availablePlayers": ["Miyan Williams", "Kingsley Eguakun", "Darius Muasau", "Tanor Bortolini", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Kingsley Eguakun",
+        "Darius Muasau",
+        "Tanor Bortolini",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "221": {
@@ -90063,7 +91191,11 @@
       "traded": true
     },
     "222": {
-      "picked": { "M.J. Devonshire (CB)": 1, "Sam Hartman (QB)": 1, "Andrew Coker (OT)": 1 },
+      "picked": {
+        "M.J. Devonshire (CB)": 1,
+        "Sam Hartman (QB)": 1,
+        "Andrew Coker (OT)": 1
+      },
       "availablePlayers": ["Zion Logue"],
       "traded": true
     },
@@ -90093,7 +91225,11 @@
       "traded": false
     },
     "224": {
-      "picked": { "A.J. Barner (TE)": 1, "Isaiah Neyor ()": 1, "X'Zauvea Gadlin ()": 1 },
+      "picked": {
+        "A.J. Barner (TE)": 1,
+        "Isaiah Neyor ()": 1,
+        "X'Zauvea Gadlin ()": 1
+      },
       "availablePlayers": ["Zion Logue"],
       "traded": true
     },
@@ -90126,7 +91262,12 @@
       "traded": true
     },
     "240": {
-      "picked": { "Nathan Thomas (OT)": 4, "Rusty Staats ()": 1, "Jalyx Hunt ()": 1, "Trevin Wallace (ILB)": 4 },
+      "picked": {
+        "Nathan Thomas (OT)": 4,
+        "Rusty Staats ()": 1,
+        "Jalyx Hunt ()": 1,
+        "Trevin Wallace (ILB)": 4
+      },
       "availablePlayers": [],
       "traded": true
     },
@@ -90802,7 +91943,11 @@
       "traded": true
     },
     "107": {
-      "picked": { "Chau Smith-Wade (CB)": 1, "Ray Davis (RB)": 1, "Johnny Wilson (WR)": 1 },
+      "picked": {
+        "Chau Smith-Wade (CB)": 1,
+        "Ray Davis (RB)": 1,
+        "Johnny Wilson (WR)": 1
+      },
       "availablePlayers": [
         "Johnny Dixon",
         "Josh Proctor",
@@ -91952,7 +93097,12 @@
       "traded": true
     },
     "159": {
-      "picked": { "Zion Tupuola-Fetui (EDGE)": 2, "Delmar Glaze ()": 1, "Javion Cohen (OG)": 1, "Jaylan Ford (ILB)": 1 },
+      "picked": {
+        "Zion Tupuola-Fetui (EDGE)": 2,
+        "Delmar Glaze ()": 1,
+        "Javion Cohen (OG)": 1,
+        "Jaylan Ford (ILB)": 1
+      },
       "availablePlayers": [
         "Dillon Johnson",
         "Nathaniel Watson",
@@ -92540,7 +93690,14 @@
         "Jaylen Harrell (EDGE)": 1,
         "Caedan Wallace (OT)": 1
       },
-      "availablePlayers": ["Miyan Williams", "Kingsley Eguakun", "Darius Muasau", "Tanor Bortolini", "Zion Logue", "Kenny Logan Jr."],
+      "availablePlayers": [
+        "Miyan Williams",
+        "Kingsley Eguakun",
+        "Darius Muasau",
+        "Tanor Bortolini",
+        "Zion Logue",
+        "Kenny Logan Jr."
+      ],
       "traded": true
     },
     "186": {
@@ -92832,7 +93989,13 @@
       "traded": true
     },
     "228": {
-      "picked": { "Rasheen Ali (RB)": 1, "Jase McClellan (RB)": 1, "Myles Jones ()": 1, "Isaiah Neyor ()": 1, "Miyan Williams (RB)": 1 },
+      "picked": {
+        "Rasheen Ali (RB)": 1,
+        "Jase McClellan (RB)": 1,
+        "Myles Jones ()": 1,
+        "Isaiah Neyor ()": 1,
+        "Miyan Williams (RB)": 1
+      },
       "availablePlayers": [
         "Maurice Smith",
         "Xavier Thomas",
@@ -94319,7 +95482,13 @@
         "Kris Abram ()": 1,
         "D.J. James (CB)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Malik Mustapha", "Nehemiah Pritchett", "Kitan Oladapo", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Malik Mustapha",
+        "Nehemiah Pritchett",
+        "Kitan Oladapo",
+        "Theo Johnson"
+      ],
       "traded": false
     },
     "94": {
@@ -94864,7 +96033,11 @@
       "traded": true
     },
     "121": {
-      "picked": { "Decamerion Richardson ()": 1, "Spencer Rattler (QB)": 2, "Ainias Smith (WRS)": 1 },
+      "picked": {
+        "Decamerion Richardson ()": 1,
+        "Spencer Rattler (QB)": 2,
+        "Ainias Smith (WRS)": 1
+      },
       "availablePlayers": [
         "Erick All",
         "Jaheim Bell",
@@ -95907,7 +97080,13 @@
       "traded": true
     },
     "198": {
-      "picked": { "Jared Wiley (TE)": 1, "Isaiah Davis (RB)": 1, "Isaiah Williams (WR)": 2, "JD Bertrand ()": 1, "Austin Stogner ()": 1 },
+      "picked": {
+        "Jared Wiley (TE)": 1,
+        "Isaiah Davis (RB)": 1,
+        "Isaiah Williams (WR)": 2,
+        "JD Bertrand ()": 1,
+        "Austin Stogner ()": 1
+      },
       "availablePlayers": [
         "David Ugwoegbu",
         "Kenny Logan Jr.",
@@ -96055,7 +97234,11 @@
       "traded": true
     },
     "238": {
-      "picked": { "Jaylen Harrell (EDGE)": 1, "Chad Lindberg ()": 1, "Xavier Weaver (WR)": 1 },
+      "picked": {
+        "Jaylen Harrell (EDGE)": 1,
+        "Chad Lindberg ()": 1,
+        "Xavier Weaver (WR)": 1
+      },
       "availablePlayers": [],
       "traded": true
     },
@@ -96104,8 +97287,16 @@
       "availablePlayers": ["DeMonte Capehart"],
       "traded": true
     },
-    "254": { "picked": { "KT Leveston ()": 1 }, "availablePlayers": ["Storm Duck", "Austin Jones"], "traded": true },
-    "255": { "picked": { "Christian Mahogany (OG)": 1 }, "availablePlayers": ["JonJon Vaughns"], "traded": true },
+    "254": {
+      "picked": { "KT Leveston ()": 1 },
+      "availablePlayers": ["Storm Duck", "Austin Jones"],
+      "traded": true
+    },
+    "255": {
+      "picked": { "Christian Mahogany (OG)": 1 },
+      "availablePlayers": ["JonJon Vaughns"],
+      "traded": true
+    },
     "fullName": "Pittsburgh Steelers"
   },
   "DAL": {
@@ -96751,7 +97942,13 @@
         "Trey Benson (RB)": 1,
         "Josh Newton (CB)": 1
       },
-      "availablePlayers": ["Jaylin Simpson", "Malik Mustapha", "Nehemiah Pritchett", "Kitan Oladapo", "Theo Johnson"],
+      "availablePlayers": [
+        "Jaylin Simpson",
+        "Malik Mustapha",
+        "Nehemiah Pritchett",
+        "Kitan Oladapo",
+        "Theo Johnson"
+      ],
       "traded": true
     },
     "124": {
@@ -97182,8 +98379,17 @@
       "traded": true
     },
     "173": {
-      "picked": { "LaDarius Henderson ()": 1, "Jarvis Brownlee Jr. (CB)": 1, "Ethan Driskell ()": 1, "MarShawn Lloyd (RB)": 1 },
-      "availablePlayers": ["Jawhar Jordan", "Kingsley Eguakun", "Darius Muasau"],
+      "picked": {
+        "LaDarius Henderson ()": 1,
+        "Jarvis Brownlee Jr. (CB)": 1,
+        "Ethan Driskell ()": 1,
+        "MarShawn Lloyd (RB)": 1
+      },
+      "availablePlayers": [
+        "Jawhar Jordan",
+        "Kingsley Eguakun",
+        "Darius Muasau"
+      ],
       "traded": true
     },
     "174": {
@@ -97319,7 +98525,12 @@
       "traded": true
     },
     "201": {
-      "picked": { "Demani Richardson (S)": 1, "Javon Baker (WR)": 1, "Drake Nugent (OC)": 1, "Jordan Whittington (WR)": 1 },
+      "picked": {
+        "Demani Richardson (S)": 1,
+        "Javon Baker (WR)": 1,
+        "Drake Nugent (OC)": 1,
+        "Jordan Whittington (WR)": 1
+      },
       "availablePlayers": [
         "Devin Leary",
         "Jha'Quan Jackson",
@@ -97466,7 +98677,11 @@
       "traded": true
     },
     "213": {
-      "picked": { "Steele Chambers (ILB)": 1, "Darius Muasau (ILB)": 1, "Dallin Holker (TE)": 1 },
+      "picked": {
+        "Steele Chambers (ILB)": 1,
+        "Darius Muasau (ILB)": 1,
+        "Dallin Holker (TE)": 1
+      },
       "availablePlayers": ["Zion Logue"],
       "traded": true
     },
@@ -97574,7 +98789,14 @@
     },
     "231": {
       "picked": { "Joshua Karty (PK)": 2 },
-      "availablePlayers": ["P.J. Jules", "Tanor Bortolini", "Andru Phillips", "Julian Pearl", "Mason McCormick", "Kendall Milton"],
+      "availablePlayers": [
+        "P.J. Jules",
+        "Tanor Bortolini",
+        "Andru Phillips",
+        "Julian Pearl",
+        "Mason McCormick",
+        "Kendall Milton"
+      ],
       "traded": true
     },
     "232": {
@@ -97618,7 +98840,11 @@
       "traded": true
     },
     "242": {
-      "picked": { "Dadrion Taylor-Demerson (CB)": 1, "McKade Mettauer ()": 1, "Braiden McGregor ()": 1 },
+      "picked": {
+        "Dadrion Taylor-Demerson (CB)": 1,
+        "McKade Mettauer ()": 1,
+        "Braiden McGregor ()": 1
+      },
       "availablePlayers": [],
       "traded": true
     },
@@ -97634,13 +98860,25 @@
       "availablePlayers": [],
       "traded": false
     },
-    "244": { "picked": { "Logan Lee (DL5T)": 1, "Ethan Driskell ()": 1 }, "availablePlayers": ["Prince Pines"], "traded": true },
-    "245": { "picked": { "Chris Morris ()": 4, "Nathaniel Watson (ILB)": 1 }, "availablePlayers": ["DeMonte Capehart"], "traded": true },
+    "244": {
+      "picked": { "Logan Lee (DL5T)": 1, "Ethan Driskell ()": 1 },
+      "availablePlayers": ["Prince Pines"],
+      "traded": true
+    },
+    "245": {
+      "picked": { "Chris Morris ()": 4, "Nathaniel Watson (ILB)": 1 },
+      "availablePlayers": ["DeMonte Capehart"],
+      "traded": true
+    },
     "fullName": "Dallas Cowboys"
   },
   "WSH": {
     "2": {
-      "picked": { "Caleb Williams (QB)": 3, "Malik Nabers (WR)": 2, "Marvin Harrison Jr. (WR)": 1 },
+      "picked": {
+        "Caleb Williams (QB)": 3,
+        "Malik Nabers (WR)": 2,
+        "Marvin Harrison Jr. (WR)": 1
+      },
       "availablePlayers": [
         "Drake Maye",
         "Olumuyiwa Fashanu",
@@ -98080,7 +99318,12 @@
       "traded": true
     },
     "40": {
-      "picked": { "Kris Jenkins (DL5T)": 3, "Kamren Kinchens (S)": 1, "Bralen Trice (EDGE)": 1, "Tyler Nubin (S)": 1 },
+      "picked": {
+        "Kris Jenkins (DL5T)": 3,
+        "Kamren Kinchens (S)": 1,
+        "Bralen Trice (EDGE)": 1,
+        "Tyler Nubin (S)": 1
+      },
       "availablePlayers": [
         "Adisa Isaac",
         "Graham Barton",
@@ -98442,7 +99685,12 @@
       "traded": true
     },
     "100": {
-      "picked": { "Tyler Davis (DL3T)": 1, "Marshawn Kneeland (EDGE)": 2, "Bucky Irving (RB)": 1, "Jamari Thrash (WR)": 1 },
+      "picked": {
+        "Tyler Davis (DL3T)": 1,
+        "Marshawn Kneeland (EDGE)": 2,
+        "Bucky Irving (RB)": 1,
+        "Jamari Thrash (WR)": 1
+      },
       "availablePlayers": [
         "Tyrice Knight",
         "Leonard Taylor III",
@@ -98744,7 +99992,12 @@
       "traded": true
     },
     "102": {
-      "picked": { "Audric Estime (RB)": 1, "Leonard Taylor III (DL3T)": 1, "Zak Zinter (OG)": 2, "Javon Solomon (EDGE)": 1 },
+      "picked": {
+        "Audric Estime (RB)": 1,
+        "Leonard Taylor III (DL3T)": 1,
+        "Zak Zinter (OG)": 2,
+        "Javon Solomon (EDGE)": 1
+      },
       "availablePlayers": [
         "Tyrice Knight",
         "Michael Pratt",

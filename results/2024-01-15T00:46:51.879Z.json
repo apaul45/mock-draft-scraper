@@ -293,7 +293,12 @@
       ]
     },
     "59": {
-      "picked": { "Ennis Rakestraw Jr. (CB)": 2, "Javon Bullard (S)": 2, "Cole Bishop (S)": 1, "Jaylan Ford (ILB)": 1 },
+      "picked": {
+        "Ennis Rakestraw Jr. (CB)": 2,
+        "Javon Bullard (S)": 2,
+        "Cole Bishop (S)": 1,
+        "Jaylan Ford (ILB)": 1
+      },
       "availablePlayers": [
         "Ja'Lynn Polk",
         "McKinnley Jackson",
@@ -370,7 +375,11 @@
       ]
     },
     "170": {
-      "picked": { "Tyrice Knight (ILB)": 1, "Braden Fiske (DL3T)": 1, "Christian Jones (OT)": 1 },
+      "picked": {
+        "Tyrice Knight (ILB)": 1,
+        "Braden Fiske (DL3T)": 1,
+        "Christian Jones (OT)": 1
+      },
       "availablePlayers": [
         "Sheridan Jones",
         "DeWayne Carter",
@@ -558,10 +567,21 @@
         "Cole Bishop (S)": 1,
         "Justin Walley": 1
       },
-      "availablePlayers": ["Jaylan Ford", "Josh Proctor", "Jase McClellan", "Justin Eboigbe", "Dominic Lovett"]
+      "availablePlayers": [
+        "Jaylan Ford",
+        "Josh Proctor",
+        "Jase McClellan",
+        "Justin Eboigbe",
+        "Dominic Lovett"
+      ]
     },
     "209": {
-      "picked": { "Bryson Nesbit (TE)": 1, "Bru McCoy": 1, "Keith Randolph": 1, "Devontez Walker (WR)": 1 },
+      "picked": {
+        "Bryson Nesbit (TE)": 1,
+        "Bru McCoy": 1,
+        "Keith Randolph": 1,
+        "Devontez Walker (WR)": 1
+      },
       "availablePlayers": ["De'Corian Clark"]
     },
     "215": {
@@ -1059,7 +1079,12 @@
       ]
     },
     "52": {
-      "picked": { "Kris Jenkins (DL5T)": 1, "Tommy Eichenberg (ILB)": 2, "Sedrick Van Pran (OC)": 1, "Ruke Orhorhoro (DL3T)": 1 },
+      "picked": {
+        "Kris Jenkins (DL5T)": 1,
+        "Tommy Eichenberg (ILB)": 2,
+        "Sedrick Van Pran (OC)": 1,
+        "Ruke Orhorhoro (DL3T)": 1
+      },
       "availablePlayers": [
         "Zach Frazier",
         "Jackson Powers-Johnson",
@@ -1356,11 +1381,26 @@
       ]
     },
     "200": {
-      "picked": { "Kenny Logan Jr. (S)": 1, "Joshua Gray (OT)": 1, "Tatum Bethune (OLB)": 1 },
-      "availablePlayers": ["Sheridan Jones", "J.J. Weaver", "Brevyn Spann-Ford", "Isaiah Williams"]
+      "picked": {
+        "Kenny Logan Jr. (S)": 1,
+        "Joshua Gray (OT)": 1,
+        "Tatum Bethune (OLB)": 1
+      },
+      "availablePlayers": [
+        "Sheridan Jones",
+        "J.J. Weaver",
+        "Brevyn Spann-Ford",
+        "Isaiah Williams"
+      ]
     },
     "207": {
-      "picked": { "Ainias Smith (WRS)": 1, "Dylan McMahon (OC)": 1, "Stefon Thompson": 1, "Tykee Smith (S)": 1, "Josh Proctor (S)": 1 },
+      "picked": {
+        "Ainias Smith (WRS)": 1,
+        "Dylan McMahon (OC)": 1,
+        "Stefon Thompson": 1,
+        "Tykee Smith (S)": 1,
+        "Josh Proctor (S)": 1
+      },
       "availablePlayers": []
     },
     "208": {
@@ -2283,13 +2323,24 @@
         "Desmond Evans"
       ]
     },
-    "253": { "picked": { "Carson Steele (RB)": 1, "Cobee Bryant (CB)": 2 }, "availablePlayers": [] },
-    "254": { "picked": { "Matt Goncalves (OT)": 1, "Khyree Jackson (CB)": 1 }, "availablePlayers": [] },
+    "253": {
+      "picked": { "Carson Steele (RB)": 1, "Cobee Bryant (CB)": 2 },
+      "availablePlayers": []
+    },
+    "254": {
+      "picked": { "Matt Goncalves (OT)": 1, "Khyree Jackson (CB)": 1 },
+      "availablePlayers": []
+    },
     "fullName": "New York Jets"
   },
   "CHI": {
     "1": {
-      "picked": { "Drake Maye (QB)": 2, "Marvin Harrison Jr. (WR)": 5, "Olumuyiwa Fashanu (OT)": 1, "Caleb Williams (QB)": 4 },
+      "picked": {
+        "Drake Maye (QB)": 2,
+        "Marvin Harrison Jr. (WR)": 5,
+        "Olumuyiwa Fashanu (OT)": 1,
+        "Caleb Williams (QB)": 4
+      },
       "availablePlayers": [
         "Malik Nabers",
         "Joe Alt",
@@ -4385,7 +4436,11 @@
       ]
     },
     "133": {
-      "picked": { "Beau Brade (S)": 1, "Marist Liufau (OLB)": 1, "Jo'quavious Marks": 1 },
+      "picked": {
+        "Beau Brade (S)": 1,
+        "Marist Liufau (OLB)": 1,
+        "Jo'quavious Marks": 1
+      },
       "availablePlayers": [
         "Joe Milton",
         "Gabriel Murphy",
@@ -4425,7 +4480,11 @@
       ]
     },
     "134": {
-      "picked": { "Brandon Coleman (OG)": 2, "Justin Walley": 1, "Jalen McMillian": 1 },
+      "picked": {
+        "Brandon Coleman (OG)": 2,
+        "Justin Walley": 1,
+        "Jalen McMillian": 1
+      },
       "availablePlayers": [
         "McCallan Castles",
         "Ainias Smith",
@@ -5760,7 +5819,11 @@
       ]
     },
     "168": {
-      "picked": { "Ray Davis (RB)": 1, "Christian Jones (OT)": 1, "Bryson Nesbit (TE)": 1 },
+      "picked": {
+        "Ray Davis (RB)": 1,
+        "Christian Jones (OT)": 1,
+        "Bryson Nesbit (TE)": 1
+      },
       "availablePlayers": [
         "Sheridan Jones",
         "DeWayne Carter",
@@ -6627,7 +6690,13 @@
     },
     "245": {
       "picked": { "Kendall Milton (RB)": 2 },
-      "availablePlayers": ["Tony Horton", "Johnny Dixon", "Dominic Lovett", "Khyree Jackson", "Matt Goncalves"]
+      "availablePlayers": [
+        "Tony Horton",
+        "Johnny Dixon",
+        "Dominic Lovett",
+        "Khyree Jackson",
+        "Matt Goncalves"
+      ]
     },
     "fullName": "Houston Texans"
   },
@@ -7356,7 +7425,11 @@
       ]
     },
     "155": {
-      "picked": { "Xavier Watts (S)": 1, "Jaylen Harrell (EDGE)": 1, "Jaden Hicks": 1 },
+      "picked": {
+        "Xavier Watts (S)": 1,
+        "Jaylen Harrell (EDGE)": 1,
+        "Jaden Hicks": 1
+      },
       "availablePlayers": [
         "Erick All",
         "Shemar Turner",
@@ -7456,11 +7529,25 @@
       ]
     },
     "214": {
-      "picked": { "Isaiah Davis (RB)": 1, "Cameron Ward": 1, "Tommy Brockermeyer": 1 },
-      "availablePlayers": ["Jake Briningstool", "De'Corian Clark", "Xavier Thomas"]
+      "picked": {
+        "Isaiah Davis (RB)": 1,
+        "Cameron Ward": 1,
+        "Tommy Brockermeyer": 1
+      },
+      "availablePlayers": [
+        "Jake Briningstool",
+        "De'Corian Clark",
+        "Xavier Thomas"
+      ]
     },
     "217": {
-      "picked": { "Lawrance Toafili": 1, "Marcus Harris (DL3T)": 1, "Joshua Gray (OT)": 1, "T.J. Tampa (CB)": 1, "Deantre Prince": 1 },
+      "picked": {
+        "Lawrance Toafili": 1,
+        "Marcus Harris (DL3T)": 1,
+        "Joshua Gray (OT)": 1,
+        "T.J. Tampa (CB)": 1,
+        "Deantre Prince": 1
+      },
       "availablePlayers": []
     },
     "218": {
@@ -7963,7 +8050,11 @@
       ]
     },
     "110": {
-      "picked": { "Jaheim Bell (TE)": 1, "Johnny Dixon (CB)": 1, "Spencer Rattler (QB)": 1 },
+      "picked": {
+        "Jaheim Bell (TE)": 1,
+        "Johnny Dixon (CB)": 1,
+        "Spencer Rattler (QB)": 1
+      },
       "availablePlayers": [
         "Cam Hart",
         "Isaiah Adams",
@@ -9489,7 +9580,14 @@
     },
     "244": {
       "picked": { "Billy Bowman": 1, "Montrell Johnson": 1 },
-      "availablePlayers": ["Kendall Milton", "Tony Horton", "Johnny Dixon", "Dominic Lovett", "Khyree Jackson", "Matt Goncalves"]
+      "availablePlayers": [
+        "Kendall Milton",
+        "Tony Horton",
+        "Johnny Dixon",
+        "Dominic Lovett",
+        "Khyree Jackson",
+        "Matt Goncalves"
+      ]
     },
     "fullName": "Tennessee Titans"
   },
@@ -10111,10 +10209,22 @@
         "Beaux Limmer (OC)": 1,
         "David Walker": 1
       },
-      "availablePlayers": ["Jaylan Ford", "Josh Proctor", "Jase McClellan", "Justin Eboigbe", "Dominic Lovett"]
+      "availablePlayers": [
+        "Jaylan Ford",
+        "Josh Proctor",
+        "Jase McClellan",
+        "Justin Eboigbe",
+        "Dominic Lovett"
+      ]
     },
     "123": {
-      "picked": { "Mike Sainristil (CB)": 1, "Drake Nugent (OC)": 1, "Cam Hart (CB)": 1, "JoJo Earle": 1, "Oronde Gadsden II (WR)": 1 },
+      "picked": {
+        "Mike Sainristil (CB)": 1,
+        "Drake Nugent (OC)": 1,
+        "Cam Hart (CB)": 1,
+        "JoJo Earle": 1,
+        "Oronde Gadsden II (WR)": 1
+      },
       "availablePlayers": [
         "Justin Walley",
         "Ainias Smith",

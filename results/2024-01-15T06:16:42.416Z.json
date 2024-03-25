@@ -427,7 +427,12 @@
       ]
     },
     "153": {
-      "picked": { "Dillon Johnson (RB)": 1, "Justin Eboigbe (DL5T)": 1, "Cam Hart (CB)": 2, "Jo'quavious Marks": 2 },
+      "picked": {
+        "Dillon Johnson (RB)": 1,
+        "Justin Eboigbe (DL5T)": 1,
+        "Cam Hart (CB)": 2,
+        "Jo'quavious Marks": 2
+      },
       "availablePlayers": [
         "Shemar Turner",
         "Jaylan Ford",
@@ -456,7 +461,13 @@
       "availablePlayers": ["Andrew Coker", "Fentrell Cypress"]
     },
     "171": {
-      "picked": { "Elijah Jones": 1, "Blake Watson (RB)": 2, "Jowon Briggs": 1, "M.J. Devonshire (CB)": 1, "LaMiles Brooks": 1 },
+      "picked": {
+        "Elijah Jones": 1,
+        "Blake Watson (RB)": 2,
+        "Jowon Briggs": 1,
+        "M.J. Devonshire (CB)": 1,
+        "LaMiles Brooks": 1
+      },
       "availablePlayers": [
         "Bryson Nesbit",
         "LaDarius Henderson",
@@ -2294,7 +2305,13 @@
       ]
     },
     "201": {
-      "picked": { "Khordae Sydnor": 1, "Traeshon Holden": 1, "Jaheim Thomas": 2, "Ro Torrence (CB)": 1, "Andrew Coker (OT)": 1 },
+      "picked": {
+        "Khordae Sydnor": 1,
+        "Traeshon Holden": 1,
+        "Jaheim Thomas": 2,
+        "Ro Torrence (CB)": 1,
+        "Andrew Coker (OT)": 1
+      },
       "availablePlayers": ["Michael Barrett", "Omar Speights"]
     },
     "240": {
@@ -2713,7 +2730,11 @@
       ]
     },
     "164": {
-      "picked": { "Sage Ryan (S)": 1, "Gabriel Murphy (EDGE)": 1, "Ruke Orhorhoro (DL3T)": 1 },
+      "picked": {
+        "Sage Ryan (S)": 1,
+        "Gabriel Murphy (EDGE)": 1,
+        "Ruke Orhorhoro (DL3T)": 1
+      },
       "availablePlayers": [
         "Devin Neal",
         "Roman Wilson",
@@ -2990,10 +3011,18 @@
       ]
     },
     "253": {
-      "picked": { "Dwight McGlothern (CB)": 1, "Andre Carter": 1, "Bru McCoy": 1, "Will Reichard (PK)": 4 },
+      "picked": {
+        "Dwight McGlothern (CB)": 1,
+        "Andre Carter": 1,
+        "Bru McCoy": 1,
+        "Will Reichard (PK)": 4
+      },
       "availablePlayers": []
     },
-    "254": { "picked": { "Dequan Finn": 2, "Isaiah Davis (RB)": 1 }, "availablePlayers": [] },
+    "254": {
+      "picked": { "Dequan Finn": 2, "Isaiah Davis (RB)": 1 },
+      "availablePlayers": []
+    },
     "fullName": "New York Jets"
   },
   "CHI": {
@@ -3942,7 +3971,12 @@
       ]
     },
     "124": {
-      "picked": { "Audric Estime (RB)": 2, "Beaux Limmer (OC)": 1, "Isaiah Adams (OG)": 1, "Harrison Mevis (PK)": 4 },
+      "picked": {
+        "Audric Estime (RB)": 2,
+        "Beaux Limmer (OC)": 1,
+        "Isaiah Adams (OG)": 1,
+        "Harrison Mevis (PK)": 4
+      },
       "availablePlayers": [
         "Curtis Jacobs",
         "Brevyn Spann-Ford",
@@ -3958,7 +3992,11 @@
       ]
     },
     "146": {
-      "picked": { "Leonard Taylor (DL3T)": 1, "Devaughn Vele": 1, "Malachi Corley (WR)": 1 },
+      "picked": {
+        "Leonard Taylor (DL3T)": 1,
+        "Devaughn Vele": 1,
+        "Malachi Corley (WR)": 1
+      },
       "availablePlayers": [
         "Garrett Greenfield",
         "McCallan Castles",
@@ -4354,8 +4392,18 @@
       ]
     },
     "185": {
-      "picked": { "Steve Linton": 1, "Kaden Prather": 1, "Tatum Bethune (OLB)": 1 },
-      "availablePlayers": ["Erick All", "Xavier Thomas", "Sam Hartman", "Dwight McGlothern", "Isaiah Davis"]
+      "picked": {
+        "Steve Linton": 1,
+        "Kaden Prather": 1,
+        "Tatum Bethune (OLB)": 1
+      },
+      "availablePlayers": [
+        "Erick All",
+        "Xavier Thomas",
+        "Sam Hartman",
+        "Dwight McGlothern",
+        "Isaiah Davis"
+      ]
     },
     "fullName": "New York Giants"
   },
@@ -5238,7 +5286,11 @@
       ]
     },
     "157": {
-      "picked": { "Javon Foster (OT)": 1, "Nehemiah Pritchett (CB)": 2, "Jackson Mitchell (OLB)": 1 },
+      "picked": {
+        "Javon Foster (OT)": 1,
+        "Nehemiah Pritchett (CB)": 2,
+        "Jackson Mitchell (OLB)": 1
+      },
       "availablePlayers": [
         "Shemar Turner",
         "Akeem Dent",
@@ -5328,7 +5380,11 @@
       ]
     },
     "162": {
-      "picked": { "Curtis Jacobs (OLB)": 1, "Anthony Belton (OT)": 1, "Sage Ryan (S)": 1 },
+      "picked": {
+        "Curtis Jacobs (OLB)": 1,
+        "Anthony Belton (OT)": 1,
+        "Sage Ryan (S)": 1
+      },
       "availablePlayers": [
         "Kiran Amegadjie",
         "Ruke Orhorhoro",
@@ -6030,7 +6086,12 @@
       ]
     },
     "87": {
-      "picked": { "Julian Pearl (OT)": 1, "Jonah Elliss (EDGE)": 1, "Adonai Mitchell (WR)": 1, "Brandon Dorlus (DL3T)": 1 },
+      "picked": {
+        "Julian Pearl (OT)": 1,
+        "Jonah Elliss (EDGE)": 1,
+        "Adonai Mitchell (WR)": 1,
+        "Brandon Dorlus (DL3T)": 1
+      },
       "availablePlayers": [
         "Tatum Bethune",
         "Jalen McMillan",
@@ -6186,7 +6247,11 @@
       ]
     },
     "161": {
-      "picked": { "Fabien Lovett (DL1T)": 1, "Antwane Wells Jr.": 1, "Keiondre Jones": 1 },
+      "picked": {
+        "Fabien Lovett (DL1T)": 1,
+        "Antwane Wells Jr.": 1,
+        "Keiondre Jones": 1
+      },
       "availablePlayers": [
         "Sage Ryan",
         "Kiran Amegadjie",
@@ -7275,7 +7340,14 @@
         "Christian Haynes (OG)": 1,
         "Justin Walley": 1
       },
-      "availablePlayers": ["Ainias Smith", "Curtis Jacobs", "Jaylan Ford", "Justin Eboigbe", "Xavier Thomas", "Tatum Bethune"]
+      "availablePlayers": [
+        "Ainias Smith",
+        "Curtis Jacobs",
+        "Jaylan Ford",
+        "Justin Eboigbe",
+        "Xavier Thomas",
+        "Tatum Bethune"
+      ]
     },
     "244": {
       "picked": { "Omar Speights (ILB)": 2, "Tanor Bortolini (OC)": 2 },
@@ -7971,7 +8043,13 @@
       ]
     },
     "53": {
-      "picked": { "T.J. Tampa (CB)": 3, "Kiran Amegadjie (OT)": 1, "Patrick Paul (OT)": 1, "Cooper Beebe (OG)": 1, "Ja'Lynn Polk (WR)": 1 },
+      "picked": {
+        "T.J. Tampa (CB)": 3,
+        "Kiran Amegadjie (OT)": 1,
+        "Patrick Paul (OT)": 1,
+        "Cooper Beebe (OG)": 1,
+        "Ja'Lynn Polk (WR)": 1
+      },
       "availablePlayers": [
         "Zach Frazier",
         "Michael Hall Jr.",
@@ -8200,10 +8278,21 @@
         "Beau Brade (S)": 1,
         "Spencer Rattler (QB)": 3
       },
-      "availablePlayers": ["Jaylan Ford", "Jaden Hicks", "Andrew Coker", "Fentrell Cypress", "Dwight McGlothern"]
+      "availablePlayers": [
+        "Jaylan Ford",
+        "Jaden Hicks",
+        "Andrew Coker",
+        "Fentrell Cypress",
+        "Dwight McGlothern"
+      ]
     },
     "155": {
-      "picked": { "Debo Williams": 1, "Spencer Rattler (QB)": 1, "Jaylan Ford (ILB)": 1, "Jaylen Harrell (EDGE)": 2 },
+      "picked": {
+        "Debo Williams": 1,
+        "Spencer Rattler (QB)": 1,
+        "Jaylan Ford (ILB)": 1,
+        "Jaylen Harrell (EDGE)": 2
+      },
       "availablePlayers": [
         "Shemar Turner",
         "Donovan Edwards",
@@ -8764,7 +8853,12 @@
       ]
     },
     "110": {
-      "picked": { "Maason Smith (DL3T)": 1, "Drake Nugent (OC)": 1, "Jaheim Bell (TE)": 1, "Jaden Hicks": 1 },
+      "picked": {
+        "Maason Smith (DL3T)": 1,
+        "Drake Nugent (OC)": 1,
+        "Jaheim Bell (TE)": 1,
+        "Jaden Hicks": 1
+      },
       "availablePlayers": [
         "Fentrell Cypress II",
         "Matt Goncalves",
@@ -9462,7 +9556,10 @@
         "Carson Steele"
       ]
     },
-    "237": { "picked": { "Patrick Jenkins": 1, "K.T. Leveston (OT)": 4 }, "availablePlayers": ["Michael Barrett", "J.J. Weaver"] },
+    "237": {
+      "picked": { "Patrick Jenkins": 1, "K.T. Leveston (OT)": 4 },
+      "availablePlayers": ["Michael Barrett", "J.J. Weaver"]
+    },
     "fullName": "Tampa Bay Buccaneers"
   },
   "IND": {
@@ -11011,7 +11108,12 @@
       ]
     },
     "121": {
-      "picked": { "Cade Stover (TE)": 1, "Marist Liufau (OLB)": 1, "Audric Estime (RB)": 1, "Johnny Dixon (CB)": 3 },
+      "picked": {
+        "Cade Stover (TE)": 1,
+        "Marist Liufau (OLB)": 1,
+        "Audric Estime (RB)": 1,
+        "Johnny Dixon (CB)": 3
+      },
       "availablePlayers": [
         "Layden Robinson",
         "Bryson Nesbit",
@@ -11057,7 +11159,12 @@
         "Beaux Limmer (OC)": 2,
         "Anthony Goodlow": 1
       },
-      "availablePlayers": ["Erick All", "Curtis Jacobs", "Jaylan Ford", "Justin Eboigbe"]
+      "availablePlayers": [
+        "Erick All",
+        "Curtis Jacobs",
+        "Jaylan Ford",
+        "Justin Eboigbe"
+      ]
     },
     "198": {
       "picked": {

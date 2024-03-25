@@ -1,6 +1,7 @@
 import axios from "axios";
 import { load } from "cheerio";
 import { readFileSync, readdirSync } from "fs";
+import Path from "path";
 
 enum Positions {
   Quarterback = "QB",
@@ -29,6 +30,10 @@ interface Player {
 interface Simulation {
   pickedFor?: string;
   players: Player[];
+}
+
+interface ProspectsWithADP extends Player {
+  ADP?: number;
 }
 
 function toTitleCase(str: string) {
@@ -61,7 +66,9 @@ function getTeams() {
 }
 
 async function getDraftOrder(teamsList: Teams) {
-  const res = await axios.get("https://www.tankathon.com/nfl/full_draft", { responseType: "document" });
+  const res = await axios.get("https://www.tankathon.com/nfl/full_draft", {
+    responseType: "document",
+  });
 
   const html = load(res.data);
 
@@ -82,12 +89,55 @@ function getDraftProspects(): Players {
   return JSON.parse(file);
 }
 
+function isDateInThisWeek(date: Date) {
+  const todayObj = new Date();
+  const todayDate = todayObj.getDate();
+  const todayDay = todayObj.getDay();
+
+  // get first date of week
+  const lastDayOfWeek = new Date(todayObj.setDate(todayDate - todayDay));
+
+  // get last date of week
+  const firstDayOfWeek = new Date(lastDayOfWeek);
+  firstDayOfWeek.setDate(lastDayOfWeek.getDate() - 6);
+
+  // if date is equal or within the first and last dates of the week
+  return date >= firstDayOfWeek && date <= lastDayOfWeek;
+}
+
+// Only use results from within the week
 function getMostRecentResult() {
-  const [{ name: mostRecentResult }] = readdirSync("./results", { withFileTypes: true }).slice(-1);
-  const file = readFileSync(`./results/${mostRecentResult}`, { encoding: "utf8" });
+  const [mostRecentResult] = readdirSync("./results").slice(-1);
+
+  // Result files formatted as {date as iso string}.json
+  const fileNameWithoutExt = Path.parse(mostRecentResult).name;
+  if (!isDateInThisWeek(new Date(fileNameWithoutExt))) return;
+
+  const file = readFileSync(`./results/${mostRecentResult}`, {
+    encoding: "utf8",
+  });
   const teamsList: Teams = JSON.parse(file);
 
   return teamsList;
+}
+
+// Only get sims from within the week
+function getMostRecentSimulations(): Simulation[] {
+  let fileNames = readdirSync("./simulations");
+
+  return fileNames
+    .filter((fileName) => {
+      const fileNameWithoutExt = Path.parse(fileName).name;
+      const fileDate = fileNameWithoutExt.split("_")[1];
+
+      return isDateInThisWeek(new Date(fileDate));
+    })
+    .map((fileName) => {
+      const data = readFileSync(`./simulations/${fileName}`, {
+        encoding: "utf8",
+      });
+      return JSON.parse(data);
+    });
 }
 
 export {
@@ -96,10 +146,12 @@ export {
   Players,
   Player,
   Simulation,
+  ProspectsWithADP,
   toTitleCase,
   removeParanthesis,
   getTeams,
   getDraftOrder,
   getDraftProspects,
   getMostRecentResult,
+  getMostRecentSimulations,
 };

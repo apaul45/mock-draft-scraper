@@ -22,23 +22,37 @@ async function scrapeNDF(page: Page) {
   await page.waitForSelector("text/Offer Trades", { hidden: true });
 
   await page.waitForSelector("text/Remaining picks", { visible: true });
-  const numberOfPicks = await page.$eval(".sc-gXmSlM.gMlgko", (el) => el.children.length);
+  const numberOfPicks = await page.$eval(
+    ".sc-gXmSlM.gMlgko",
+    (el) => el.children.length
+  );
 
   for (let i = 0; i < numberOfPicks; i++) {
-    await page.waitForSelector(".player-draft-btn", { visible: true, timeout: 100000 });
+    await page.waitForSelector(".player-draft-btn", {
+      visible: true,
+      timeout: 100000,
+    });
     // @ts-ignore
     await page.$eval(".player-draft-btn", (el) => el.click());
-    await page.waitForSelector(".player-draft-btn", { hidden: true, timeout: 80000 });
+    await page.waitForSelector(".player-draft-btn", {
+      hidden: true,
+      timeout: 80000,
+    });
 
     // Trade Popup stalls simulation, so remove if present
     const tradeOffer = await page.$("text/Offer Trades");
     if (tradeOffer) await page.click("text/Reject");
   }
 
-  await page.waitForSelector(".share-draft-wrap", { visible: true, timeout: 100000 });
+  await page.waitForSelector(".share-draft-wrap", {
+    visible: true,
+    timeout: 100000,
+  });
 
   let html = load(await page.content());
-  draft.pickedFor = html(".draft-result-pick-logo").first().children()[0].attribs["alt"];
+  draft.pickedFor = html(".draft-result-pick-logo")
+    .first()
+    .children()[0].attribs["alt"];
 
   for (let i = 1; i <= 7; i++) {
     await page.click(`text/Round ${i}`);

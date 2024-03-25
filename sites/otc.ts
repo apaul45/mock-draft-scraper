@@ -29,7 +29,10 @@ async function scrapeOTC(page: Page) {
 
   await page.waitForNavigation();
 
-  let randomTeam = await page.$eval(".team-select-name", (el) => el.textContent);
+  let randomTeam = await page.$eval(
+    ".team-select-name",
+    (el) => el.textContent
+  );
   randomTeam = toTitleCase(randomTeam as string);
 
   // 7 rounds, one page per round
@@ -46,10 +49,14 @@ async function scrapeOTC(page: Page) {
       .filter((el) => el.children[2].data.includes(randomTeam));
 
     for (let j = 0; j < teamPicks.length; j++) {
-      const div = await page.waitForSelector(".available-player-my-pick", { visible: true });
+      const div = await page.waitForSelector(".available-player-my-pick", {
+        visible: true,
+      });
       await div?.click();
 
-      const draftBtn = await page.waitForSelector("text/Draft this Player", { visible: true });
+      const draftBtn = await page.waitForSelector("text/Draft this Player", {
+        visible: true,
+      });
       draftBtn?.click();
 
       // Need to wait until pick is fully made to avoid missing the next one
@@ -57,7 +64,9 @@ async function scrapeOTC(page: Page) {
     }
 
     if (i < 7) {
-      const nextRdBtn = await page.waitForSelector("text/Next Round", { visible: true });
+      const nextRdBtn = await page.waitForSelector("text/Next Round", {
+        visible: true,
+      });
       nextRdBtn?.click();
     }
 

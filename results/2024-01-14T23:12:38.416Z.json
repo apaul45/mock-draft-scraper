@@ -182,7 +182,11 @@
       ]
     },
     "154": {
-      "picked": { "Ainias Smith (WRS)": 1, "Dylan McMahon (OC)": 1, "Jordan Burch (DL5T)": 1 },
+      "picked": {
+        "Ainias Smith (WRS)": 1,
+        "Dylan McMahon (OC)": 1,
+        "Jordan Burch (DL5T)": 1
+      },
       "availablePlayers": [
         "Jaheim Bell",
         "Jabari Small",
@@ -693,7 +697,14 @@
         "Joshua Gray"
       ]
     },
-    "164": { "picked": { "Marlowe Wax": 1, "Tory Horton (WR)": 2, "Warren Thompson": 4 }, "availablePlayers": ["Kamal Hadden"] },
+    "164": {
+      "picked": {
+        "Marlowe Wax": 1,
+        "Tory Horton (WR)": 2,
+        "Warren Thompson": 4
+      },
+      "availablePlayers": ["Kamal Hadden"]
+    },
     "fullName": "Kansas City Chiefs"
   },
   "GB": {
@@ -1060,7 +1071,11 @@
       ]
     },
     "153": {
-      "picked": { "Tatum Bethune (OLB)": 1, "Antwaun Powell-Ryland": 1, "Sione Vaki": 1 },
+      "picked": {
+        "Tatum Bethune (OLB)": 1,
+        "Antwaun Powell-Ryland": 1,
+        "Sione Vaki": 1
+      },
       "availablePlayers": [
         "Jordan Burch",
         "Jaheim Bell",
@@ -1128,7 +1143,11 @@
   },
   "MIA": {
     "23": {
-      "picked": { "Leonard Taylor (DL3T)": 1, "Maason Smith (DL3T)": 1, "Demeioun Robinson": 1 },
+      "picked": {
+        "Leonard Taylor (DL3T)": 1,
+        "Maason Smith (DL3T)": 1,
+        "Demeioun Robinson": 1
+      },
       "availablePlayers": [
         "Nate Wiggins",
         "Terrion Arnold",
@@ -1434,7 +1453,12 @@
       "availablePlayers": []
     },
     "202": {
-      "picked": { "Darius Muasau (ILB)": 1, "Omar Speights (ILB)": 2, "Steele Chambers (ILB)": 1, "Rasheen Ali (RB)": 2 },
+      "picked": {
+        "Darius Muasau (ILB)": 1,
+        "Omar Speights (ILB)": 2,
+        "Steele Chambers (ILB)": 1,
+        "Rasheen Ali (RB)": 2
+      },
       "availablePlayers": [
         "Zion Nelson",
         "Akheem Mesidor",
@@ -1459,7 +1483,14 @@
         "Nathaniel Watson"
       ]
     },
-    "241": { "picked": { "Ja'Quan Sheppard": 5, "Akeem Dent (S)": 1, "Michael Wiley": 1 }, "availablePlayers": [] },
+    "241": {
+      "picked": {
+        "Ja'Quan Sheppard": 5,
+        "Akeem Dent (S)": 1,
+        "Michael Wiley": 1
+      },
+      "availablePlayers": []
+    },
     "fullName": "Miami Dolphins"
   },
   "DET": {
@@ -1688,7 +1719,12 @@
       ]
     },
     "246": {
-      "picked": { "Brennan Armstrong": 2, "Willie Lampkin (OG)": 1, "Kendall Milton (RB)": 2, "Tony Horton": 1 },
+      "picked": {
+        "Brennan Armstrong": 2,
+        "Willie Lampkin (OG)": 1,
+        "Kendall Milton (RB)": 2,
+        "Tony Horton": 1
+      },
       "availablePlayers": []
     },
     "fullName": "Detroit Lions"
@@ -1917,7 +1953,13 @@
       ]
     },
     "187": {
-      "picked": { "Joshua Gray (OT)": 1, "Jacob Cowing (WRS)": 1, "Rasheen Ali (RB)": 2, "Justin Walley": 1, "Bru McCoy": 1 },
+      "picked": {
+        "Joshua Gray (OT)": 1,
+        "Jacob Cowing (WRS)": 1,
+        "Rasheen Ali (RB)": 2,
+        "Justin Walley": 1,
+        "Bru McCoy": 1
+      },
       "availablePlayers": [
         "Steve Linton",
         "Isaiah Davis",
@@ -2253,7 +2295,11 @@
       ]
     },
     "143": {
-      "picked": { "Luke Altmyer": 1, "Devin Leary (QB)": 2, "Ben Sinnott (TE)": 1 },
+      "picked": {
+        "Luke Altmyer": 1,
+        "Devin Leary (QB)": 2,
+        "Ben Sinnott (TE)": 1
+      },
       "availablePlayers": [
         "Ajani Cornelius",
         "Clark Barrington",
@@ -2548,7 +2594,12 @@
         "Miyan Williams (RB)": 1,
         "Javon Foster (OT)": 1
       },
-      "availablePlayers": ["Dwight McGlothern", "Xavier Thomas", "Tatum Bethune", "Zion Nelson"]
+      "availablePlayers": [
+        "Dwight McGlothern",
+        "Xavier Thomas",
+        "Tatum Bethune",
+        "Zion Nelson"
+      ]
     },
     "229": {
       "picked": {
@@ -2787,10 +2838,19 @@
       ]
     },
     "204": {
-      "picked": { "Jerrin Thompson": 3, "Desmond Evans": 1, "Miyan Williams (RB)": 1, "Jaylen Harrell (EDGE)": 1, "Nathan Thomas (OT)": 1 },
+      "picked": {
+        "Jerrin Thompson": 3,
+        "Desmond Evans": 1,
+        "Miyan Williams (RB)": 1,
+        "Jaylen Harrell (EDGE)": 1,
+        "Nathan Thomas (OT)": 1
+      },
       "availablePlayers": ["Tory Taylor", "Will Reichard"]
     },
-    "221": { "picked": { "Sam Hartman (QB)": 1 }, "availablePlayers": ["Dwight McGlothern", "Isaac Rex", "Devin Kirkwood"] },
+    "221": {
+      "picked": { "Sam Hartman (QB)": 1 },
+      "availablePlayers": ["Dwight McGlothern", "Isaac Rex", "Devin Kirkwood"]
+    },
     "227": {
       "picked": { "Jonah Monheim (OT)": 1, "Xavier Thomas (EDGE)": 1 },
       "availablePlayers": [
@@ -2944,7 +3004,13 @@
       ]
     },
     "144": {
-      "picked": { "Alton McCaskill": 1, "Ainias Smith (WRS)": 1, "Emani Bailey (RB)": 2, "Devin Neal (RB)": 1, "Trey Benson (RB)": 1 },
+      "picked": {
+        "Alton McCaskill": 1,
+        "Ainias Smith (WRS)": 1,
+        "Emani Bailey (RB)": 2,
+        "Devin Neal (RB)": 1,
+        "Trey Benson (RB)": 1
+      },
       "availablePlayers": [
         "Jimmy Horn Jr.",
         "Anthony Belton",
@@ -3660,7 +3726,12 @@
         "Byron Murphy II (DL3T)": 1,
         "Audric Estime (RB)": 1
       },
-      "availablePlayers": ["Curtis Jacobs", "Beaux Limmer", "Ainias Smith", "Jasheen Davis"]
+      "availablePlayers": [
+        "Curtis Jacobs",
+        "Beaux Limmer",
+        "Ainias Smith",
+        "Jasheen Davis"
+      ]
     },
     "116": {
       "picked": {
@@ -3708,7 +3779,13 @@
       "availablePlayers": []
     },
     "196": {
-      "picked": { "AJ Barner": 1, "DeWayne Carter (DL3T)": 2, "Gabe Hall (DL3T)": 1, "T.J. Sanders": 1, "Bryce Foster (OC)": 1 },
+      "picked": {
+        "AJ Barner": 1,
+        "DeWayne Carter (DL3T)": 2,
+        "Gabe Hall (DL3T)": 1,
+        "T.J. Sanders": 1,
+        "Bryce Foster (OC)": 1
+      },
       "availablePlayers": [
         "Zion Nelson",
         "Stefon Thompson",
@@ -3739,7 +3816,11 @@
       ]
     },
     "235": {
-      "picked": { "Michael Jurgens (OG)": 4, "Jahmal Banks": 1, "Sincere Haynesworth (OC)": 1 },
+      "picked": {
+        "Michael Jurgens (OG)": 4,
+        "Jahmal Banks": 1,
+        "Sincere Haynesworth (OC)": 1
+      },
       "availablePlayers": ["Billy Bowman", "Tony Horton"]
     },
     "fullName": "Cincinnati Bengals"
@@ -3923,7 +4004,12 @@
       ]
     },
     "119": {
-      "picked": { "Jacob Cowing (WRS)": 1, "Will Shipley (RB)": 1, "Jonah Monheim (OT)": 1, "Rod Moore (S)": 1 },
+      "picked": {
+        "Jacob Cowing (WRS)": 1,
+        "Will Shipley (RB)": 1,
+        "Jonah Monheim (OT)": 1,
+        "Rod Moore (S)": 1
+      },
       "availablePlayers": [
         "Kiran Amegadjie",
         "Sam Hartman",
@@ -4051,7 +4137,13 @@
       ]
     },
     "151": {
-      "picked": { "Sione Vaki": 1, "Cam Hart (CB)": 2, "Alton McCaskill": 1, "DJ James": 1, "Kamren Kinchens (S)": 1 },
+      "picked": {
+        "Sione Vaki": 1,
+        "Cam Hart (CB)": 2,
+        "Alton McCaskill": 1,
+        "DJ James": 1,
+        "Kamren Kinchens (S)": 1
+      },
       "availablePlayers": [
         "Ruke Orhorhoro",
         "Curtis Jacobs",
@@ -4316,10 +4408,23 @@
         "McCallan Castles (TE)": 1,
         "Kamren Kinchens (S)": 1
       },
-      "availablePlayers": ["Curtis Jacobs", "Jaylan Ford", "Jonah Monheim", "Jase McClellan", "Xavier Thomas", "Brennan Armstrong"]
+      "availablePlayers": [
+        "Curtis Jacobs",
+        "Jaylan Ford",
+        "Jonah Monheim",
+        "Jase McClellan",
+        "Xavier Thomas",
+        "Brennan Armstrong"
+      ]
     },
     "166": {
-      "picked": { "Jahdae Barron (S)": 1, "Jaden Davis": 1, "Brandon Coleman (OG)": 1, "Cedric Gray (ILB)": 3, "Jo'quavious Marks": 1 },
+      "picked": {
+        "Jahdae Barron (S)": 1,
+        "Jaden Davis": 1,
+        "Brandon Coleman (OG)": 1,
+        "Cedric Gray (ILB)": 3,
+        "Jo'quavious Marks": 1
+      },
       "availablePlayers": ["Kamal Hadden"]
     },
     "fullName": "Baltimore Ravens"
@@ -5141,7 +5246,12 @@
       ]
     },
     "135": {
-      "picked": { "Noah Daniels": 1, "Ladarius Henderson (OT)": 1, "Donovan Jackson (OG)": 1, "Ainias Smith (WRS)": 4 },
+      "picked": {
+        "Noah Daniels": 1,
+        "Ladarius Henderson (OT)": 1,
+        "Donovan Jackson (OG)": 1,
+        "Ainias Smith (WRS)": 4
+      },
       "availablePlayers": [
         "Ben Sinnott",
         "Jasheen Davis",
@@ -5681,7 +5791,11 @@
       "availablePlayers": []
     },
     "223": {
-      "picked": { "Curtis Jacobs (OLB)": 1, "Sataoa Laumea (OT)": 1, "Walter Rouse": 1 },
+      "picked": {
+        "Curtis Jacobs (OLB)": 1,
+        "Sataoa Laumea (OT)": 1,
+        "Walter Rouse": 1
+      },
       "availablePlayers": ["Dwight McGlothern"]
     },
     "fullName": "Los Angeles Chargers"
@@ -6472,7 +6586,11 @@
       ]
     },
     "115": {
-      "picked": { "Christian Haynes (OG)": 2, "Jack Nelson (OT)": 1, "Tyleik Williams (DL1T)": 1 },
+      "picked": {
+        "Christian Haynes (OG)": 2,
+        "Jack Nelson (OT)": 1,
+        "Tyleik Williams (DL1T)": 1
+      },
       "availablePlayers": [
         "Mekhi Wingo",
         "Zion Tupuola-Fetui",
@@ -6605,7 +6723,13 @@
       ]
     },
     "195": {
-      "picked": { "Steve Linton": 1, "T.J. Sanders": 2, "Xavier Thomas (EDGE)": 1, "Austin Stogner": 1, "Jawhar Jordan (RB)": 1 },
+      "picked": {
+        "Steve Linton": 1,
+        "T.J. Sanders": 2,
+        "Xavier Thomas (EDGE)": 1,
+        "Austin Stogner": 1,
+        "Jawhar Jordan (RB)": 1
+      },
       "availablePlayers": [
         "Zion Nelson",
         "Stefon Thompson",
@@ -6652,7 +6776,11 @@
   },
   "LAR": {
     "21": {
-      "picked": { "Laiatu Latu (EDGE)": 2, "Tyler Nubin (S)": 1, "Jared Verse (EDGE)": 1 },
+      "picked": {
+        "Laiatu Latu (EDGE)": 2,
+        "Tyler Nubin (S)": 1,
+        "Jared Verse (EDGE)": 1
+      },
       "availablePlayers": [
         "Demeioun Robinson",
         "Nate Wiggins",
@@ -6959,7 +7087,13 @@
       "availablePlayers": ["Andrew Coker"]
     },
     "156": {
-      "picked": { "Gabe Hall (DL3T)": 1, "Ajani Cornelius (OT)": 1, "Ben Sinnott (TE)": 1, "Jaden Hicks": 4, "Spencer Rattler (QB)": 1 },
+      "picked": {
+        "Gabe Hall (DL3T)": 1,
+        "Ajani Cornelius (OT)": 1,
+        "Ben Sinnott (TE)": 1,
+        "Jaden Hicks": 4,
+        "Spencer Rattler (QB)": 1
+      },
       "availablePlayers": ["Benjamin Yurosek"]
     },
     "191": {
@@ -6972,7 +7106,14 @@
         "Miyan Williams (RB)": 1,
         "Jaden Hicks": 1
       },
-      "availablePlayers": ["Akheem Mesidor", "Zion Nelson", "Dwight McGlothern", "Blake Watson", "Steele Chambers", "J.J. Weaver"]
+      "availablePlayers": [
+        "Akheem Mesidor",
+        "Zion Nelson",
+        "Dwight McGlothern",
+        "Blake Watson",
+        "Steele Chambers",
+        "J.J. Weaver"
+      ]
     },
     "214": {
       "picked": {
@@ -7256,7 +7397,14 @@
         "Layton Jordan"
       ]
     },
-    "165": { "picked": { "Jabari Small": 2, "Isaiah Adams (OG)": 1, "Brandon Coleman (OG)": 4 }, "availablePlayers": ["Kamal Hadden"] },
+    "165": {
+      "picked": {
+        "Jabari Small": 2,
+        "Isaiah Adams (OG)": 1,
+        "Brandon Coleman (OG)": 4
+      },
+      "availablePlayers": ["Kamal Hadden"]
+    },
     "180": {
       "picked": {
         "Jasheen Davis (EDGE)": 1,
@@ -7764,9 +7912,22 @@
         "Donovan Edwards (RB)": 2,
         "Trey Benson (RB)": 1
       },
-      "availablePlayers": ["Anthony Belton", "Ainias Smith", "Curtis Jacobs", "Jaylan Ford", "Xavier Thomas"]
+      "availablePlayers": [
+        "Anthony Belton",
+        "Ainias Smith",
+        "Curtis Jacobs",
+        "Jaylan Ford",
+        "Xavier Thomas"
+      ]
     },
-    "255": { "picked": { "Bryson Nesbit (TE)": 1, "Tyreem Powell (ILB)": 1, "K.T. Leveston (OT)": 4 }, "availablePlayers": [] },
+    "255": {
+      "picked": {
+        "Bryson Nesbit (TE)": 1,
+        "Tyreem Powell (ILB)": 1,
+        "K.T. Leveston (OT)": 4
+      },
+      "availablePlayers": []
+    },
     "fullName": "Tampa Bay Buccaneers"
   },
   "IND": {
@@ -8306,7 +8467,12 @@
         "McKinnley Jackson (DL1T)": 1,
         "Josh Newton (CB)": 1
       },
-      "availablePlayers": ["Audric Estime", "Jaheim Bell", "Cam Hart", "Christian Mahogany"]
+      "availablePlayers": [
+        "Audric Estime",
+        "Jaheim Bell",
+        "Cam Hart",
+        "Christian Mahogany"
+      ]
     },
     "71": {
       "picked": {
@@ -8345,11 +8511,31 @@
         "Cooper Beebe (OG)": 1,
         "Trey Benson (RB)": 1
       },
-      "availablePlayers": ["Anthony Belton", "Audric Estime", "Layden Robinson", "Jasheen Davis", "Beaux Limmer", "Ainias Smith"]
+      "availablePlayers": [
+        "Anthony Belton",
+        "Audric Estime",
+        "Layden Robinson",
+        "Jasheen Davis",
+        "Beaux Limmer",
+        "Ainias Smith"
+      ]
     },
     "137": {
-      "picked": { "Tyrice Knight (ILB)": 1, "MarShawn Lloyd (RB)": 1, "Josh Proctor (S)": 1, "Joe Milton": 1, "Anthony Belton (OT)": 3 },
-      "availablePlayers": ["Ben Sinnott", "Jasheen Davis", "Theo Johnson", "Jordan Burch", "Kamal Hadden", "Benjamin Yurosek"]
+      "picked": {
+        "Tyrice Knight (ILB)": 1,
+        "MarShawn Lloyd (RB)": 1,
+        "Josh Proctor (S)": 1,
+        "Joe Milton": 1,
+        "Anthony Belton (OT)": 3
+      },
+      "availablePlayers": [
+        "Ben Sinnott",
+        "Jasheen Davis",
+        "Theo Johnson",
+        "Jordan Burch",
+        "Kamal Hadden",
+        "Benjamin Yurosek"
+      ]
     },
     "188": {
       "picked": {
@@ -8371,9 +8557,22 @@
         "Blake Watson"
       ]
     },
-    "222": { "picked": { "Akeem Dent (S)": 1, "Ja'Quan Sheppard": 1, "Tyreek Chappell": 5 }, "availablePlayers": ["Dwight McGlothern"] },
+    "222": {
+      "picked": {
+        "Akeem Dent (S)": 1,
+        "Ja'Quan Sheppard": 1,
+        "Tyreek Chappell": 5
+      },
+      "availablePlayers": ["Dwight McGlothern"]
+    },
     "224": {
-      "picked": { "Noah Daniels": 2, "Brant Kuithe (FB)": 2, "Walter Rouse": 1, "Doug Nester": 1, "Quinton Newsome": 1 },
+      "picked": {
+        "Noah Daniels": 2,
+        "Brant Kuithe (FB)": 2,
+        "Walter Rouse": 1,
+        "Doug Nester": 1,
+        "Quinton Newsome": 1
+      },
       "availablePlayers": []
     },
     "fullName": "Arizona Cardinals"
@@ -8510,7 +8709,12 @@
         "David Walker": 1,
         "Kingsley Eguakun": 1
       },
-      "availablePlayers": ["Beaux Limmer", "Mike Sainristil", "Cole Bishop", "Xavier Thomas"]
+      "availablePlayers": [
+        "Beaux Limmer",
+        "Mike Sainristil",
+        "Cole Bishop",
+        "Xavier Thomas"
+      ]
     },
     "145": {
       "picked": { "Dallin Holker (TE)": 1, "Beaux Limmer (OC)": 1 },
@@ -8588,7 +8792,13 @@
       "availablePlayers": ["Dwight McGlothern"]
     },
     "244": {
-      "picked": { "Jacoby Windmon": 1, "Billy Bowman": 2, "Tailese Fuaga": 1, "Sincere Haynesworth (OC)": 3, "Brennan Armstrong": 1 },
+      "picked": {
+        "Jacoby Windmon": 1,
+        "Billy Bowman": 2,
+        "Tailese Fuaga": 1,
+        "Sincere Haynesworth (OC)": 3,
+        "Brennan Armstrong": 1
+      },
       "availablePlayers": []
     },
     "fullName": "Tennessee Titans"
@@ -9251,7 +9461,12 @@
     },
     "199": {
       "picked": { "Johnny Dixon (CB)": 1, "Tyrice Knight (ILB)": 1 },
-      "availablePlayers": ["LaDarius Henderson", "Cedric Johnson", "Fabien Lovett", "Tanor Bortolini"]
+      "availablePlayers": [
+        "LaDarius Henderson",
+        "Cedric Johnson",
+        "Fabien Lovett",
+        "Tanor Bortolini"
+      ]
     },
     "240": {
       "picked": {
@@ -9374,7 +9589,13 @@
       ]
     },
     "172": {
-      "picked": { "Justin Walley": 1, "Jasheen Davis (EDGE)": 1, "Dylan Laube (RB)": 1, "Jaylan Ford (ILB)": 4, "Decorian Patterson": 1 },
+      "picked": {
+        "Justin Walley": 1,
+        "Jasheen Davis (EDGE)": 1,
+        "Dylan Laube (RB)": 1,
+        "Jaylan Ford (ILB)": 4,
+        "Decorian Patterson": 1
+      },
       "availablePlayers": []
     },
     "fullName": "Dallas Cowboys"
