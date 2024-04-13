@@ -61,7 +61,7 @@ function processSimulation({
   return teamsList;
 }
 
-async function gatherResultsFromScratch() {
+export async function gatherResultsFromScratch() {
   let { teamsList, reverseTeamsList } = getTeams();
   const draftOrder = await getDraftOrder(reverseTeamsList);
   const draftProspects = getDraftProspects();
@@ -89,7 +89,7 @@ async function gatherResultsFromScratch() {
   );
 }
 
-async function gatherResults(simulations: Simulation[]) {
+export async function gatherResults(simulations: Simulation[]) {
   // Add to the most recent result to prevent overcomputation
   let teamsList = getMostRecentResult();
 
@@ -125,5 +125,3 @@ async function gatherResults(simulations: Simulation[]) {
     (err: any) => {}
   );
 }
-
-export default gatherResults;

@@ -22,15 +22,15 @@ enum Positions {
 type Teams = { [key: string]: any };
 type Players = { [player: string]: { school: string; position: string } };
 
-interface Player {
+type Player = {
   name: string;
   team: string;
-}
+};
 
-interface Simulation {
+type Simulation = {
   pickedFor?: string;
   players: Player[];
-}
+};
 
 interface ProspectsWithADP extends Player {
   ADP?: number;
@@ -89,35 +89,30 @@ function getDraftProspects(): Players {
   return JSON.parse(file);
 }
 
-function isDateWithin(date: Date, range: number = 31) {
-  const todayObj = new Date();
-  const todayDate = todayObj.getDate();
-  const todayDay = todayObj.getDay();
-
-  const end = new Date(todayObj.setDate(todayDate - todayDay));
+function isDateWithin(date: Date, range: number = 30) {
+  const today = new Date();
 
   // get last date of week
-  const start = new Date(end);
-  start.setDate(end.getDate() - range);
+  const start = new Date(today);
+  start.setDate(today.getDate() - range);
 
   // if date is equal or within the first and last dates of the week
-  return date >= start && date <= end;
+  return date >= start && date <= today;
 }
 
 // Only use results from within the week
-function getMostRecentResult() {
+function getMostRecentResult(): Teams | undefined {
   const [mostRecentResult] = readdirSync("./results").slice(-1);
 
   // Result files formatted as {date as iso string}.json
   const fileNameWithoutExt = Path.parse(mostRecentResult).name;
-  if (!isDateWithin(new Date(fileNameWithoutExt), 6)) return;
+
+  if (!isDateWithin(new Date(fileNameWithoutExt))) return;
 
   const file = readFileSync(`./results/${mostRecentResult}`, {
     encoding: "utf8",
   });
-  const teamsList: Teams = JSON.parse(file);
-
-  return teamsList;
+  return JSON.parse(file);
 }
 
 // Only get sims from within the week

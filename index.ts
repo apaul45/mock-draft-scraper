@@ -5,7 +5,7 @@ import AdblockerPlugin from "puppeteer-extra-plugin-adblocker";
 import { writeFileSync, readdirSync, readFileSync } from "fs";
 import { scrapers, Scrapers } from "./sites";
 import { findKey, sortBy } from "lodash";
-import gatherResults from "./get_results";
+import { gatherResults } from "./get_results";
 
 async function main() {
   const simulations: Simulation[] = [];
