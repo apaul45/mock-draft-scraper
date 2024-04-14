@@ -11,19 +11,11 @@ import {
 } from "./utils";
 import { intersection } from "lodash";
 
-function processSimulation({
-  simulation,
-  reverseTeamsList,
-  draftProspects,
-  draftOrder,
-  teamsList,
-}: {
-  simulation: Simulation;
-  reverseTeamsList: any;
-  draftProspects: Players;
-  draftOrder: any[];
-  teamsList: Teams;
-}) {
+const { teamsList, reverseTeamsList } = getTeams();
+const draftProspects = getDraftProspects();
+const draftOrder = getDraftOrder();
+
+function processSimulation(simulation: Simulation, currentResult: Teams) {
   // Some sims return the team name rather than abbrev., so account for it
   simulation.pickedFor =
     reverseTeamsList[simulation.pickedFor || ""] || simulation.pickedFor;
@@ -38,15 +30,15 @@ function processSimulation({
 
     name += ` (${draftProspects[name]?.position ?? ""})`;
 
-    const pickObject = teamsList?.[team]?.[index + 1];
+    const pickObject = currentResult?.[team]?.[index + 1];
 
     const pickedPlayers = pickObject?.["picked"] || {};
     const availablePlayers = players.slice(index + 1);
     const previousAvailablePlayers =
       pickObject?.["availablePlayers"] || availablePlayers;
 
-    teamsList[team] = {
-      ...teamsList[team],
+    currentResult[team] = {
+      ...currentResult[team],
       [index + 1]: {
         picked: { ...pickedPlayers, [name]: 1 + (pickedPlayers[name] || 0) },
         availablePlayers: intersection(
@@ -58,43 +50,33 @@ function processSimulation({
     };
   });
 
-  return teamsList;
+  return currentResult;
 }
 
-export async function gatherResultsFromScratch() {
-  let { teamsList, reverseTeamsList } = getTeams();
-  const draftOrder = await getDraftOrder(reverseTeamsList);
-  const draftProspects = getDraftProspects();
+async function gatherResultsFromScratch() {
+  let result = teamsList;
 
   const simulations = getMostRecentSimulations();
-
   if (!simulations.length) return;
 
   simulations.forEach(
-    (simulation) =>
-      (teamsList = processSimulation({
-        simulation,
-        reverseTeamsList,
-        draftProspects,
-        draftOrder,
-        teamsList,
-      }))
+    (simulation) => (result = processSimulation(simulation, result))
   );
 
   console.log(`Processed ${simulations.length} files`);
   writeFile(
     `./results/${new Date().toISOString()}.json`,
-    JSON.stringify(teamsList),
+    JSON.stringify(result),
     (err: any) => {}
   );
 }
 
 export async function gatherResults(simulations: Simulation[]) {
   // Add to the most recent result to prevent overcomputation
-  let teamsList = getMostRecentResult();
+  let result = getMostRecentResult();
 
   // If most recent result is too old, build new result from scratch
-  if (!teamsList) {
+  if (!result) {
     console.log("Creating new result from scratch...");
     await gatherResultsFromScratch();
     return;
@@ -103,25 +85,14 @@ export async function gatherResults(simulations: Simulation[]) {
   // Prevent creation of duplicate result
   if (!simulations.length) return;
 
-  const { reverseTeamsList } = getTeams();
-  const draftProspects = getDraftProspects();
-  const draftOrder = await getDraftOrder(reverseTeamsList);
-
   simulations.forEach(
-    (simulation) =>
-      (teamsList = processSimulation({
-        simulation,
-        draftOrder,
-        draftProspects,
-        teamsList: teamsList as Teams,
-        reverseTeamsList,
-      }))
+    (simulation) => (result = processSimulation(simulation, result as Teams))
   );
 
   console.log(`Added ${simulations.length} simulations`);
   writeFile(
     `./results/${new Date().toISOString()}.json`,
-    JSON.stringify(teamsList),
+    JSON.stringify(result),
     (err: any) => {}
   );
 }

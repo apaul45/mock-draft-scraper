@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer-extra";
-import { Simulation, getDraftProspects } from "./utils";
+import { Simulation, fetchDraftOrder, getDraftProspects } from "./utils";
 import StealthPlugin from "puppeteer-extra-plugin-stealth";
 import AdblockerPlugin from "puppeteer-extra-plugin-adblocker";
 import { writeFileSync, readdirSync, readFileSync } from "fs";
@@ -47,8 +47,8 @@ async function main() {
 
   await browser.close();
 
+  await fetchDraftOrder();
   await gatherResults(simulations);
-  //console.log(getPlayerScores());
 }
 
 function getPlayerScores() {

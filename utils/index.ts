@@ -1,6 +1,6 @@
 import axios from "axios";
 import { load } from "cheerio";
-import { readFileSync, readdirSync } from "fs";
+import { readFileSync, readdirSync, writeFileSync } from "fs";
 import Path from "path";
 
 enum Positions {
@@ -65,7 +65,9 @@ function getTeams() {
   return { teamsList, reverseTeamsList };
 }
 
-async function getDraftOrder(teamsList: Teams) {
+async function fetchDraftOrder() {
+  const { reverseTeamsList: teams } = getTeams();
+
   const res = await axios.get("https://www.tankathon.com/nfl/full_draft", {
     responseType: "document",
   });
@@ -78,10 +80,15 @@ async function getDraftOrder(teamsList: Teams) {
       const link = el.attribs["href"];
       const team = link.substring(link.lastIndexOf("/") + 1);
 
-      return teamsList[toTitleCase(team)];
+      return teams[toTitleCase(team)];
     });
 
-  return draftOrder;
+  writeFileSync("./utils/draftorder.json", JSON.stringify(draftOrder));
+}
+
+function getDraftOrder() {
+  const file = readFileSync("./utils/draftorder.json", { encoding: "utf-8" });
+  return JSON.parse(file);
 }
 
 function getDraftProspects(): Players {
@@ -144,6 +151,7 @@ export {
   toTitleCase,
   removeParanthesis,
   getTeams,
+  fetchDraftOrder,
   getDraftOrder,
   getDraftProspects,
   getMostRecentResult,
