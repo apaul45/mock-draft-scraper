@@ -99,15 +99,13 @@ function getDraftProspects(): Players {
 function isDateWithin(date: Date, range: number) {
   const today = new Date();
 
-  // get last date of week
   const start = new Date(today);
   start.setDate(today.getDate() - range);
 
-  // if date is equal or within the first and last dates of the week
   return date >= start && date <= today;
 }
 
-// Only use results from within the week
+// Only use results from within certain time period
 function getMostRecentResult(range: number = 30): Teams | undefined {
   const [mostRecentResult] = readdirSync("./results").slice(-1);
 
@@ -122,7 +120,7 @@ function getMostRecentResult(range: number = 30): Teams | undefined {
   return JSON.parse(file);
 }
 
-// Only get sims from within the week
+// Only get sims from within certain time period
 function getMostRecentSimulations(range: number = 30): Simulation[] {
   let fileNames = readdirSync("./simulations");
 

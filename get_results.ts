@@ -52,38 +52,14 @@ function processSimulation(simulation: Simulation, currentResult: Teams) {
   return currentResult;
 }
 
-function writeResult(result: Teams) {
-  const resultToday = getMostRecentResult(1);
-  const fileName = resultToday
-    ? readdirSync("./results").slice(-1)[0]
-    : `${new Date().toISOString()}.json`;
-
-  writeFile(`./results/${fileName}`, JSON.stringify(result), (err: any) => {});
-}
-
-async function gatherResultsFromScratch() {
-  let result = teamsList;
-
-  const simulations = getMostRecentSimulations();
-  if (!simulations.length) return;
-
-  simulations.forEach(
-    (simulation) => (result = processSimulation(simulation, result))
-  );
-
-  console.log(`Processed ${simulations.length} files`);
-  writeResult(result);
-}
-
 export async function gatherResults(simulations: Simulation[]) {
   // Add to the most recent result to prevent overcomputation
   let result = getMostRecentResult();
 
   // If most recent result is too old, build new result from scratch
   if (!result) {
-    console.log("Creating new result from scratch...");
-    await gatherResultsFromScratch();
-    return;
+    result = teamsList;
+    simulations = getMostRecentSimulations();
   }
 
   // Prevent creation of duplicate result
@@ -94,5 +70,12 @@ export async function gatherResults(simulations: Simulation[]) {
   );
 
   console.log(`Added ${simulations.length} simulations`);
-  writeResult(result);
+
+  // Write same day sims to the same result
+  const resultToday = getMostRecentResult(1);
+  const fileName = resultToday
+    ? readdirSync("./results").slice(-1)[0]
+    : `${new Date().toISOString()}.json`;
+
+  writeFile(`./results/${fileName}`, JSON.stringify(result), (err: any) => {});
 }
