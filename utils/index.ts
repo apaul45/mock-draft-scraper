@@ -96,7 +96,7 @@ function getDraftProspects(): Players {
   return JSON.parse(file);
 }
 
-function isDateWithin(date: Date, range: number = 30) {
+function isDateWithin(date: Date, range: number) {
   const today = new Date();
 
   // get last date of week
@@ -108,13 +108,13 @@ function isDateWithin(date: Date, range: number = 30) {
 }
 
 // Only use results from within the week
-function getMostRecentResult(): Teams | undefined {
+function getMostRecentResult(range: number = 30): Teams | undefined {
   const [mostRecentResult] = readdirSync("./results").slice(-1);
 
   // Result files formatted as {date as iso string}.json
   const fileNameWithoutExt = Path.parse(mostRecentResult).name;
 
-  if (!isDateWithin(new Date(fileNameWithoutExt))) return;
+  if (!isDateWithin(new Date(fileNameWithoutExt), range)) return;
 
   const file = readFileSync(`./results/${mostRecentResult}`, {
     encoding: "utf8",
@@ -123,7 +123,7 @@ function getMostRecentResult(): Teams | undefined {
 }
 
 // Only get sims from within the week
-function getMostRecentSimulations(): Simulation[] {
+function getMostRecentSimulations(range: number = 30): Simulation[] {
   let fileNames = readdirSync("./simulations");
 
   return fileNames
@@ -131,7 +131,7 @@ function getMostRecentSimulations(): Simulation[] {
       const fileNameWithoutExt = Path.parse(fileName).name;
       const fileDate = fileNameWithoutExt.split("_")[1];
 
-      return isDateWithin(new Date(fileDate));
+      return isDateWithin(new Date(fileDate), range);
     })
     .map((fileName) => {
       const data = readFileSync(`./simulations/${fileName}`, {

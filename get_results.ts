@@ -1,6 +1,5 @@
-import { writeFile } from "fs";
+import { writeFile, readdirSync } from "fs";
 import {
-  Players,
   Simulation,
   Teams,
   getDraftOrder,
@@ -53,6 +52,15 @@ function processSimulation(simulation: Simulation, currentResult: Teams) {
   return currentResult;
 }
 
+function writeResult(result: Teams) {
+  const resultToday = getMostRecentResult(1);
+  const fileName = resultToday
+    ? readdirSync("./results").slice(-1)[0]
+    : `${new Date().toISOString()}.json`;
+
+  writeFile(`./results/${fileName}`, JSON.stringify(result), (err: any) => {});
+}
+
 async function gatherResultsFromScratch() {
   let result = teamsList;
 
@@ -64,11 +72,7 @@ async function gatherResultsFromScratch() {
   );
 
   console.log(`Processed ${simulations.length} files`);
-  writeFile(
-    `./results/${new Date().toISOString()}.json`,
-    JSON.stringify(result),
-    (err: any) => {}
-  );
+  writeResult(result);
 }
 
 export async function gatherResults(simulations: Simulation[]) {
@@ -90,9 +94,5 @@ export async function gatherResults(simulations: Simulation[]) {
   );
 
   console.log(`Added ${simulations.length} simulations`);
-  writeFile(
-    `./results/${new Date().toISOString()}.json`,
-    JSON.stringify(result),
-    (err: any) => {}
-  );
+  writeResult(result);
 }
