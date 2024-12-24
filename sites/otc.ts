@@ -11,8 +11,9 @@ async function scrapeOTC(page: Page) {
   const teamContainers = await page.$$(".team-select-name.center");
   sample(teamContainers)?.click();
 
-  const [nextBtn] = await page.$x("//a[contains(text(), 'Next')]");
-  // @ts-ignore
+  const nextBtnSelector = 'a::-p-text("Next")';
+  await page.waitForSelector(nextBtnSelector);
+  const nextBtn = await page.$(nextBtnSelector);
   await nextBtn?.click();
 
   await page.waitForSelector(".setup-option.round-number", { visible: true });
