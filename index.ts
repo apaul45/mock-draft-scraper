@@ -1,13 +1,17 @@
 import puppeteer from "puppeteer-extra";
-import { Simulation, fetchDraftOrder, getDraftProspects } from "./utils";
+import { Simulation } from "./utils";
 import StealthPlugin from "puppeteer-extra-plugin-stealth";
 import AdblockerPlugin from "puppeteer-extra-plugin-adblocker";
-import { writeFileSync, readdirSync, readFileSync } from "fs";
+import { writeFileSync } from "fs";
 import { scrapers, Scrapers } from "./sites";
-import { findKey, sortBy } from "lodash";
+import { findKey } from "lodash";
 import { gatherResults } from "./get_results";
+import { fetchDraftOrder, fetchDraftProspects } from "./utils/resources";
 
 async function main() {
+  await fetchDraftOrder();
+  await fetchDraftProspects();
+
   const simulations: Simulation[] = [];
 
   puppeteer.use(StealthPlugin()).use(AdblockerPlugin({ blockTrackers: true }));
@@ -47,44 +51,7 @@ async function main() {
 
   await browser.close();
 
-  await fetchDraftOrder();
   await gatherResults(simulations);
-}
-
-function getPlayerScores() {
-  const draftProspects: { [player: string]: any } = getDraftProspects();
-
-  const files = readdirSync("./simulations", { withFileTypes: true });
-
-  files.forEach(({ name }) => {
-    const simFile = readFileSync(`./simulations/${name}`, {
-      encoding: "utf-8",
-    });
-    const simulation: Simulation = JSON.parse(simFile);
-
-    simulation.players.forEach(({ name }, index) => {
-      if (!draftProspects[name]) return;
-
-      if (!draftProspects[name]["ADP"]) {
-        draftProspects[name]["ADP"] = 0;
-        draftProspects[name]["totalAppearances"] = 0;
-      }
-
-      draftProspects[name]["ADP"] += index + 1;
-      draftProspects[name]["totalAppearances"] += 1;
-    });
-  });
-
-  const prospectKeys = Object.keys(draftProspects).filter(
-    (key) => draftProspects[key]?.totalAppearances === files.length
-  );
-
-  prospectKeys.forEach((key) => (draftProspects[key].ADP /= files.length));
-
-  return sortBy(prospectKeys, (key) => draftProspects[key].ADP).map((name) => ({
-    name,
-    ...draftProspects[name],
-  }));
 }
 
 main();

@@ -2,13 +2,11 @@ import { writeFile, readdirSync } from "fs";
 import {
   Simulation,
   Teams,
-  getDraftOrder,
-  getDraftProspects,
   getMostRecentResult,
   getMostRecentSimulations,
-  getTeams,
 } from "./utils";
 import { intersection } from "lodash";
+import { getDraftOrder, getDraftProspects, getTeams } from "./utils/resources";
 
 const { teamsList, reverseTeamsList } = getTeams();
 const draftProspects = getDraftProspects();

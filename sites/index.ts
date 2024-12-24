@@ -29,7 +29,7 @@ const scrapers: Scraper[] = [
   { name: Scrapers.NDB, scraper: scrapeNDB },
   { name: Scrapers.SKA, scraper: scrapeSKA },
   { name: Scrapers.OTC, scraper: scrapeOTC },
-  { name: Scrapers.NDF, scraper: scrapeNDF },
+  // { name: Scrapers.NDF, scraper: scrapeNDF },
   { name: Scrapers.WTM, scraper: scrapeWTM },
 ];
 

@@ -1,6 +1,4 @@
-import axios from "axios";
-import { load } from "cheerio";
-import { readFileSync, readdirSync, writeFileSync } from "fs";
+import { readFileSync, readdirSync } from "fs";
 import Path from "path";
 
 enum Positions {
@@ -36,6 +34,7 @@ interface ProspectsWithADP extends Player {
   ADP?: number;
 }
 
+// General utils
 function toTitleCase(str: string) {
   return str
     .toLowerCase()
@@ -50,50 +49,13 @@ function removeParanthesis(str: string) {
   return str.replace(/[\])}[{(]/g, "");
 }
 
-function getTeams() {
-  const file = readFileSync("./utils/teams.json", { encoding: "utf8" });
-  const teamsList: Teams = JSON.parse(file);
+function getCurrentYear() {
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth();
+  const currentYear = currentDate.getFullYear();
 
-  const reverseTeamsList = Object.fromEntries(
-    Object.entries(teamsList).map(([key, value]) => {
-      const fullName = value["fullName"];
-
-      return [fullName.split(" ").pop(), key];
-    })
-  );
-
-  return { teamsList, reverseTeamsList };
-}
-
-async function fetchDraftOrder() {
-  const { reverseTeamsList: teams } = getTeams();
-
-  const res = await axios.get("https://www.tankathon.com/nfl/full_draft", {
-    responseType: "document",
-  });
-
-  const html = load(res.data);
-
-  const draftOrder = html(".team-link > a")
-    .toArray()
-    .map((el) => {
-      const link = el.attribs["href"];
-      const team = link.substring(link.lastIndexOf("/") + 1);
-
-      return teams[toTitleCase(team)];
-    });
-
-  writeFileSync("./utils/draftorder.json", JSON.stringify(draftOrder));
-}
-
-function getDraftOrder() {
-  const file = readFileSync("./utils/draftorder.json", { encoding: "utf-8" });
-  return JSON.parse(file);
-}
-
-function getDraftProspects(): Players {
-  const file = readFileSync("./utils/prospects.json", { encoding: "utf-8" });
-  return JSON.parse(file);
+  // Draft cycle ends in April/May, so use next years if after
+  return currentMonth > 5 ? currentYear + 1 : currentYear;
 }
 
 function isDateWithin(date: Date, range: number) {
@@ -110,7 +72,7 @@ function getMostRecentResult(range: number = 30): Teams | undefined {
   const [mostRecentResult] = readdirSync("./results").slice(-1);
 
   // Result files formatted as {date as iso string}.json
-  const fileNameWithoutExt = Path.parse(mostRecentResult).name;
+  const fileNameWithoutExt = Path.parse(mostRecentResult ?? "")?.name;
 
   if (!isDateWithin(new Date(fileNameWithoutExt), range)) return;
 
@@ -122,7 +84,7 @@ function getMostRecentResult(range: number = 30): Teams | undefined {
 
 // Only get sims from within certain time period
 function getMostRecentSimulations(range: number = 30): Simulation[] {
-  let fileNames = readdirSync("./simulations");
+  const fileNames = readdirSync("./simulations");
 
   return fileNames
     .filter((fileName) => {
@@ -148,10 +110,7 @@ export {
   ProspectsWithADP,
   toTitleCase,
   removeParanthesis,
-  getTeams,
-  fetchDraftOrder,
-  getDraftOrder,
-  getDraftProspects,
+  getCurrentYear,
   getMostRecentResult,
   getMostRecentSimulations,
 };
