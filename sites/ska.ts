@@ -12,7 +12,7 @@ async function scrapeSKA(page: Page) {
   await page.click("#fast");
 
   await page.click(".start-draft-btn");
-  await page.waitForSelector(".draft-simulation-container", { visible: true });
+  await page.waitForSelector(".simulator-content-container", { visible: true });
 
   await page.waitForSelector("[data-shortname='full_result']", {
     visible: true,
