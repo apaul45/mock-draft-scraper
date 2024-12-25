@@ -4,15 +4,15 @@ import {
   Teams,
   getMostRecentResult,
   getMostRecentSimulations,
-} from "./utils";
+} from "./";
 import { intersection } from "lodash";
-import { getDraftOrder, getDraftProspects, getTeams } from "./utils/resources";
+import { getResources, Resources } from "./resources";
 
-const { teamsList, reverseTeamsList } = getTeams();
-const draftProspects = getDraftProspects();
-const draftOrder = getDraftOrder();
+let resources: Resources;
 
 function processSimulation(simulation: Simulation, currentResult: Teams) {
+  const { reverseTeamsList, draftOrder, draftProspects } = resources;
+
   // Some sims return the team name rather than abbrev., so account for it
   simulation.pickedFor =
     reverseTeamsList[simulation.pickedFor || ""] || simulation.pickedFor;
@@ -51,6 +51,9 @@ function processSimulation(simulation: Simulation, currentResult: Teams) {
 }
 
 export async function gatherResults(simulations: Simulation[]) {
+  resources = await getResources();
+  const { teamsList } = resources;
+
   // Add to the most recent result to prevent overcomputation
   let result = getMostRecentResult();
 

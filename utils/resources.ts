@@ -1,9 +1,15 @@
 import axios from "axios";
 import { load } from "cheerio";
 import { existsSync, readFileSync, writeFileSync } from "fs";
-import { getCurrentYear, Players, Teams, toTitleCase } from ".";
+import {
+  getCurrentYear,
+  getMostRecentResult,
+  Players,
+  Teams,
+  toTitleCase,
+} from ".";
 
-export async function fetchDraftOrder() {
+async function fetchDraftOrder() {
   const { reverseTeamsList: teams } = getTeams();
 
   const res = await axios.get("https://www.tankathon.com/nfl/full_draft", {
@@ -30,13 +36,8 @@ export async function fetchDraftOrder() {
   return draftOrder;
 }
 
-export async function fetchDraftProspects() {
+async function fetchDraftProspects() {
   const currentYear = getCurrentYear();
-  const draftOrderFilePath = `./utils/${currentYear}/prospects.json`;
-
-  if (existsSync(draftOrderFilePath)) {
-    return;
-  }
 
   const prospects: Players = {};
 
@@ -70,7 +71,7 @@ export async function fetchDraftProspects() {
   return prospects;
 }
 
-export function getTeams() {
+function getTeams() {
   const file = readFileSync("./utils/teams.json", { encoding: "utf8" });
   const teamsList: Teams = JSON.parse(file);
 
@@ -85,18 +86,49 @@ export function getTeams() {
   return { teamsList, reverseTeamsList };
 }
 
-export function getDraftOrder() {
+async function getDraftOrder() {
+  const hasResultWithinDay = !!getMostRecentResult(1);
+
   const currentYear = getCurrentYear();
   const draftOrderFilePath = `./utils/${currentYear}/draftorder.json`;
+
+  // Fetch/refetch draft order if results haven't been captured in some time
+  // or the file doesn't exist
+  if (!hasResultWithinDay || !existsSync(draftOrderFilePath)) {
+    return await fetchDraftOrder();
+  }
 
   const file = readFileSync(draftOrderFilePath, { encoding: "utf-8" });
   return JSON.parse(file);
 }
 
-export function getDraftProspects() {
+async function getDraftProspects(): Promise<Players> {
   const currentYear = getCurrentYear();
   const prospectsFilePath = `./utils/${currentYear}/prospects.json`;
 
+  if (!existsSync(prospectsFilePath)) {
+    return await fetchDraftProspects();
+  }
+
   const file = readFileSync(prospectsFilePath, { encoding: "utf-8" });
   return JSON.parse(file);
+}
+
+export type Resources = {
+  teamsList: Teams;
+  reverseTeamsList: Record<string, string>;
+  draftOrder: string[];
+  draftProspects: Players;
+};
+export async function getResources(): Promise<Resources> {
+  const [draftOrder, draftProspects] = await Promise.all([
+    getDraftOrder(),
+    getDraftProspects(),
+  ]);
+
+  return {
+    ...getTeams(),
+    draftOrder,
+    draftProspects,
+  };
 }

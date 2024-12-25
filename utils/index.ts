@@ -68,7 +68,7 @@ function isDateWithin(date: Date, range: number) {
 }
 
 // Only use results from within certain time period
-function getMostRecentResult(range: number = 30): Teams | undefined {
+function getMostRecentResult(range: number = 7): Teams | undefined {
   const [mostRecentResult] = readdirSync("./results").slice(-1);
 
   // Result files formatted as {date as iso string}.json
