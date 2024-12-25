@@ -1,4 +1,6 @@
 import puppeteer from "puppeteer-extra";
+import { Cluster } from "puppeteer-cluster";
+import { Page } from "puppeteer";
 import { Simulation } from "./utils";
 import StealthPlugin from "puppeteer-extra-plugin-stealth";
 import AdblockerPlugin from "puppeteer-extra-plugin-adblocker";
@@ -16,19 +18,22 @@ async function main() {
 
   puppeteer.use(StealthPlugin()).use(AdblockerPlugin({ blockTrackers: true }));
 
-  const browser = await puppeteer.launch({
-    headless: "new",
-    args: [`--window-size=1920,1080`],
-    defaultViewport: null,
+  const cluster = await Cluster.launch({
+    maxConcurrency: scrapers.length,
+    puppeteer,
+    puppeteerOptions: {
+      headless: true,
+      args: [`--window-size=1920,1080`],
+      defaultViewport: null,
+    },
+    timeout: 600000,
+    retryLimit: 1,
   });
 
-  for (const { name, scraper } of scrapers) {
-    try {
-      const page = await browser.newPage();
-
+  scrapers.forEach(({ name, scraper }) =>
+    cluster.queue(async ({ page }: { page: Page }) => {
       console.log(`Starting ${name} Simulation...`);
       const start = Date.now();
-
       const result = await scraper(page);
 
       const totalTime = (Date.now() - start) / 60000;
@@ -44,12 +49,11 @@ async function main() {
         JSON.stringify(result)
       );
       simulations.push(result);
-    } catch (e) {
-      console.log(`${name} Simulation failed with error: ${e} \n`);
-    }
-  }
+    })
+  );
 
-  await browser.close();
+  await cluster.idle();
+  await cluster.close();
 
   await gatherResults(simulations);
 }
