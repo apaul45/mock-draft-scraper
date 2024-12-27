@@ -1,16 +1,15 @@
-import puppeteer from "puppeteer-extra";
-import StealthPlugin from "puppeteer-extra-plugin-stealth";
-import AdblockerPlugin from "puppeteer-extra-plugin-adblocker";
-import { Cluster } from "puppeteer-cluster";
-import { Page } from "puppeteer";
-import { Simulation } from "./utils";
-import { writeFileSync } from "fs";
-import { scrapers, Scrapers } from "./sites";
-import { findKey } from "lodash";
-import { gatherResults } from "./utils/get_results";
+import puppeteer from 'puppeteer-extra';
+import StealthPlugin from 'puppeteer-extra-plugin-stealth';
+import AdblockerPlugin from 'puppeteer-extra-plugin-adblocker';
+import { Cluster } from 'puppeteer-cluster';
+import { Page } from 'puppeteer';
+import { scrapers, Scrapers } from './sites';
+import { findKey } from 'lodash';
+import { gatherResults } from './utils/get_results';
+import { DbSimulation, initializeDb, ResultsDb } from './db';
 
 async function main() {
-  const simulations: Simulation[] = [];
+  const simulations: DbSimulation[] = [];
 
   puppeteer.use(StealthPlugin()).use(AdblockerPlugin({ blockTrackers: true }));
 
@@ -30,6 +29,7 @@ async function main() {
     cluster.queue(async ({ page }: { page: Page }) => {
       console.log(`Starting ${name} Simulation...`);
       const start = Date.now();
+
       const result = await scraper(page);
 
       const totalTime = (Date.now() - start) / 60000;
@@ -38,13 +38,7 @@ async function main() {
       );
 
       const abbreviatedName = findKey(Scrapers, (el) => el === name);
-      const currentDate = new Date().toISOString();
-
-      writeFileSync(
-        `./simulations/${abbreviatedName}_${currentDate}.json`,
-        JSON.stringify(result)
-      );
-      simulations.push(result);
+      simulations.push({ ...result, scraperName: abbreviatedName ?? '' });
     })
   );
 
