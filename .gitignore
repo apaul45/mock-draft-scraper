@@ -3,3 +3,5 @@ dist/
 .env
 results
 simulations
+gcp-sa.json
+*/drafts.db

@@ -1,10 +1,13 @@
 import axios from 'axios';
 import { load } from 'cheerio';
-import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync, readdirSync } from 'fs';
+import Path from 'path';
 import {
   getCurrentYear,
   getMostRecentResult,
   Players,
+  serializeSimulation,
+  Simulation,
   Teams,
   toTitleCase,
 } from '.';
@@ -112,6 +115,45 @@ async function getDraftProspects(): Promise<Players> {
 
   const file = readFileSync(prospectsFilePath, { encoding: 'utf-8' });
   return JSON.parse(file);
+}
+
+export function getSimulations() {
+  const fileNames = readdirSync('./simulations');
+
+  const simulations = fileNames.map((fileName) => {
+    const fileNameWithoutExt = Path.parse(fileName).name;
+    const [scraperName, fileDate] = fileNameWithoutExt.split('_');
+
+    const data = readFileSync(`./simulations/${fileName}`, {
+      encoding: 'utf8',
+    });
+    const simulation: Simulation = JSON.parse(data);
+
+    return {
+      scraperName,
+      date: fileDate,
+      ...serializeSimulation(simulation),
+    };
+  });
+
+  return simulations;
+}
+
+export function getResults() {
+  const fileNames = readdirSync('./results');
+
+  const results = fileNames.map((fileName) => {
+    const fileNameWithoutExt = Path.parse(fileName).name;
+    const data = readFileSync(`./results/${fileName}`, { encoding: 'utf8' });
+    const result = JSON.parse(data);
+
+    return {
+      result,
+      date: new Date(fileNameWithoutExt).toISOString(),
+    };
+  });
+
+  return results;
 }
 
 export type Resources = {
