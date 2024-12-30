@@ -6,9 +6,13 @@ import { Page } from 'puppeteer';
 import { scrapers, Scrapers } from './sites';
 import { findKey } from 'lodash';
 import { gatherResults } from './utils/get_results';
-import { DbSimulation, initializeDb, ResultsDb } from './db';
+import { DbSimulation } from './db';
+import { configDotenv } from 'dotenv';
 
 async function main() {
+  configDotenv();
+  const { PUPPETEER_EXECUTABLE_PATH } = process.env;
+
   const simulations: DbSimulation[] = [];
 
   puppeteer.use(StealthPlugin()).use(AdblockerPlugin({ blockTrackers: true }));
@@ -18,8 +22,11 @@ async function main() {
     puppeteer,
     puppeteerOptions: {
       headless: true,
-      args: [`--window-size=1920,1080`],
+      args: ['--window-size=1920,1080', '--no-sandbox'],
       defaultViewport: null,
+      ...(PUPPETEER_EXECUTABLE_PATH && {
+        executablePath: PUPPETEER_EXECUTABLE_PATH,
+      }),
     },
     timeout: 600000,
     retryLimit: 1,
