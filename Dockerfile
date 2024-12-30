@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install gnupg wget -y && \
   rm -rf /var/lib/apt/lists/*
 
 # Set the working directory.
-WORKDIR /app
+WORKDIR /mock-draft-scraper
 
 # Copy package.json and package-lock.json.
 COPY package*.json ./

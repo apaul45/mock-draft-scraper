@@ -50,13 +50,24 @@ function removeParanthesis(str: string) {
   return str.replace(/[\])}[{(]/g, '');
 }
 
-function getCurrentYear() {
+function getDraftYear() {
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth();
   const currentYear = currentDate.getFullYear();
 
   // Draft cycle ends in April/May, so use next years if after
   return currentMonth > 5 ? currentYear + 1 : currentYear;
+}
+
+function inSeason() {
+  const draftYear = getDraftYear();
+
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth();
+  const currentYear = currentDate.getFullYear();
+
+  // Season is from September to February
+  return currentYear < draftYear || currentMonth <= 2;
 }
 
 function isDateWithin(date: Date, range: number) {
@@ -130,7 +141,8 @@ export {
   ProspectsWithADP,
   toTitleCase,
   removeParanthesis,
-  getCurrentYear,
+  getDraftYear,
+  inSeason,
   getMostRecentResult,
   getMostRecentSimulations,
   serializeSimulation,

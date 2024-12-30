@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+results
+simulations
+gcp-sa.json
+*/drafts.db

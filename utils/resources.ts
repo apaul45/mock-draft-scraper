@@ -3,8 +3,9 @@ import { load } from 'cheerio';
 import { existsSync, readFileSync, writeFileSync, readdirSync } from 'fs';
 import Path from 'path';
 import {
-  getCurrentYear,
+  getDraftYear,
   getMostRecentResult,
+  inSeason,
   Players,
   serializeSimulation,
   Simulation,
@@ -30,9 +31,9 @@ async function fetchDraftOrder() {
       return teams[toTitleCase(team)];
     });
 
-  const currentYear = getCurrentYear();
+  const draftYear = getDraftYear();
   writeFileSync(
-    `./utils/${currentYear}/draftorder.json`,
+    `./utils/${draftYear}/draftorder.json`,
     JSON.stringify(draftOrder)
   );
 
@@ -40,14 +41,14 @@ async function fetchDraftOrder() {
 }
 
 async function fetchDraftProspects() {
-  const currentYear = getCurrentYear();
+  const draftYear = getDraftYear();
 
   const prospects: Players = {};
 
   // Get top 400 prospects
   for (let i = 1; i <= 4; i++) {
     const res = await axios.get(
-      `https://www.drafttek.com/${currentYear}-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2025-Page-${i}.asp`
+      `https://www.drafttek.com/${draftYear}-NFL-Draft-Big-Board/Top-NFL-Draft-Prospects-2025-Page-${i}.asp`
     );
 
     const html = load(res.data);
@@ -67,7 +68,7 @@ async function fetchDraftProspects() {
   }
 
   writeFileSync(
-    `./utils/${currentYear}/prospects.json`,
+    `./utils/${draftYear}/prospects.json`,
     JSON.stringify(prospects)
   );
 
@@ -90,14 +91,11 @@ export function getTeams() {
 }
 
 async function getDraftOrder() {
-  const hasResultWithinDay = !!getMostRecentResult(1);
+  const draftYear = getDraftYear();
+  const draftOrderFilePath = `./utils/${draftYear}/draftorder.json`;
 
-  const currentYear = getCurrentYear();
-  const draftOrderFilePath = `./utils/${currentYear}/draftorder.json`;
-
-  // Fetch/refetch draft order if results haven't been captured in some time
-  // or the file doesn't exist
-  if (!hasResultWithinDay || !existsSync(draftOrderFilePath)) {
+  // Fetch/refetch draft order during the season to account for changes
+  if (inSeason() || !existsSync(draftOrderFilePath)) {
     return await fetchDraftOrder();
   }
 
@@ -106,7 +104,7 @@ async function getDraftOrder() {
 }
 
 async function getDraftProspects(): Promise<Players> {
-  const currentYear = getCurrentYear();
+  const currentYear = getDraftYear();
   const prospectsFilePath = `./utils/${currentYear}/prospects.json`;
 
   if (!existsSync(prospectsFilePath)) {
